@@ -1,11 +1,12 @@
 package server;
 
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -40,18 +41,23 @@ public class Server {
 	    public void run() {
 	        try {
 
-	            DataOutputStream output = new DataOutputStream(clientSocket.getOutputStream());
+	            OutputStream output = clientSocket.getOutputStream();
 	            output.flush();
 	            DataInputStream input = new DataInputStream(clientSocket.getInputStream());
 
 	            while (!interrupted()) {
-	               request = input.readUTF();
-	               System.out.println(request);
-	               ByteArrayOutputStream baos=new ByteArrayOutputStream();
-	               BufferedImage img=ImageIO.read(new File("D:/Lite skit/Bilder/Random/locator.bmp"));
-	               ImageIO.write(img, "bmp", baos);
-	               output.write(baos.toByteArray());
-	               output.flush();
+	            	request = input.readUTF();
+	            	System.out.println(request);
+	            	ByteArrayOutputStream baos=new ByteArrayOutputStream();
+	            	BufferedImage img=ImageIO.read(new File("E:/Lite skit/Bilder/Random/locator2.bmp"));
+	            	ImageIO.write(img, "BMP", baos);
+	            	ByteArrayInputStream bi = new ByteArrayInputStream(baos.toByteArray());
+	            	byte[] buffer = new byte[2048];
+   					int read = bi.read(buffer);
+   					output.write(buffer, 0, read);
+   					output.flush();
+   					output.close();
+   					System.out.println(read);
 	            }
 	            clientSocket.close();
 	            System.out.println("Disconnected from client");
