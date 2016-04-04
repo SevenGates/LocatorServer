@@ -52,7 +52,7 @@ public class Server {
 	            	BufferedImage img=ImageIO.read(new File("E:/Lite skit/Bilder/Random/locator2.bmp"));
 	            	ImageIO.write(img, "BMP", baos);
 	            	ByteArrayInputStream bi = new ByteArrayInputStream(baos.toByteArray());
-	            	byte[] buffer = new byte[2048];
+	            	byte[] buffer = new byte[999999999];
    					int read = bi.read(buffer);
    					output.write(buffer, 0, read);
    					output.flush();
