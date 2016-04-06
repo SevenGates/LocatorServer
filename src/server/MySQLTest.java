@@ -23,7 +23,7 @@ public class MySQLTest {
 		Connection dbCon = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String query = "SELECT FIRST view FROM building";
+		String query = "select * from building";
 		try {
 			// getting database connection to MySQL server
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
