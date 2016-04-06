@@ -13,7 +13,8 @@ import java.net.Socket;
 import javax.imageio.ImageIO;
 
 public class Server {
-
+	private String filename;
+	
 	ServerSocket serverSocket;
 	public Server() {
 		try {
@@ -49,7 +50,7 @@ public class Server {
 	            	request = input.readUTF();
 	            	System.out.println(request);
 	            	ByteArrayOutputStream baos=new ByteArrayOutputStream();
-	            	BufferedImage img=ImageIO.read(new File("C:/Users/Chrille/Downloads/locator2.bmp"));
+	            	BufferedImage img=ImageIO.read(new File(filename));
 	            	ImageIO.write(img, "BMP", baos);
 	            	ByteArrayInputStream bi = new ByteArrayInputStream(baos.toByteArray());
 	            	byte[] buffer = new byte[999999999];
@@ -66,6 +67,10 @@ public class Server {
 	        }
 
 	    }
+	}
+	
+	public void getPic(String filename){
+		this.filename = filename;
 	}
 	
 	@SuppressWarnings("unused")
