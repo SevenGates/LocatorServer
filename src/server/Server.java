@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,6 +26,7 @@ public class Server {
 	ServerSocket serverSocket;
 	
 	public Server() {
+		
 		try {
 			System.out.println("Waiting...");
 			serverSocket = new ServerSocket(8080);
@@ -48,6 +50,9 @@ public class Server {
 	    }
 
 	    public void run() {
+	    	Random random = new Random();
+	    	int rand = random.nextInt(5);
+	    	
 	        try {
 	        	MySQLTest sql = new MySQLTest();
 	        	sql.main(null);
@@ -59,7 +64,7 @@ public class Server {
 	            	request = input.readUTF();
 	            	System.out.println(request);
 	            	ByteArrayOutputStream baos=new ByteArrayOutputStream();
-	            	BufferedImage img=ImageIO.read(new File(sql.getAL().get(0)));
+	            	BufferedImage img=ImageIO.read(new File(sql.getAL().get(rand)));
 	            	ImageIO.write(img, "BMP", baos);
 	            	ByteArrayInputStream bi = new ByteArrayInputStream(baos.toByteArray());
 	            	byte[] buffer = new byte[999999999];
