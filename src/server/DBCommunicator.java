@@ -33,9 +33,13 @@ public class DBCommunicator {
 		 String rRoomCoor = "inget från DB";
 		 String rDoorCoor = "inget från DB";
 		 String rCorridorCoor = "inget från DB";
+		 String rBuilding = "inget frånDB";
+		 String rBuildingMap = "inget från DB";
+		 String rLevelMap = "inget från DB";
+		 String rNbrLevels = "inget från DB";
 		 String query =
 		        "SELECT levels, roomid, roomCoor, " +
-		        "doorCoor, corridorCoor " +
+		        "doorCoor, corridorCoor, building, buildingMap, levelMap, nbrLevels " +
 		        "FROM " + dbName + ".room "
 		        	+"WHERE roomid='"+roomSearch+"'";
 		        
@@ -51,6 +55,10 @@ public class DBCommunicator {
 		        	rRoomCoor = rs.getString("roomCoor");
 		        	rDoorCoor = rs.getString("doorCoor");
 		        	rCorridorCoor = rs.getString("corridorCoor");
+		        	rBuilding = rs.getString("building");
+		        	rBuildingMap = rs.getString("buildingMap");
+		        	rLevelMap = rs.getString("levelMap");
+		        	rNbrLevels = rs.getString("nbrLevels");
 		        }
 		    } catch (SQLException e ) {
 		        System.out.println(e);
@@ -59,16 +67,23 @@ public class DBCommunicator {
 		    }
 		    
 			
-		String spock = "{\"levels\": \" "+ rLevels + "\",\"roomid\": \" " + rRoomid + "\","
-				+ "\"roomCoor\": \" " +	rRoomCoor + "\",\"doorCoor\": \" "+ rDoorCoor + "\",\"corridorCoor\": \" "+ rCorridorCoor + "\", }";
+		String jsonText = "{\"levels\": \" "+ rLevels + "\",\"roomid\": \" " + rRoomid + "\","
+				+ "\"roomCoor\": \" " +	rRoomCoor + "\",\"doorCoor\": \" "+ rDoorCoor + "\",\"corridorCoor\": \" "+ rCorridorCoor + "\","
+						+ "\"building\": \" "+ rBuilding + "\",\"buildingMap\": \" "+ rBuildingMap + "\", \"levelMap\": \" "+ rLevelMap + "\","
+								+ "\"nbrLevels\": \" "+ rNbrLevels + "\",}";
 		
-		JSONObject obj = new JSONObject(spock);
+		JSONObject obj = new JSONObject(jsonText);
 		String ab = obj.getString("levels");
 		String abc = obj.getString("roomid");
 		String abcd = obj.getString("roomCoor");
 		String abcde = obj.getString("doorCoor");
 		String abcdef = obj.getString("corridorCoor");
-		System.out.println(ab + " " + abc + " " + abcd + " " + abcde + " " + abcdef);
+		String abcdefg = obj.getString("building");
+		String abcdefgh = obj.getString("buildingMap");
+		String abcdefghi = obj.getString("levelMap");
+		String abcdefghij = obj.getString("nbrLevels");
+
+		System.out.println(ab + " " + abc + " " + abcd + " " + abcde + " " + abcdef + " " + abcdefg+ " " + abcdefgh+ " " + abcdefghi+ " " + abcdefghij);
 		
 		
 //		String name, floors, path; // Tablen building
