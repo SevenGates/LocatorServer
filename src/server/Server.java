@@ -24,13 +24,13 @@ import javax.imageio.ImageIO;
 public class Server {
 	private String filename;
 	ServerSocket serverSocket;
+	ServerController controller;
 	
 	public Server() {
-		
 		try {
 			System.out.println("Waiting...");
 			serverSocket = new ServerSocket(8080);
-			System.out.println("Resultat från SQL");
+			controller = new ServerController(this);
 //			MySQLTest sql = new MySQLTest();
 //        	sql.main(null);
 			while(true) {
@@ -52,10 +52,7 @@ public class Server {
 	    	clientSocket = client;
 	    }
 
-	    public void run() {
-	    	Random random = new Random();
-	    	int rand = random.nextInt(5);
-	    	
+	    public void run() {   	
 	        try {
 	        	
 	            OutputStream output = clientSocket.getOutputStream();
@@ -64,11 +61,15 @@ public class Server {
 
 	            while (!interrupted()) {
 	            	request = input.readUTF();
-	            	System.out.println(request);
-	            	ByteArrayOutputStream baos=new ByteArrayOutputStream();
-	            	BufferedImage img=ImageIO.read(new File("test"));
+	            	controller.fromServer(request);
+	            	// Här ska det skickas till controllern som kontrollerar vad klienten vill. 
+	            	
+	            	ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	            	BufferedImage img=ImageIO.read(new File("bajs"));
 	            	ImageIO.write(img, "BMP", baos);
 	            	ByteArrayInputStream bi = new ByteArrayInputStream(baos.toByteArray());
+	            	
+	            	
 	            	byte[] buffer = new byte[999999999];
    					int read = bi.read(buffer);
    					output.write(buffer, 0, read);
