@@ -30,6 +30,9 @@ public class Server {
 		try {
 			System.out.println("Waiting...");
 			serverSocket = new ServerSocket(8080);
+			System.out.println("Resultat från SQL");
+			MySQLTest sql = new MySQLTest();
+        	sql.main(null);
 			while(true) {
 				Socket clientSocket = serverSocket.accept();
 				Thread t = new ThreadHandler(clientSocket);
@@ -54,8 +57,7 @@ public class Server {
 	    	int rand = random.nextInt(5);
 	    	
 	        try {
-	        	MySQLTest sql = new MySQLTest();
-	        	sql.main(null);
+	        	
 	            OutputStream output = clientSocket.getOutputStream();
 	            output.flush();
 	            DataInputStream input = new DataInputStream(clientSocket.getInputStream());
@@ -64,7 +66,7 @@ public class Server {
 	            	request = input.readUTF();
 	            	System.out.println(request);
 	            	ByteArrayOutputStream baos=new ByteArrayOutputStream();
-	            	BufferedImage img=ImageIO.read(new File(sql.getAL().get(rand)));
+	            	BufferedImage img=ImageIO.read(new File("test"));
 	            	ImageIO.write(img, "BMP", baos);
 	            	ByteArrayInputStream bi = new ByteArrayInputStream(baos.toByteArray());
 	            	byte[] buffer = new byte[999999999];
@@ -103,7 +105,7 @@ public class Server {
 		Connection dbCon = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String query = "select * from building";
+		String query = "SELECT * FROM room";
 		try {
 			// getting database connection to MySQL server
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -116,16 +118,16 @@ public class Server {
 			while (rs.next()) {
 				
 				String name = rs.getString(1);
-				int floors = rs.getInt(2);
+				String floors = rs.getString(2);
 				view = rs.getString(3);
+				System.out.print("Byggnad/Våning " + name + ", ");
+				System.out.print("Salsnamn " + floors + ", ");
+				System.out.println("Koordinat " + view);
+
 				test.add(view);
 				
-				
-				System.out.println("name : " + name);
-				System.out.println("floors : " + floors);
-				System.out.println("bytes : " + view + "\n");
-				
 			}
+			
 		} catch (SQLException ex) {
 			System.out.println(ex.toString());
 			System.out.println("Någor har gått fel.");
