@@ -23,7 +23,7 @@ public class MySQLTest {
 		Connection dbCon = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String query = "select * from building";
+		String query = "select room from building";
 		try {
 			// getting database connection to MySQL server
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -36,20 +36,24 @@ public class MySQLTest {
 			while (rs.next()) {
 				
 				String name = rs.getString(1);
-				int floors = rs.getInt(2);
-				view = rs.getString(3);
+//				int floors = rs.getInt(2);
+//				view = rs.getString(3);
 				
 				
 				
 				System.out.println("name : " + name);
-				System.out.println("floors : " + floors);
-				System.out.println("bytes : " + view + "\n");
+//				System.out.println("floors : " + floors);
+//				System.out.println("bytes : " + view + "\n");
 				
 			}
 			Server server = new Server();
 			
 		} catch (SQLException ex) {
 			System.out.println(ex.toString());
+			
+			String[] fel = new String[3];
+			fel[0] = "Error";
+			fel[1] = "C:/";
 			System.out.println("Någor har gått fel.");
 	//		Logger.getLogger(CollectionTest.class.getName()).log(Level.SEVERE, null, ex);
 		} catch (ClassNotFoundException e) {

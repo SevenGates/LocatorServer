@@ -12,7 +12,18 @@ public class ServerController {
 	public void fromServer(String request) {
 		// Gör om till SQL anrop. Och skickar till DB.
 		String sqlQuery = request; // Här ska det göras om till anrop. 
+		sendToDB(sqlQuery);
+		
+		
+	}
+	
+	public void sendToDB(String sqlQuery) {
 		String[] fromDB = dbCom.query(sqlQuery); //resultat från DB efter anrop. 
+		checkContent(fromDB);
+	}
+
+	private void checkContent(String[] fromDB) {
+		//kontrollera innehållet 
 		
 	}
 
