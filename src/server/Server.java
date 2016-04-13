@@ -149,4 +149,10 @@ public class Server {
 		Server server = new Server();
 		
 	}
+
+
+	public void getFromController(String[] fromDB) {
+		// TODO Auto-generated method stub
+		
+	}
 }

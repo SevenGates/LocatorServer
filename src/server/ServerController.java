@@ -24,6 +24,17 @@ public class ServerController {
 
 	private void checkContent(String[] fromDB) {
 		//kontrollera innehållet 
+		if (fromDB[0] == "Error"){
+			errorHandler(fromDB[1]);
+		} else{
+			server.getFromController(fromDB);
+		}
+		
+	}
+
+	private void errorHandler(String fromDB) {
+		// Tar emot vilken typ av error. Sedan gör vi något coolt med det.
+		
 		
 	}
 
