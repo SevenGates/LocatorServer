@@ -31,8 +31,8 @@ public class Server {
 			System.out.println("Waiting...");
 			serverSocket = new ServerSocket(8080);
 			System.out.println("Resultat från SQL");
-			MySQLTest sql = new MySQLTest();
-        	sql.main(null);
+//			MySQLTest sql = new MySQLTest();
+//        	sql.main(null);
 			while(true) {
 				Socket clientSocket = serverSocket.accept();
 				Thread t = new ThreadHandler(clientSocket);
@@ -85,65 +85,62 @@ public class Server {
 	    }
 	}
 	
-	public void getPic(String filename){
-		this.filename = filename;
-	}
-	
-	private class MySQLTest {
-		ArrayList<String> test = new ArrayList<String>();
-		
-		public ArrayList<String> getAL(){
-			return test;
-		}
-	
-	public void main(String args[]) {
-		
-		String view = null;
-		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
-		String username = "root";
-		String password = "k5!298E45H";
-		Connection dbCon = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		String query = "SELECT * FROM room";
-		try {
-			// getting database connection to MySQL server
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			dbCon = DriverManager.getConnection(dbURL, username, password);
-			// getting PreparedStatment to execute query
-			stmt = dbCon.prepareStatement(query);
-			// Resultset returned by query
-			rs = stmt.executeQuery(query);
-			
-			while (rs.next()) {
-				
-				String name = rs.getString(1);
-				String floors = rs.getString(2);
-				view = rs.getString(3);
-				System.out.print("Byggnad/Våning " + name + ", ");
-				System.out.print("Salsnamn " + floors + ", ");
-				System.out.println("Koordinat " + view);
 
-				test.add(view);
-				
-			}
-			
-		} catch (SQLException ex) {
-			System.out.println(ex.toString());
-			System.out.println("Någor har gått fel.");
-	//		Logger.getLogger(CollectionTest.class.getName()).log(Level.SEVERE, null, ex);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e.toString());
-		} finally {
-			// close connection ,stmt and resultset here
-			
-			
-		}
-	
-	}
-	
-}
+//	private class MySQLTest {
+//		ArrayList<String> test = new ArrayList<String>();
+//		
+//		public ArrayList<String> getAL(){
+//			return test;
+//		}
+//	
+//	public void main(String args[]) {
+//		
+//		String view = null;
+//		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
+//		String username = "root";
+//		String password = "k5!298E45H";
+//		Connection dbCon = null;
+//		Statement stmt = null;
+//		ResultSet rs = null;
+//		String query = "SELECT * FROM room";
+//		try {
+//			// getting database connection to MySQL server
+//			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//			dbCon = DriverManager.getConnection(dbURL, username, password);
+//			// getting PreparedStatment to execute query
+//			stmt = dbCon.prepareStatement(query);
+//			// Resultset returned by query
+//			rs = stmt.executeQuery(query);
+//			
+//			while (rs.next()) {
+//				
+//				String name = rs.getString(1);
+//				String floors = rs.getString(2);
+//				view = rs.getString(3);
+//				System.out.print("Byggnad/Våning " + name + ", ");
+//				System.out.print("Salsnamn " + floors + ", ");
+//				System.out.println("Koordinat " + view);
+//
+//				test.add(view);
+//				
+//			}
+//			
+//		} catch (SQLException ex) {
+//			System.out.println(ex.toString());
+//			System.out.println("Någor har gått fel.");
+//	//		Logger.getLogger(CollectionTest.class.getName()).log(Level.SEVERE, null, ex);
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			System.out.println(e.toString());
+//		} finally {
+//			// close connection ,stmt and resultset here
+//			
+//			
+//		}
+//	
+//	}
+//	
+//}
 	
 	
 	@SuppressWarnings("unused")

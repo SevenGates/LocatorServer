@@ -47,7 +47,7 @@ public class MySQLTest {
 				
 			}
 			Server server = new Server();
-			server.getPic(view);
+			
 		} catch (SQLException ex) {
 			System.out.println(ex.toString());
 			System.out.println("Någor har gått fel.");
