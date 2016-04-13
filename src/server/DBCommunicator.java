@@ -12,12 +12,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Base64;
 import java.util.Base64.Encoder;
-
 import javax.imageio.ImageIO;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import com.mysql.jdbc.Statement;
 
 public class DBCommunicator {
@@ -91,30 +88,24 @@ public class DBCommunicator {
 		String byteToString2 = en.encodeToString(buffer);
 		
 		
-		
-		
-		
-		
-		
-		
 		String jsonText = "{\"levels\": \" " + rLevels + "\",\"roomid\": \" " + rRoomid + "\"," + "\"roomCoor\": \" "
 				+ rRoomCoor + "\",\"doorCoor\": \" " + rDoorCoor + "\",\"corridorCoor\": \" " + rCorridorCoor + "\","
 				+ "\"building\": \" " + rBuilding + "\",\"buildingMap\": \" " + byteToString + "\", \"levelMap\": \" "
 				+ byteToString2 + "\"," + "\"nbrLevels\": \" " + rNbrLevels + "\",}";
 
 		JSONObject obj = new JSONObject(jsonText);
-		String ab = obj.getString("levels");
-		String abc = obj.getString("roomid");
-		String abcd = obj.getString("roomCoor");
-		String abcde = obj.getString("doorCoor");
-		String abcdef = obj.getString("corridorCoor");
-		String abcdefg = obj.getString("building");
-		String abcdefgh = obj.getString("buildingMap");
-		String abcdefghi = obj.getString("levelMap");
-		String abcdefghij = obj.getString("nbrLevels");
-
-		System.out.println(ab + " " + abc + " " + abcd + " " + abcde + " " + abcdef + " " + abcdefg + " " + abcdefgh
-				+ " " + abcdefghi + " " + abcdefghij);
+//		String ab = obj.getString("levels");
+//		String abc = obj.getString("roomid");
+//		String abcd = obj.getString("roomCoor");
+//		String abcde = obj.getString("doorCoor");
+//		String abcdef = obj.getString("corridorCoor");
+//		String abcdefg = obj.getString("building");
+//		String abcdefgh = obj.getString("buildingMap");
+//		String abcdefghi = obj.getString("levelMap");
+//		String abcdefghij = obj.getString("nbrLevels");
+//
+//		System.out.println(ab + " " + abc + " " + abcd + " " + abcde + " " + abcdef + " " + abcdefg + " " + abcdefgh
+//				+ " " + abcdefghi + " " + abcdefghij);
 
 		// String name, floors, path; // Tablen building
 		// String id, building, map; // Tablen levels
