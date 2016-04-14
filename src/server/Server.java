@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -21,10 +22,14 @@ import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Server {
 	private String filename;
 	ServerSocket serverSocket;
 	ServerController controller;
+	JSONObject guinnessCompleteJson;
 	
 	public Server() {
 		try {
@@ -54,26 +59,28 @@ public class Server {
 	    public void run() {   	
 	        try {
 	        	
-	            OutputStream output = clientSocket.getOutputStream();
+	            ObjectOutputStream output = new ObjectOutputStream(clientSocket.getOutputStream());
 	            output.flush();
 	            DataInputStream input = new DataInputStream(clientSocket.getInputStream());
 
 	            while (!interrupted()) {
 	            	request = input.readUTF();
 	            	controller.msgFromClient(request);
-	            	// Här ska det skickas till controllern som kontrollerar vad klienten vill. 
-	            	
-	            	
-//   					output.write(buffer, 0, read);
-//   					output.flush();
-//   					output.close();
-//   					System.out.println(read);
+	            	output.writeObject(guinnessCompleteJson);
+	            	output.flush();
+	            	output.close();
 	            }
 	            clientSocket.close();
 	            System.out.println("Disconnected from client");
 	        } catch (IOException e) {
 	            System.out.println("Error " + e.toString());
-	        }
+	        } catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 	    }
 	}
@@ -87,5 +94,11 @@ public class Server {
 	public void getFromController(String[] fromDB) {
 		
 		
+	}
+
+	public void guinnessSendJsonToClient(JSONObject jsonCool) {
+		guinnessCompleteJson = jsonCool;
+		String a = jsonCool.toString();
+		System.out.println(a);
 	}
 }

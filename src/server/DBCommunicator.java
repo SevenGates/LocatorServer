@@ -56,11 +56,35 @@ public class DBCommunicator {
 		
 		return array;
 	}
+	
+	public String dBchange(String string) throws SQLException, JSONException, IOException {
+		Statement stmt = null;
+		Connection con = null;
+		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
+		String username = "root";
+		String password = "k5!298E45H";
+		String query = string;
+		String result = null;
+		try {
+			con = DriverManager.getConnection(dbURL, username, password);
+			stmt = (Statement) con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery(query);
+			
+			while (rs.next()) {
+				result = rs.getString("dbname");
+			}
+		} catch (SQLException e) {
+			System.out.println(e);
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+		}
+		
+		return result;
+	}
 
-//	public static void main(String[] args) throws SQLException, JSONException, IOException {
-//		DBCommunicator db = new DBCommunicator();
-//		db.tableRoom("ORD131");
-//	}
+
 }
 
 /*

@@ -20,7 +20,7 @@ public class ServerController {
 		dbCom = new DBCommunicator();
 	}
 
-	public void msgFromClient(String request) {
+	public void msgFromClient(String request) throws SQLException, JSONException, IOException {
 		// Gör om till SQL anrop. Och skickar till DB.
 		String sqlQuery = request; // Här ska det göras om till anrop.
 		String[] splitQuery = sqlQuery.split(",");
@@ -34,14 +34,6 @@ public class ServerController {
 			createSQL_SEP(splitQuery);
 		}
 
-		String GET_COMPLEX = "GCO,"; // följs av minst 2st bokstäver som ska
-										// skicka anrop till SQL.
-		String CONFIRM_COMPLEX = "CNF,"; // följs av plats men valt exempel
-											// MalmöHögskola. returnerar true or
-											// false.
-		String SEARCH_ROOM = "SER,"; // följsa av roomid + vilken plats
-		String SEARCH_PROGRAM = "SEP,"; // följs av porgramid + vilken plats
-
 	}
 
 	private void createSQL_SEP(String[] splitQuery) {
@@ -49,8 +41,9 @@ public class ServerController {
 
 	}
 
-	private void createSQL_SER(String[] splitQuery) {
-
+	private void createSQL_SER(String[] splitQuery) throws SQLException, JSONException, IOException {
+		splitQuery[2] = changeDB(splitQuery[2]);
+		
 		String SERQuery = "SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor " + "FROM "
 				+ splitQuery[2] + ".building " + "JOIN levels " + "ON building.name=levels.building " + "JOIN room "
 				+ "ON levels.id = room.levels " + "WHERE roomid = '" + splitQuery[1] + "'";
@@ -67,6 +60,12 @@ public class ServerController {
 
 	}
 	
+	private String changeDB(String string) throws SQLException, JSONException, IOException {
+		String query = "SELECT dbname FROM locatormain.places WHERE place LIKE '" + string + "';";;
+		String newString = dbCom.dBchange(query);
+				return newString;
+	}
+
 	private void createSQL_GCO(String splitQuery) {
 		String GCOQuery = "SELECT place FROM locatormain.places WHERE place LIKE '%" + splitQuery + "%';";
 
@@ -85,8 +84,8 @@ public class ServerController {
 
 	private void createJSON(String[] fromDB) throws IOException, JSONException {
 
-		fromDB[1] = stringToByte(fromDB[1]);
-		fromDB[4] = stringToByte(fromDB[4]);
+	//	fromDB[1] = stringToByte(fromDB[1]);
+	//	fromDB[4] = stringToByte(fromDB[4]);
 
 		String jsonText = "{\"name\": \" " + fromDB[0] + "\",\"path\": \" " + fromDB[1] + "\"," + "\"floors\": \" "
 				+ fromDB[2] + "\",\"id\": \" " + fromDB[3] + "\",\"map\": \" " + fromDB[4] + "\"," + "\"roomid\": \" "
@@ -113,10 +112,11 @@ public class ServerController {
 
 	}
 
-	private void sendCompleteJSONToClient(JSONObject jsonGCOQuery) {
-		// TODO Auto-generated method stub
+	private void sendCompleteJSONToClient(JSONObject jsonCool) {
+		server.guinnessSendJsonToClient(jsonCool);
 
 	}
+
 
 	private void sendBoolToClient(boolean b) {
 		// TODO Auto-generated method stub
