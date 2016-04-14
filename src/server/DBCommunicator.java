@@ -20,7 +20,7 @@ import com.mysql.jdbc.Statement;
 public class DBCommunicator {
 
 	
-	public String[] tableRoom(String roomSearch) throws SQLException, JSONException, IOException {
+	public String[] dBSearchRoom(String roomSearch) throws SQLException, JSONException, IOException {
 		Statement stmt = null;
 		Connection con = null;
 		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";

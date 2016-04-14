@@ -45,7 +45,7 @@ public class ServerController {
 	}
 
 	private void createSQL_SEP(String[] splitQuery) {
-		// TODO Auto-generated method stub
+		// RÖR INTE I SPRINT 2. 8=====D
 
 	}
 
@@ -57,7 +57,7 @@ public class ServerController {
 
 		String[] fromDB;
 		try {
-			fromDB = dbCom.tableRoom(SERQuery);
+			fromDB = dbCom.dBSearchRoom(SERQuery);
 			createJSON(fromDB);
 		} catch (SQLException | JSONException | IOException e) {
 			// TODO Auto-generated catch block
