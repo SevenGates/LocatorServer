@@ -19,50 +19,32 @@ import com.mysql.jdbc.Statement;
 
 public class DBCommunicator {
 
-	public String[] query(String sqlQuery) {
-		// anropar DB. Får tillbaka data i form av strängar. Som vi lagrar i en
-		// sträng array. Och sedan returnerar.
-		String[] resultFromDB = new String[11]; // En string array som just nu
-												// kan hålla all data från alla
-												// tabeller (tillsammans 11st)
-		return resultFromDB;
-	}
-
-	public void tableRoom(String roomSearch) throws SQLException, JSONException, IOException {
+	
+	public String[] tableRoom(String roomSearch) throws SQLException, JSONException, IOException {
 		Statement stmt = null;
 		Connection con = null;
 		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
 		String username = "root";
 		String password = "k5!298E45H";
-		String dbName = "locatormah";
-		String rLevels = "inget från DB";
-		String rRoomid = "inget från DB";
-		String rRoomCoor = "inget från DB";
-		String rDoorCoor = "inget från DB";
-		String rCorridorCoor = "inget från DB";
-		String rBuilding = "inget frånDB";
-		String rBuildingMap = "inget från DB";
-		String rLevelMap = "inget från DB";
-		String rNbrLevels = "inget från DB";
-		String query = "SELECT levels, roomid, roomCoor, "
-				+ "doorCoor, corridorCoor, building, buildingMap, levelMap, nbrLevels " + "FROM " + dbName + ".room "
-				+ "WHERE roomid='" + roomSearch + "'";
+		String query = roomSearch;
+		String[] array = new String[9];
 
 		try {
 			con = DriverManager.getConnection(dbURL, username, password);
 			stmt = (Statement) con.prepareStatement(query);
 			ResultSet rs = stmt.executeQuery(query);
-
+			
 			while (rs.next()) {
-				rLevels = rs.getString("levels");
-				rRoomid = rs.getString("roomid");
-				rRoomCoor = rs.getString("roomCoor");
-				rDoorCoor = rs.getString("doorCoor");
-				rCorridorCoor = rs.getString("corridorCoor");
-				rBuilding = rs.getString("building");
-				rBuildingMap = rs.getString("buildingMap");
-				rLevelMap = rs.getString("levelMap");
-				rNbrLevels = rs.getString("nbrLevels");
+				array[0] = rs.getString("name");
+				array[1] = rs.getString("path");
+				array[2] = rs.getString("floors");
+				array[3] = rs.getString("id");
+				array[4] = rs.getString("map");
+				array[5] = rs.getString("roomid");
+				array[6] = rs.getString("roomCoor");
+				array[7] = rs.getString("doorCoor");
+				array[8] = rs.getString("corridorCoor");
+			
 			}
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -71,53 +53,14 @@ public class DBCommunicator {
 				stmt.close();
 			}
 		}
-
-		File fnew = new File(rBuildingMap);
-		File fnew2 = new File(rLevelMap);
-		Encoder en = Base64.getEncoder();
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		BufferedImage originalImage = ImageIO.read(fnew);
-		ImageIO.write(originalImage, "BMP", baos);
-		baos.flush();
-		BufferedImage image2 = ImageIO.read(fnew2);
-		byte[] buffer = baos.toByteArray();
-		String byteToString = en.encodeToString(buffer);
-		ImageIO.write(image2, "BMP", baos);
-		baos.flush();
-		byte[] buffer2 = baos.toByteArray();
-		String byteToString2 = en.encodeToString(buffer);
 		
-		
-		String jsonText = "{\"levels\": \" " + rLevels + "\",\"roomid\": \" " + rRoomid + "\"," + "\"roomCoor\": \" "
-				+ rRoomCoor + "\",\"doorCoor\": \" " + rDoorCoor + "\",\"corridorCoor\": \" " + rCorridorCoor + "\","
-				+ "\"building\": \" " + rBuilding + "\",\"buildingMap\": \" " + byteToString + "\", \"levelMap\": \" "
-				+ byteToString2 + "\"," + "\"nbrLevels\": \" " + rNbrLevels + "\",}";
-
-		JSONObject obj = new JSONObject(jsonText);
-//		String ab = obj.getString("levels");
-//		String abc = obj.getString("roomid");
-//		String abcd = obj.getString("roomCoor");
-//		String abcde = obj.getString("doorCoor");
-//		String abcdef = obj.getString("corridorCoor");
-//		String abcdefg = obj.getString("building");
-//		String abcdefgh = obj.getString("buildingMap");
-//		String abcdefghi = obj.getString("levelMap");
-//		String abcdefghij = obj.getString("nbrLevels");
-//
-//		System.out.println(ab + " " + abc + " " + abcd + " " + abcde + " " + abcdef + " " + abcdefg + " " + abcdefgh
-//				+ " " + abcdefghi + " " + abcdefghij);
-
-		// String name, floors, path; // Tablen building
-		// String id, building, map; // Tablen levels
-		// String roomid, roomCoor, doorCoor, corridorCoor, levels; // Tablen
-		// room
-
+		return array;
 	}
 
-	public static void main(String[] args) throws SQLException, JSONException, IOException {
-		DBCommunicator db = new DBCommunicator();
-		db.tableRoom("NIB0517");
-	}
+//	public static void main(String[] args) throws SQLException, JSONException, IOException {
+//		DBCommunicator db = new DBCommunicator();
+//		db.tableRoom("ORD131");
+//	}
 }
 
 /*
