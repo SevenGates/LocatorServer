@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.Base64;
 import java.util.Base64.Encoder;
@@ -11,7 +12,7 @@ import javax.imageio.ImageIO;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ServerController {
+public class ServerController implements Serializable{
 	Server server;
 	DBCommunicator dbCom;
 

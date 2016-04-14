@@ -6,6 +6,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import com.mysql.jdbc.Statement;
 
-public class DBCommunicator {
+public class DBCommunicator implements Serializable{
 
 	
 	public String[] dBSearchRoom(String roomSearch) throws SQLException, JSONException, IOException {

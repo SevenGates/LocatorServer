@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.Connection;
@@ -25,11 +26,11 @@ import javax.imageio.ImageIO;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Server {
+public class Server implements Serializable{
 	private String filename;
 	ServerSocket serverSocket;
 	ServerController controller;
-	JSONObject guinnessCompleteJson;
+	String guinnessCompleteJson;
 	
 	public Server() {
 		try {
@@ -97,7 +98,7 @@ public class Server {
 	}
 
 	public void guinnessSendJsonToClient(JSONObject jsonCool) {
-		guinnessCompleteJson = jsonCool;
+		guinnessCompleteJson = jsonCool.toString();
 		String a = jsonCool.toString();
 		System.out.println(a);
 	}
