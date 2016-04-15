@@ -67,7 +67,7 @@ public class ServerController implements Serializable{
 	}
 
 	private void createSQL_GCO(String splitQuery) throws SQLException, JSONException, IOException {
-		String GCOQuery = "SELECT place FROM locatormain.places WHERE place LIKE '%" + splitQuery + "%';";
+		String GCOQuery = "SELECT place FROM locatormain.places WHERE place LIKE '"+ splitQuery +"%';";
 		ArrayList<String> differentPlaces = dbCom.searchComplex(GCOQuery);
 		
 		createJSON_GCO(differentPlaces);
@@ -91,10 +91,10 @@ public class ServerController implements Serializable{
 		fromDB[1] = stringToByte(fromDB[1]);
 		fromDB[4] = stringToByte(fromDB[4]);
 
-		String jsonText = "{\"name\": \" " + fromDB[0] + "\",\"path\": \" " + fromDB[1] + "\"," + "\"floors\": \" "
-				+ fromDB[2] + "\",\"id\": \" " + fromDB[3] + "\",\"map\": \" " + fromDB[4] + "\"," + "\"roomid\": \" "
-				+ fromDB[5] + "\",\"roomCoor\": \" " + fromDB[6] + "\", \"doorCoor\": \" " + fromDB[7] + "\","
-				+ "\"corridorCoor\": \" " + fromDB[8] + "\",}";
+		String jsonText = "{\"name\": \"" + fromDB[0] + "\",\"path\": \"" + fromDB[1] + "\"," + "\"floors\": \""
+				+ fromDB[2] + "\",\"id\": \"" + fromDB[3] + "\",\"map\": \"" + fromDB[4] + "\"," + "\"roomid\": \""
+				+ fromDB[5] + "\",\"roomCoor\": \"" + fromDB[6] + "\", \"doorCoor\": \"" + fromDB[7] + "\","
+				+ "\"corridorCoor\": \"" + fromDB[8] + "\",}";
 
 		JSONObject obj = new JSONObject(jsonText);
 		sendCompleteJSONToClient(obj);
@@ -102,13 +102,13 @@ public class ServerController implements Serializable{
 	}
 	
 	private void createJSON_GCO(ArrayList<String> differentPlaces) throws IOException, JSONException {
-		String jsonText = "{\"nbrOfPlaces\": \" " + differentPlaces.size();
+		String jsonText = "{\"nbrOfPlaces\": \"" + Integer.toString(differentPlaces.size());
 		String jsonBuildText = "";
 		String jsonCloseText = "\",}";
 		
 		if (differentPlaces.size()>0){
 			for (int i = 0; i < differentPlaces.size(); i++){
-				jsonBuildText += "\",\"place" + i+1 + "\": \" " + differentPlaces.get(i);
+				jsonBuildText += "\",\"place" + i+1 + "\": \"" + differentPlaces.get(i);
 			}
 			jsonBuildText += jsonCloseText;
 			jsonText += jsonBuildText;
