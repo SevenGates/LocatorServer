@@ -30,7 +30,9 @@ public class Server implements Serializable{
 	private String filename;
 	ServerSocket serverSocket;
 	ServerController controller;
-	String guinnessCompleteJson;
+	String completeJson;
+	boolean confirmComplex;
+	Object send;
 	
 	public Server() {
 		try {
@@ -66,10 +68,19 @@ public class Server implements Serializable{
 
 	            while (!interrupted()) {
 	            	request = input.readUTF();
-	            	controller.msgFromClient(request);
-	            	output.writeObject(guinnessCompleteJson);
-	            	output.flush();
-	            	output.close();
+	            	int sendNbr = controller.msgFromClient(request);		            	
+	            	switch (sendNbr){
+	            	case 1 : 
+	            		output.writeObject(completeJson);
+		            	output.flush();
+		            	output.close();
+	            		break;
+	            	case 2 : 
+	            		output.writeBoolean(confirmComplex);
+		            	output.flush();
+		            	output.close();
+	            		break;
+	            	}       	
 	            }
 	            clientSocket.close();
 	            System.out.println("Disconnected from client");
@@ -82,24 +93,20 @@ public class Server implements Serializable{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 	    }
 	}
 	
-	@SuppressWarnings("unused")
 	public static void main(String[] args){
 		Server server = new Server();
 		
 	}
 
-	public void getFromController(String[] fromDB) {
-		
-		
+	public void sendJsonToClient(JSONObject jsonCool) {
+		completeJson = jsonCool.toString();
 	}
 
-	public void guinnessSendJsonToClient(JSONObject jsonCool) {
-		guinnessCompleteJson = jsonCool.toString();
-		String a = jsonCool.toString();
-		System.out.println(a);
+	
+	public void sendBool(boolean b) {
+		confirmComplex = b;
 	}
 }

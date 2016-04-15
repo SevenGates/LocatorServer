@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Base64.Encoder;
 import javax.imageio.ImageIO;
@@ -85,13 +86,66 @@ public class DBCommunicator implements Serializable{
 		return result;
 	}
 
+	public ArrayList<String> searchComplex(String string) throws SQLException, JSONException, IOException {
+		Statement stmt = null;
+		Connection con = null;
+		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
+		String username = "root";
+		String password = "k5!298E45H";
+		String query = string;
+		ArrayList<String> result = new ArrayList<String>();
+		
+		try {
+			con = DriverManager.getConnection(dbURL, username, password);
+			stmt = (Statement) con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery(query);
+			
+			while (rs.next()) {
+				result.add(rs.getString("place"));
+			}
+		} catch (SQLException e) {
+			System.out.println(e);
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+		}
+		
+		return result;
+	}
+	
+	public boolean confirmComplex(String string) throws SQLException, JSONException, IOException {
+		Statement stmt = null;
+		Connection con = null;
+		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
+		String username = "root";
+		String password = "k5!298E45H";
+		String query = string;
+		int whatIsThis = -1;
+		boolean result = false;
+		
+		try {
+			con = DriverManager.getConnection(dbURL, username, password);
+			stmt = (Statement) con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery(query);
+			
+			while (rs.next()) {
+				whatIsThis = rs.getInt("place");
+			}
+			if (whatIsThis == 1){
+				result = true;
+			} else if (whatIsThis == 0){
+				result = false;
+			}
+		} catch (SQLException e) {
+			System.out.println(e);
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+		}
+		
+		return result;
+	}
 
 }
-
-/*
- * Vid felanrop till DB tycker jag och Isak att vi ska skapa en string[] med
- * info om felkoden som returneras ändå. Utifrån den kan vi i controllern se
- * vilket fel och skicka en standardbild till klienten och kort info. Ex.
- * String[0] = "error". String[1] = "SQLexcep" eventuellt fler positioner med
- * ytterliggare information
- */
