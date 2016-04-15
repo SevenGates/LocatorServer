@@ -6,19 +6,40 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
-public class Server {
+import org.json.JSONException;
+import org.json.JSONObject;
 
+public class Server implements Serializable{
+	private String filename;
 	ServerSocket serverSocket;
+	ServerController controller;
+	String completeJson;
+	boolean confirmComplex;
+	Object send;
+	
 	public Server() {
 		try {
 			System.out.println("Waiting...");
 			serverSocket = new ServerSocket(8080);
+			controller = new ServerController(this);
+			
 			while(true) {
 				Socket clientSocket = serverSocket.accept();
 				Thread t = new ThreadHandler(clientSocket);
@@ -28,7 +49,7 @@ public class Server {
 			System.out.println("Error:" + e.toString());
 		}
 		System.out.println("End!");
-	}
+	} 
 	
 	private class ThreadHandler extends Thread {
 	    Socket clientSocket;
@@ -38,38 +59,54 @@ public class Server {
 	    	clientSocket = client;
 	    }
 
-	    public void run() {
+	    public void run() {   	
 	        try {
-
-	            OutputStream output = clientSocket.getOutputStream();
+	        	
+	            ObjectOutputStream output = new ObjectOutputStream(clientSocket.getOutputStream());
 	            output.flush();
 	            DataInputStream input = new DataInputStream(clientSocket.getInputStream());
 
 	            while (!interrupted()) {
 	            	request = input.readUTF();
-	            	System.out.println(request);
-	            	ByteArrayOutputStream baos=new ByteArrayOutputStream();
-	            	BufferedImage img=ImageIO.read(new File("C:/Users/Chrille/Downloads/locator2.bmp"));
-	            	ImageIO.write(img, "BMP", baos);
-	            	ByteArrayInputStream bi = new ByteArrayInputStream(baos.toByteArray());
-	            	byte[] buffer = new byte[999999999];
-   					int read = bi.read(buffer);
-   					output.write(buffer, 0, read);
-   					output.flush();
-   					output.close();
-   					System.out.println(read);
+	            	int sendNbr = controller.msgFromClient(request);		            	
+	            	switch (sendNbr){
+	            	case 1 : 
+	            		output.writeObject(completeJson);
+		            	output.flush();
+		            	output.close();
+	            		break;
+	            	case 2 : 
+	            		output.writeBoolean(confirmComplex);
+		            	output.flush();
+		            	output.close();
+	            		break;
+	            	}       	
 	            }
 	            clientSocket.close();
 	            System.out.println("Disconnected from client");
 	        } catch (IOException e) {
 	            System.out.println("Error " + e.toString());
-	        }
-
+	        } catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	    }
 	}
 	
-	@SuppressWarnings("unused")
 	public static void main(String[] args){
 		Server server = new Server();
+		
+	}
+
+	public void sendJsonToClient(JSONObject jsonCool) {
+		completeJson = jsonCool.toString();
+	}
+
+	
+	public void sendBool(boolean b) {
+		confirmComplex = b;
 	}
 }

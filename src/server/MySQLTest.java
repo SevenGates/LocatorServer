@@ -14,30 +14,46 @@ import java.util.logging.Logger;
  */
 
 public class MySQLTest {
+	
 	public static void main(String args[]) {
+		String view = null;
 		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
 		String username = "root";
 		String password = "k5!298E45H";
 		Connection dbCon = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String query = "select * from test";
+		String query = "select room from building";
 		try {
 			// getting database connection to MySQL server
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			System.out.println("Class funkar");
 			dbCon = DriverManager.getConnection(dbURL, username, password);
-			System.out.println("Driver funkar");
 			// getting PreparedStatment to execute query
 			stmt = dbCon.prepareStatement(query);
 			// Resultset returned by query
 			rs = stmt.executeQuery(query);
+			
 			while (rs.next()) {
-				int count = rs.getInt(1);
-				System.out.println("count of stock : " + count);
+				
+				String name = rs.getString(1);
+//				int floors = rs.getInt(2);
+//				view = rs.getString(3);
+				
+				
+				
+				System.out.println("name : " + name);
+//				System.out.println("floors : " + floors);
+//				System.out.println("bytes : " + view + "\n");
+				
 			}
+			Server server = new Server();
+			
 		} catch (SQLException ex) {
 			System.out.println(ex.toString());
+			
+			String[] fel = new String[3];
+			fel[0] = "Error";
+			fel[1] = "C:/";
 			System.out.println("Någor har gått fel.");
 	//		Logger.getLogger(CollectionTest.class.getName()).log(Level.SEVERE, null, ex);
 		} catch (ClassNotFoundException e) {
@@ -45,6 +61,8 @@ public class MySQLTest {
 			System.out.println(e.toString());
 		} finally {
 			// close connection ,stmt and resultset here
+			
+			
 		}
 	}
 }
