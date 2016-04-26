@@ -20,23 +20,35 @@ import org.json.JSONObject;
 import com.mysql.jdbc.Statement;
 
 public class DBCommunicator implements Serializable{
+	private ServerController controller;
 
 	
+	public DBCommunicator(ServerController serverController) {
+		controller = serverController;
+	}
+
 	public String[] dBSearchRoom(String roomSearch) throws SQLException, JSONException, IOException {
+		controller.loggDB("DBCommunicator/dcSearchRoom: Inne i metoden.");
 		Statement stmt = null;
 		Connection con = null;
 		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
 		String username = "root";
 		String password = "k5!298E45H";
 		String query = roomSearch;
+		controller.loggDB("DBCommunicator/dcSearchRoom: Anropet till DB = " + roomSearch);
 		String[] array = new String[9];
+		String[] errorArray = new String[2];
 
 		try {
 			con = DriverManager.getConnection(dbURL, username, password);
 			stmt = (Statement) con.prepareStatement(query);
 			ResultSet rs = stmt.executeQuery(query);
-			
+					
 			while (rs.next()) {
+				if (rs.getString("name") == null){
+					controller.loggDB("DBCommunicator/dcSearchRoom: I TRY/WHILE/IF, om name = null");
+					return errorArray;
+				} else{
 				array[0] = rs.getString("name");
 				array[1] = rs.getString("path");
 				array[2] = rs.getString("floors");
@@ -46,26 +58,29 @@ public class DBCommunicator implements Serializable{
 				array[6] = rs.getString("roomCoor");
 				array[7] = rs.getString("doorCoor");
 				array[8] = rs.getString("corridorCoor");
-			
+				}
 			}
 		} catch (SQLException e) {
-			System.out.println(e);
+			controller.loggDB("DBCommunicator/dcSearchRoom: CATCH SQL = " + e);
 		} finally {
 			if (stmt != null) {
+				controller.loggDB("DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt");
 				stmt.close();
 			}
 		}
-		
+		controller.loggDB("DBCommunicator/dcSearchRoom: Returnerar array");
 		return array;
 	}
 	
 	public String dBchange(String string) throws SQLException, JSONException, IOException {
+		controller.loggDB("DBCommunicator/dBchange: Inne i metoden.");
 		Statement stmt = null;
 		Connection con = null;
 		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
 		String username = "root";
 		String password = "k5!298E45H";
 		String query = string;
+		controller.loggDB("DBCommunicator/dBchange: SQLanropet = " + string);
 		String result = null;
 		try {
 			con = DriverManager.getConnection(dbURL, username, password);
@@ -76,9 +91,10 @@ public class DBCommunicator implements Serializable{
 				result = rs.getString("dbname");
 			}
 		} catch (SQLException e) {
-			System.out.println(e);
+			controller.loggDB("DBCommunicator/dBchange: CATCH SQL = " + e);
 		} finally {
 			if (stmt != null) {
+				controller.loggDB("DBCommunicator/dBchange: Om stmt != null så stänger vid stmt");
 				stmt.close();
 			}
 		}
@@ -87,12 +103,14 @@ public class DBCommunicator implements Serializable{
 	}
 
 	public ArrayList<String> searchComplex(String string) throws SQLException, JSONException, IOException {
+		controller.loggDB("DBCommunicator/searchComplex: Inne i metoden");
 		Statement stmt = null;
 		Connection con = null;
 		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
 		String username = "root";
 		String password = "k5!298E45H";
 		String query = string;
+		controller.loggDB("DBCommunicator/searchComplex: SQL anrop = " + string);
 		ArrayList<String> result = new ArrayList<String>();
 		
 		try {
@@ -104,23 +122,27 @@ public class DBCommunicator implements Serializable{
 				result.add(rs.getString("place"));
 			}
 		} catch (SQLException e) {
-			System.out.println(e);
+			controller.loggDB("DBCommunicator/searchComplex: CATCH SQL = " + e);
 		} finally {
 			if (stmt != null) {
+				controller.loggDB("DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt");
 				stmt.close();
 			}
 		}
-		
+		controller.loggDB("DBCommunicator/searchComplex: Returnerar resultatet = " + result.toString());
 		return result;
 	}
 	
 	public boolean confirmComplex(String string) throws SQLException, JSONException, IOException {
+		controller.loggDB("DBCommunicator/confirmComplex: Inne i metoden");
 		Statement stmt = null;
 		Connection con = null;
 		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
 		String username = "root";
 		String password = "k5!298E45H";
 		String query = string;
+		controller.loggDB("DBCommunicator/confirmComplex: SQLanrop = " + string);
+
 		int whatIsThis = -1;
 		boolean result = false;
 		
@@ -138,13 +160,14 @@ public class DBCommunicator implements Serializable{
 				result = false;
 			}
 		} catch (SQLException e) {
-			System.out.println(e);
+			controller.loggDB("DBCommunicator/confirmComplex: CATCH SQL = " + e);
 		} finally {
 			if (stmt != null) {
+				controller.loggDB("DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt");
 				stmt.close();
 			}
 		}
-		
+		controller.loggDB("DBCommunicator/confirmComplex: Returnerar = " + result);
 		return result;
 	}
 

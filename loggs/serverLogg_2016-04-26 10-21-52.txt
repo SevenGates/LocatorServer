@@ -1,0 +1,69 @@
+apr 26, 2016 10:21:52 FM server.Server <init>
+INFO: KONSTRUKTORN: Server is waiting for response.
+
+apr 26, 2016 10:21:52 FM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+apr 26, 2016 10:21:52 FM server.Server <init>
+INFO: KONSTRUKTORN: Controller is created
+
+apr 26, 2016 10:34:06 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 26, 2016 10:34:06 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/115.239.228.8,port=52316,localport=8080]
+
+apr 26, 2016 10:34:06 FM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-1
+
+apr 26, 2016 10:34:06 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 26, 2016 10:34:07 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 26, 2016 10:34:07 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 26, 2016 10:34:37 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+apr 26, 2016 10:42:16 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 26, 2016 10:42:16 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/195.178.248.9,port=4939,localport=8080]
+
+apr 26, 2016 10:42:16 FM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-2
+
+apr 26, 2016 10:42:16 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 26, 2016 10:42:16 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 26, 2016 10:42:16 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 26, 2016 10:42:16 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,ORD131,Malmö Högskola
+
+apr 26, 2016 10:42:17 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 26, 2016 10:42:17 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 26, 2016 10:42:17 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 26, 2016 10:42:26 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 26, 2016 10:42:26 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 26, 2016 10:42:26 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+

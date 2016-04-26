@@ -1,0 +1,6 @@
+apr 25, 2016 3:02:38 EM server.Server <init>
+INFO: KONSTRUKTORN: Server is waiting for response.
+apr 25, 2016 3:02:38 EM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+apr 25, 2016 3:02:38 EM server.Server <init>
+INFO: KONSTRUKTORN: Controller is created
