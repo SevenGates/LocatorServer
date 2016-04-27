@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map.Entry;
 import java.util.Base64.Encoder;
 import java.util.logging.FileHandler;
@@ -124,6 +125,8 @@ public class ServerController implements Serializable{
 		    createSQL_edge(dB, nID, room);
 		}
 		
+		mp.getNodes();
+		mp.getEdge();
 		
 	}
 
@@ -157,11 +160,11 @@ public class ServerController implements Serializable{
 				}
 			}
 			
+//			testGraph();
+			
 		} catch (SQLException e) {
 			server.LOGG("CONTROLLER/create: CATCH = " + e);
 		}
-		
-		
 		
 	}
 
@@ -176,7 +179,18 @@ public class ServerController implements Serializable{
 	    x2 = Integer.parseInt(splitCoor2[0]);
 	    y2 = Integer.parseInt(splitCoor2[1]);
 	    mp.addEdge(x1, y1, x2, y2);
+	    
 	}
+
+//	private void testGraph() {
+//		List <String> listCoords = mp.findShortestPath(627, 830, 494, 650);
+//		
+//		for (String S : listCoords){
+//			System.out.println(S);
+//		}
+//		System.out.println("-----");
+//			
+//	}
 
 	private void addNodes(HashMap<String,String> map) {
 		int nmbNodes = map.size();
@@ -189,7 +203,6 @@ public class ServerController implements Serializable{
 		    y = Integer.parseInt(splitCoor[1]);
 		    mp.addNode(x, y);
 		}
-		mp.getNodes();
 	}
 
 	private void createSQL_GCO(String splitQuery) throws SQLException, JSONException, IOException {
@@ -248,7 +261,9 @@ public class ServerController implements Serializable{
 		server.LOGG("CONTROLLER/CreateJSON: När det gjorts om till JSON");
 		JSONObject obj = new JSONObject(jsonText);
 		server.LOGG("CONTROLLER/CreateJSON: Innan det skickas till metoden sendCompleteJSONToClient");
+		
 		sendCompleteJSONToClient(obj);
+		
 
 	}
 	

@@ -27,7 +27,7 @@ public class MapGraph {
 		Node nodeCheck;
 		for(int i = 0; i < Node.getNodeCount(); i++) {
 			nodeCheck = (Node)map.get(i);
-			System.out.print(nodeCheck.getNodeConf().getX()+", ");
+			System.out.print("Nod" + i +" : " + nodeCheck.getNodeConf().getX()+", ");
 			System.out.println(nodeCheck.getNodeConf().getY());
 		}
 	}
@@ -50,6 +50,16 @@ public class MapGraph {
 			graph.addEdge(edge);
 			
 		}
+	}
+	
+	public void getEdge(){
+		HashMap map = graph.getEdges();
+		System.out.println("Antal edges i hashmapen = " + map.size());
+		Edge edgeCheck = (Edge) map.get(655371);
+		System.out.println("EdgeID = " + edgeCheck.getID());
+		System.out.println(edgeCheck.getEdgeConf().getEdgeType());
+		
+		
 	}
 	
 	public void addEdge (int id1, int id2) {

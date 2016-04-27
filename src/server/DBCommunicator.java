@@ -280,7 +280,11 @@ public class DBCommunicator implements Serializable{
 			ResultSet rs = stmt.executeQuery(query);
 			
 			while (rs.next()) {
-				result.add(rs.getString("connectID"));
+				String temp = rs.getString("connectID");
+				if(temp!= null) {
+					result.add(temp);	
+				}
+				
 			}
 		} catch (SQLException e) {
 			controller.loggDB("DBCommunicator/searchComplex: CATCH SQL = " + e);
