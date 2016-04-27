@@ -3,9 +3,9 @@ package server;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import brite.Graph.*;
-import grph.Grph;
 
 public class MapGraph {
 	
@@ -20,6 +20,16 @@ public class MapGraph {
 		NodeConf nodeConf = new  NodeConf(x, y, 0);
 		node.setNodeConf(nodeConf);
 		graph.addNode(node);
+	}
+	
+	public void getNodes(){
+		HashMap map = graph.getNodes();
+		Node nodeCheck;
+		for(int i = 0; i < Node.getNodeCount(); i++) {
+			nodeCheck = (Node)map.get(i);
+			System.out.print(nodeCheck.getNodeConf().getX()+", ");
+			System.out.println(nodeCheck.getNodeConf().getY());
+		}
 	}
 	
 	public void addEdge(int x1, int y1, int x2, int y2) {
@@ -91,37 +101,37 @@ public class MapGraph {
 	/**
 	 * Testfunktion med exempel kod för användning.
 	 */
-	public static void main(String[] args) {
-		MapGraph graph = new MapGraph();
-		graph.addNode(0, 1);
-		graph.addNode(0, 2);
-		graph.addNode(0, 3);
-		graph.addNode(0, 4);
-		graph.addNode(0, 5);
-		graph.addNode(1, 1);
-		graph.addNode(1, 2);
-		graph.addNode(1, 3);
-		graph.addNode(1, 4);
-		graph.addNode(1, 5);
-		graph.addEdge(0, 1);
-		graph.addEdge(1, 2);
-		graph.addEdge(2, 3);
-		graph.addEdge(3, 4);
-		graph.addEdge(0, 5);
-		graph.addEdge(5, 6);
-		graph.addEdge(6, 7);
-		graph.addEdge(7, 8);
-		graph.addEdge(8, 9);
-		graph.addEdge(9, 4);
-		List <String> listCoords = graph.findShortestPath(0, 1, 0, 5);
-		List <String> listID = graph.findShortestPath(0, 8);
-		
-		for (String S : listCoords){
-			System.out.println(S);
-		}
-		System.out.println("-----");
-		for (String S : listID){
-			System.out.println(S);
-		}
-	}
+//	public static void main(String[] args) {
+//		MapGraph graph = new MapGraph();
+//		graph.addNode(0, 1);
+//		graph.addNode(0, 2);
+//		graph.addNode(0, 3);
+//		graph.addNode(0, 4);
+//		graph.addNode(0, 5);
+//		graph.addNode(1, 1);
+//		graph.addNode(1, 2);
+//		graph.addNode(1, 3);
+//		graph.addNode(1, 4);
+//		graph.addNode(1, 5);
+//		graph.addEdge(0, 1);
+//		graph.addEdge(1, 2);
+//		graph.addEdge(2, 3);
+//		graph.addEdge(3, 4);
+//		graph.addEdge(0, 5);
+//		graph.addEdge(5, 6);
+//		graph.addEdge(6, 7);
+//		graph.addEdge(7, 8);
+//		graph.addEdge(8, 9);
+//		graph.addEdge(9, 4);
+//		List <String> listCoords = graph.findShortestPath(0, 1, 0, 5);
+//		List <String> listID = graph.findShortestPath(0, 8);
+//		
+//		for (String S : listCoords){
+//			System.out.println(S);
+//		}
+//		System.out.println("-----");
+//		for (String S : listID){
+//			System.out.println(S);
+//		}
+//	}
 }

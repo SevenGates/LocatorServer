@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.HashMap;
 import java.util.Base64.Encoder;
 import javax.imageio.ImageIO;
 import org.json.JSONException;
@@ -21,6 +22,7 @@ import com.mysql.jdbc.Statement;
 
 public class DBCommunicator implements Serializable{
 	private ServerController controller;
+	private HashMap<String,String> map = new HashMap<String, String>();
 
 	
 	public DBCommunicator(ServerController serverController) {
@@ -70,6 +72,38 @@ public class DBCommunicator implements Serializable{
 		}
 		controller.loggDB("DBCommunicator/dcSearchRoom: Returnerar array");
 		return array;
+	}
+
+	public String dBSearchFloor(String roomSearch) throws SQLException, JSONException, IOException {
+		controller.loggDB("DBCommunicator/dcSearchRoom: Inne i metoden.");
+		Statement stmt = null;
+		Connection con = null;
+		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
+		String username = "root";
+		String password = "k5!298E45H";
+		String query = roomSearch;
+		controller.loggDB("DBCommunicator/dcSearchRoom: Anropet till DB = " + roomSearch);
+		String floor = "";
+
+		try {
+			con = DriverManager.getConnection(dbURL, username, password);
+			stmt = (Statement) con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery(query);
+					
+			while (rs.next()) {
+				floor = rs.getString("levels");
+				
+			}
+		} catch (SQLException e) {
+			controller.loggDB("DBCommunicator/dcSearchRoom(string): CATCH SQL = " + e);
+		} finally {
+			if (stmt != null) {
+				controller.loggDB("DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt");
+				stmt.close();
+			}
+		}
+		controller.loggDB("DBCommunicator/dcSearchRoom: Returnerar array");
+		return floor;
 	}
 	
 	public String dBchange(String string) throws SQLException, JSONException, IOException {
@@ -171,4 +205,91 @@ public class DBCommunicator implements Serializable{
 		return result;
 	}
 
+	public HashMap<String,String> dBGetNodes(String queryGetNodes) throws SQLException {
+		controller.loggDB("DBCommunicator/dcSearchRoom: Inne i metoden.");
+		Statement stmt = null;
+		Connection con = null;
+		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
+		String username = "root";
+		String password = "k5!298E45H";
+		String query = queryGetNodes;
+
+		try {
+			con = DriverManager.getConnection(dbURL, username, password);
+			stmt = (Statement) con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery(query);
+					
+			while (rs.next()) {
+				String key = rs.getString("nID");
+				String value = rs.getString("coor");
+				map.put(key, value);
+				}
+		} catch (SQLException e) {
+			controller.loggDB("DBCommunicator/dBGetNodes: CATCH SQL = " + e);
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+		}
+		controller.loggDB("DBCommunicator/dBgetNodes: Returnerar noder");
+		return map;
+	}
+
+	public String dBGetEndNode(String queryGetNodes) throws SQLException {
+		controller.loggDB("DBCommunicator/dcSearchRoom: Inne i metoden.");
+		Statement stmt = null;
+		Connection con = null;
+		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
+		String username = "root";
+		String password = "k5!298E45H";
+		String query = queryGetNodes;
+		String value = "NAJS";
+
+		try {
+			con = DriverManager.getConnection(dbURL, username, password);
+			stmt = (Statement) con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery(query);
+					
+			while (rs.next()) {
+				value = rs.getString("corridorCoor");
+				}
+		} catch (SQLException e) {
+			controller.loggDB("DBCommunicator/dBGetNodes: CATCH SQL = " + e);
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+		}
+		controller.loggDB("DBCommunicator/dBgetNodes: Returnerar noder");
+		return value;
+	}
+
+
+	public ArrayList<String> dBSearchEdges(String queryGetEdges) throws SQLException {
+		Statement stmt = null;
+		Connection con = null;
+		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
+		String username = "root";
+		String password = "k5!298E45H";
+		String query = queryGetEdges;
+		ArrayList<String> result = new ArrayList<String>();
+		
+		try {
+			con = DriverManager.getConnection(dbURL, username, password);
+			stmt = (Statement) con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery(query);
+			
+			while (rs.next()) {
+				result.add(rs.getString("connectID"));
+			}
+		} catch (SQLException e) {
+			controller.loggDB("DBCommunicator/searchComplex: CATCH SQL = " + e);
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+		}
+		controller.loggDB("DBCommunicator/searchComplex: Returnerar resultatet = " + result.toString());
+		return result;
+	}
 }

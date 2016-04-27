@@ -10,6 +10,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map.Entry;
 import java.util.Base64.Encoder;
 import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
@@ -21,11 +23,13 @@ import org.json.JSONObject;
 public class ServerController implements Serializable{
 	Server server;
 	DBCommunicator dbCom;
+	MapGraph mp = new MapGraph();
+	private HashMap<String,String> map = new HashMap<String, String>();
+	private HashMap<String,ArrayList<String>> edgeMap = new HashMap<String,ArrayList<String>>();
 
 	public ServerController(Server server) {
 		this.server = server;
 		dbCom = new DBCommunicator(this);
-		
 	}
 
 	/*
@@ -89,7 +93,103 @@ public class ServerController implements Serializable{
 			server.LOGG("CONTROLLER/createSQL_SER: CATCH = " + e);
 		}
 		
+		createSQL_nodes(splitQuery[1], splitQuery[2]);
 
+	}
+
+	private void createSQL_nodes(String room, String dB) throws SQLException, JSONException, IOException {
+		String queryGetFloor = "SELECT levels " + "FROM "
+				+ dB + ".room " + "WHERE roomid = '" + room + "'";
+		String floor = "";
+		try {
+			floor = dbCom.dBSearchFloor(queryGetFloor);
+			
+		} catch (SQLException | JSONException | IOException e) {
+			server.LOGG("CONTROLLER/createSQL_nodes: CATCH = " + e);
+		}
+		
+		
+		String queryGetNodes = "SELECT nID, coor " + "FROM "
+				+ dB + ".node " + "WHERE nID LIKE '" + floor + "%'";
+		map = dbCom.dBGetNodes(queryGetNodes);
+		
+		String queryGetEndNode = "SELECT corridorCoor " + "FROM "
+				+ dB + ".room " + "WHERE roomid = '" + room + "';";
+		String value = dbCom.dBGetEndNode(queryGetEndNode);
+		map.put("endNode", value);
+		addNodes(map);
+		
+		for(Entry<String, String> entry : map.entrySet()) {
+		    String nID = entry.getKey();
+		    createSQL_edge(dB, nID, room);
+		}
+		
+		
+	}
+
+	private void createSQL_edge(String dB, String nID, String room) throws SQLException, JSONException, IOException {
+		String queryGetEdges = "SELECT connectID " + "FROM "
+				+ dB + ".edge " + "WHERE nID = '" + nID + "';";
+		ArrayList<String> fromDB = new ArrayList<String>();
+		
+		try {
+			fromDB = dbCom.dBSearchEdges(queryGetEdges);
+			if (fromDB.size() > 0){
+				for (int i = 0; i < fromDB.size();i++){
+					addEdges(nID, fromDB.get(i));
+				}
+			}
+			
+		} catch (SQLException e) {
+			server.LOGG("CONTROLLER/create: CATCH = " + e);
+		}
+		
+		
+		String queryGetEdges2 = "SELECT nID " + "FROM "
+				+ dB + ".noderoom " + "WHERE roomID = '" + room + "';";
+		ArrayList<String> fromDB2 = new ArrayList<String>();
+		
+		try {
+			fromDB2 = dbCom.dBSearchEdges(queryGetEdges2);
+			if (fromDB2.size() > 0){
+				for (int i = 0; i < fromDB.size();i++){
+					addEdges("endNode", fromDB.get(i));
+				}
+			}
+			
+		} catch (SQLException e) {
+			server.LOGG("CONTROLLER/create: CATCH = " + e);
+		}
+		
+		
+		
+	}
+
+	private void addEdges(String nID, String connected) {
+		int x1, x2, y1, y2;
+		String coor1 = map.get(nID);
+		String coor2 = map.get(connected);
+		String[] splitCoor = coor1.split("\\.");
+		String[] splitCoor2 = coor2.split("\\.");
+	    x1 = Integer.parseInt(splitCoor[0]);
+	    y1 = Integer.parseInt(splitCoor[1]);
+	    x2 = Integer.parseInt(splitCoor2[0]);
+	    y2 = Integer.parseInt(splitCoor2[1]);
+	    mp.addEdge(x1, y1, x2, y2);
+	}
+
+	private void addNodes(HashMap<String,String> map) {
+		int nmbNodes = map.size();
+
+		for(Entry<String, String> entry : map.entrySet()) {
+		    String value = entry.getValue();
+		    int x,y;
+		    String[] splitCoor = value.split("\\.");
+		    x = Integer.parseInt(splitCoor[0]);
+		    y = Integer.parseInt(splitCoor[1]);
+		    mp.addNode(x, y);
+		}
+		mp.getNodes();
 	}
 
 	private void createSQL_GCO(String splitQuery) throws SQLException, JSONException, IOException {
@@ -218,8 +318,18 @@ public class ServerController implements Serializable{
 		sendCompleteJSONToClient(obj);
 		
 	}
+	
 	public void loggDB(String string){
 		server.LOGG(string);
 	}
 	
 }
+
+/*
+ * 
+ * Skapa en metod som skapar en startnod.
+ * Skapa en metod som skapar en slutnod.
+ * Skapa EDGE-hashmap
+ * 
+ * 
+ */
