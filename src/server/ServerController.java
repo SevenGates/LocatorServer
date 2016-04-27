@@ -40,11 +40,11 @@ public class ServerController implements Serializable{
 		if (splitQuery[0].equals("GCO")) {
 			server.LOGG("CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.");
 			createSQL_GCO(splitQuery[1]);
-			return 2;
+			return 1;
 		} else if (splitQuery[0].equals("CNF")) {
 			server.LOGG("CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.");
 			createSQL_CNF(splitQuery[1]);
-			return 1;
+			return 2;
 		} else if (splitQuery[0].equals("SER")) {
 			server.LOGG("CONTROLLER/msgFromClient: If 'SER' så är vi här inne.");
 			createSQL_SER(splitQuery);
@@ -160,7 +160,7 @@ public class ServerController implements Serializable{
 		
 		if (differentPlaces.size()>0){
 			for (int i = 0; i < differentPlaces.size(); i++){
-				jsonBuildText += "\",\"place" + i+1 + "\": \"" + differentPlaces.get(i);
+				jsonBuildText += "\",\"place" + (i+1) + "\": \"" + differentPlaces.get(i);
 			}
 			jsonBuildText += jsonCloseText;
 			jsonText += jsonBuildText;
