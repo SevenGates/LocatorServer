@@ -280,6 +280,11 @@ public class ServerController implements Serializable{
 		return newString;
 	}
 	
+	/*
+	 * Metoden som tar emot allt från databasen. Vilken sal, byggnad, våning, bild och hur många noder den har ansluten till sig. 
+	 * Sedan gör vi om det till JSON för att skicka till klienten. 
+	 */
+	
 	private void createJSON(String[] fromDB) throws IOException, JSONException {
 		server.LOGG("CONTROLLER/CreateJSON: Inne i metoden createJSON");
 		server.LOGG("CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = " + fromDB[1]);
