@@ -1,0 +1,86 @@
+apr 28, 2016 11:01:27 FM server.Server <init>
+INFO: KONSTRUKTORN: Server is waiting for response.
+
+apr 28, 2016 11:01:27 FM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+apr 28, 2016 11:01:27 FM server.Server <init>
+INFO: KONSTRUKTORN: Controller is created
+
+apr 28, 2016 11:10:25 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 11:10:25 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/115.231.222.40,port=24545,localport=8080]
+
+apr 28, 2016 11:10:25 FM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-1
+
+apr 28, 2016 11:10:25 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 11:10:25 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 11:10:25 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 11:10:57 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+apr 28, 2016 11:30:32 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 11:30:32 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.181.61,port=39647,localport=8080]
+
+apr 28, 2016 11:30:32 FM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-2
+
+apr 28, 2016 11:30:32 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 11:30:32 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 11:30:32 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 11:30:32 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,
+
+apr 28, 2016 11:30:32 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,
+apr 28, 2016 11:30:32 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 11:30:32 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.
+apr 28, 2016 11:30:37 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 11:30:37 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.181.61,port=39058,localport=8080]
+
+apr 28, 2016 11:30:37 FM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-3
+
+apr 28, 2016 11:30:37 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 11:30:37 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 11:30:37 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 11:30:37 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,,
+
+apr 28, 2016 11:30:37 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,,
+apr 28, 2016 11:30:37 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 11:30:37 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'SER' så är vi här inne.
+apr 28, 2016 11:30:37 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: efter anropad metod createSQL_SER

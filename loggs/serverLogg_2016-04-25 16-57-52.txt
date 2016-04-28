@@ -1,0 +1,156 @@
+apr 25, 2016 4:57:52 EM server.Server <init>
+INFO: KONSTRUKTORN: Server is waiting for response.
+
+apr 25, 2016 4:57:52 EM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+apr 25, 2016 4:57:52 EM server.Server <init>
+INFO: KONSTRUKTORN: Controller is created
+
+apr 25, 2016 5:09:41 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 25, 2016 5:09:41 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/115.231.222.40,port=45218,localport=8080]
+
+apr 25, 2016 5:09:41 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-1
+
+apr 25, 2016 5:09:41 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 25, 2016 5:09:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 25, 2016 5:09:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 25, 2016 5:10:12 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+apr 25, 2016 5:20:45 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 25, 2016 5:20:45 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/123.59.59.52,port=41095,localport=8080]
+
+apr 25, 2016 5:20:45 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-2
+
+apr 25, 2016 5:20:45 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 25, 2016 5:20:45 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 25, 2016 5:20:45 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 25, 2016 5:21:00 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+apr 25, 2016 5:22:13 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 25, 2016 5:22:13 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/123.59.59.52,port=51612,localport=8080]
+
+apr 25, 2016 5:22:13 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-3
+
+apr 25, 2016 5:22:13 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 25, 2016 5:22:13 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 25, 2016 5:22:13 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 25, 2016 5:22:28 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+apr 25, 2016 5:33:58 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 25, 2016 5:33:58 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/104.219.238.10,port=55712,localport=8080]
+
+apr 25, 2016 5:33:58 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-4
+
+apr 25, 2016 5:33:58 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 25, 2016 5:33:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 25, 2016 5:33:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 25, 2016 5:34:08 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+apr 25, 2016 5:57:31 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 25, 2016 5:57:31 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/115.231.222.40,port=50219,localport=8080]
+
+apr 25, 2016 5:57:31 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-5
+
+apr 25, 2016 5:57:31 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 25, 2016 5:57:31 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 25, 2016 5:57:31 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 25, 2016 5:58:02 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+apr 25, 2016 8:58:21 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 25, 2016 8:58:21 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/198.20.69.74,port=34950,localport=8080]
+
+apr 25, 2016 8:58:21 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-6
+
+apr 25, 2016 8:58:21 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 25, 2016 8:58:21 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 25, 2016 8:58:21 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 25, 2016 8:58:25 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+apr 25, 2016 10:00:13 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 25, 2016 10:00:13 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/115.231.222.40,port=26908,localport=8080]
+
+apr 25, 2016 10:00:13 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-7
+
+apr 25, 2016 10:00:13 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 25, 2016 10:00:13 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 25, 2016 10:00:13 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 25, 2016 10:00:44 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+

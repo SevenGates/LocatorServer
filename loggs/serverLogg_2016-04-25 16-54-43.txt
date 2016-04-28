@@ -1,0 +1,48 @@
+apr 25, 2016 4:54:43 EM server.Server <init>
+INFO: KONSTRUKTORN: Server is waiting for response.
+
+apr 25, 2016 4:54:43 EM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+apr 25, 2016 4:54:43 EM server.Server <init>
+INFO: KONSTRUKTORN: Controller is created
+
+apr 25, 2016 4:55:09 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 25, 2016 4:55:09 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/84.55.78.172,port=59513,localport=8080]
+
+apr 25, 2016 4:55:09 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-1
+
+apr 25, 2016 4:55:09 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 25, 2016 4:55:09 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 25, 2016 4:55:09 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 25, 2016 4:55:09 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,orkanen131,Malmö Högskola
+
+apr 25, 2016 4:55:09 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 25, 2016 4:55:09 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 25, 2016 4:55:09 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 25, 2016 4:55:09 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 25, 2016 4:55:09 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 25, 2016 4:55:09 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
