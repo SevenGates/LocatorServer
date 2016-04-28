@@ -27,7 +27,7 @@ public class MapGraph {
 		Node nodeCheck;
 		for(int i = 0; i < Node.getNodeCount(); i++) {
 			nodeCheck = (Node)map.get(i);
-			System.out.print("Nod" + i +" : " + nodeCheck.getNodeConf().getX()+", ");
+			System.out.print("Nod" + nodeCheck.getID() +" : " + nodeCheck.getNodeConf().getX()+", ");
 			System.out.println(nodeCheck.getNodeConf().getY());
 		}
 	}
@@ -57,9 +57,7 @@ public class MapGraph {
 		System.out.println("Antal edges i hashmapen = " + map.size());
 		Edge edgeCheck = (Edge) map.get(655371);
 		System.out.println("EdgeID = " + edgeCheck.getID());
-		System.out.println(edgeCheck.getEdgeConf().getEdgeType());
-		
-		
+		System.out.println("Vafan händer här? " + edgeCheck.computeID(11, 12));
 	}
 	
 	public void addEdge (int id1, int id2) {
@@ -71,6 +69,23 @@ public class MapGraph {
 		edge.setDirection(GraphConstants.UNDIRECTED);
 		edge.setEuclideanDist(0);
 		graph.addEdge(edge);
+	}
+	
+	public int getNodeId(int x, int y) {
+		HashMap map = graph.getNodes();
+	    Node nodeCheck, node1 = new Node(-1);
+	    for(int i = 0; i < Node.getNodeCount(); i++) {
+	        nodeCheck = (Node)map.get(i);
+	        if(nodeCheck.getNodeConf().getX() == x && nodeCheck.getNodeConf().getY() == y)
+	            node1 = nodeCheck;
+	    }
+	    return node1.getID();
+	}
+
+
+	public int getEdgeId(int x1, int y1, int x2, int y2) {
+		int node1 = getNodeId(x1, y1), node2 = getNodeId(x2,y2);
+	  	return Edge.computeID(node1,node2);
 	}
 	
 	public List<String> findShortestPath(int x1, int y1, int x2, int y2) {

@@ -27,6 +27,7 @@ public class ServerController implements Serializable{
 	MapGraph mp = new MapGraph();
 	private HashMap<String,String> map = new HashMap<String, String>();
 	private HashMap<String,ArrayList<String>> edgeMap = new HashMap<String,ArrayList<String>>();
+	ArrayList<String> lastNode = new ArrayList<String>();
 
 	public ServerController(Server server) {
 		this.server = server;
@@ -99,6 +100,7 @@ public class ServerController implements Serializable{
 	}
 
 	private void createSQL_nodes(String room, String dB) throws SQLException, JSONException, IOException {
+//		ArrayList<String> lastNode = new ArrayList<String>();
 		String queryGetFloor = "SELECT levels " + "FROM "
 				+ dB + ".room " + "WHERE roomid = '" + room + "'";
 		String floor = "";
@@ -114,10 +116,10 @@ public class ServerController implements Serializable{
 				+ dB + ".node " + "WHERE nID LIKE '" + floor + "%'";
 		map = dbCom.dBGetNodes(queryGetNodes);
 		
-		String queryGetEndNode = "SELECT corridorCoor " + "FROM "
-				+ dB + ".room " + "WHERE roomid = '" + room + "';";
-		String value = dbCom.dBGetEndNode(queryGetEndNode);
-		map.put("endNode", value);
+//		String queryGetEndNode = "SELECT corridorCoor " + "FROM "
+//				+ dB + ".room " + "WHERE roomid = '" + room + "';";
+//		String value = dbCom.dBGetEndNode(queryGetEndNode);
+//		map.put("endNode", value);
 		addNodes(map);
 		
 		for(Entry<String, String> entry : map.entrySet()) {
@@ -125,11 +127,33 @@ public class ServerController implements Serializable{
 		    createSQL_edge(dB, nID, room);
 		}
 		
-		mp.getNodes();
-		mp.getEdge();
-		
+		System.out.println(lastNode.toString());
+		int x, y;
+		String lastNodeID = lastNode.get(0);
+		String lastNodeString = map.get(lastNodeID);
+		String[] coor = lastNodeString.split("\\.");
+		x = Integer.parseInt(coor[0]);
+		y = Integer.parseInt(coor[1]);
+//		int[] coor = lastNode();
+		List <String> listCoords = mp.findShortestPath(627, 830, x, y);
+		for (String S : listCoords){
+			System.out.println(S);
+		}
 	}
 
+//	public int[] lastNode(){
+//		int x, y;
+//		String lastNodeID = lastNode.get(0);
+//		String lastNodeString = map.get(lastNodeID);
+//		String[] coor = lastNodeString.split("\\.");
+//		int[] bajs = new int[2];
+//		bajs[0] = Integer.parseInt(coor[0]);
+//		bajs[1] = Integer.parseInt(coor[1]);
+//				
+//		return bajs;
+//	}
+	
+	
 	private void createSQL_edge(String dB, String nID, String room) throws SQLException, JSONException, IOException {
 		String queryGetEdges = "SELECT connectID " + "FROM "
 				+ dB + ".edge " + "WHERE nID = '" + nID + "';";
@@ -150,15 +174,15 @@ public class ServerController implements Serializable{
 		
 		String queryGetEdges2 = "SELECT nID " + "FROM "
 				+ dB + ".noderoom " + "WHERE roomID = '" + room + "';";
-		ArrayList<String> fromDB2 = new ArrayList<String>();
+//		ArrayList<String> fromDB2 = new ArrayList<String>();
 		
 		try {
-			fromDB2 = dbCom.dBSearchEdges(queryGetEdges2);
-			if (fromDB2.size() > 0){
-				for (int i = 0; i < fromDB.size();i++){
-					addEdges("endNode", fromDB.get(i));
-				}
-			}
+			lastNode = dbCom.dBSearchLastNode(queryGetEdges2);
+//			if (fromDB2.size() > 0){
+//				for (int i = 0; i < fromDB.size();i++){
+//					addEdges("endNode", fromDB.get(i));
+//				}
+//			}
 			
 //			testGraph();
 			
@@ -181,16 +205,6 @@ public class ServerController implements Serializable{
 	    mp.addEdge(x1, y1, x2, y2);
 	    
 	}
-
-//	private void testGraph() {
-//		List <String> listCoords = mp.findShortestPath(627, 830, 494, 650);
-//		
-//		for (String S : listCoords){
-//			System.out.println(S);
-//		}
-//		System.out.println("-----");
-//			
-//	}
 
 	private void addNodes(HashMap<String,String> map) {
 		int nmbNodes = map.size();

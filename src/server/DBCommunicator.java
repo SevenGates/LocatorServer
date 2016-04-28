@@ -296,4 +296,37 @@ public class DBCommunicator implements Serializable{
 		controller.loggDB("DBCommunicator/searchComplex: Returnerar resultatet = " + result.toString());
 		return result;
 	}
+	
+	public ArrayList<String> dBSearchLastNode(String queryGetEdges) throws SQLException {
+		Statement stmt = null;
+		Connection con = null;
+		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
+		String username = "root";
+		String password = "k5!298E45H";
+		String query = queryGetEdges;
+		ArrayList<String> result = new ArrayList<String>();
+		
+		try {
+			con = DriverManager.getConnection(dbURL, username, password);
+			stmt = (Statement) con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery(query);
+			
+			while (rs.next()) {
+				String temp = rs.getString("nID");
+				if(temp!= null) {
+					result.add(temp);	
+				}
+				
+			}
+		} catch (SQLException e) {
+			controller.loggDB("DBCommunicator/searchComplex: CATCH SQL = " + e);
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+		}
+		controller.loggDB("DBCommunicator/searchComplex: Returnerar resultatet = " + result.toString());
+		return result;
+	}
+	
 }
