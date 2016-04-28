@@ -1,0 +1,3456 @@
+apr 28, 2016 1:57:43 EM server.Server <init>
+INFO: KONSTRUKTORN: Server is waiting for response.
+
+apr 28, 2016 1:57:43 EM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+apr 28, 2016 1:57:43 EM server.Server <init>
+INFO: KONSTRUKTORN: Controller is created
+
+apr 28, 2016 1:57:45 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 1:57:45 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/81.227.253.254,port=49954,localport=8080]
+
+apr 28, 2016 1:57:45 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-1
+
+apr 28, 2016 1:57:45 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 1:57:45 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 1:57:45 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 1:57:45 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,NIA0515,Malmö Högskola
+
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,NIA0515,Malmö Högskola
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'SER' så är vi här inne.
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: efter anropad metod createSQL_SER
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Inne i metoden changeDB
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: SQLanrop = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'NIA0515'
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'NIA0515'
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: I TRY när fromDB-arrayen ska fyllas med svar från DB. Svar = 
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'NIA0515'
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:57:45 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Inne i metoden createJSON
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Niagara.bmp
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Plan 5.bmp
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+apr 28, 2016 1:57:47 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden sendCompleteJSONToClient
+apr 28, 2016 1:57:47 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 1:57:47 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 1:57:47 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 1:57:47 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 1:57:51 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 1:57:51 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/115.231.222.40,port=7649,localport=8080]
+
+apr 28, 2016 1:57:51 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-3
+
+apr 28, 2016 1:57:51 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 1:57:51 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 1:57:51 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 1:57:55 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 1:57:55 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 1:57:55 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 1:58:21 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 1:58:21 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/81.227.253.254,port=60719,localport=8080]
+
+apr 28, 2016 1:58:21 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-4
+
+apr 28, 2016 1:58:21 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 1:58:21 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 1:58:21 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 1:58:21 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,NIB0514,Malmö Högskola
+
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,NIB0514,Malmö Högskola
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'SER' så är vi här inne.
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: efter anropad metod createSQL_SER
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Inne i metoden changeDB
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: SQLanrop = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'NIB0514'
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'NIB0514'
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: I TRY när fromDB-arrayen ska fyllas med svar från DB. Svar = 
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'NIB0514'
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Inne i metoden createJSON
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Niagara.bmp
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Plan 5.bmp
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden sendCompleteJSONToClient
+apr 28, 2016 1:58:21 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 1:58:21 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 1:58:22 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 1:58:22 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 1:58:25 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+apr 28, 2016 1:58:27 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 1:58:27 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 1:58:27 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 1:58:39 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 1:58:39 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/109.58.144.167,port=60907,localport=8080]
+
+apr 28, 2016 1:58:39 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-5
+
+apr 28, 2016 1:58:39 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 1:58:39 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 1:58:39 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 1:58:39 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Ma
+
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Ma
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Ma%';
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Ma%';
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 1:58:39 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 1:58:39 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 1:58:39 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 1:58:39 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 1:58:39 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 1:58:39 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 1:58:39 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 1:58:40 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 1:58:40 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/109.58.144.167,port=65192,localport=8080]
+
+apr 28, 2016 1:58:40 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-6
+
+apr 28, 2016 1:58:40 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 1:58:40 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 1:58:40 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 1:58:40 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,Malmö Högskola
+
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,Malmö Högskola
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Inne i metoden createSQL_CNF
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Inne i metoden
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: CATCH SQL = java.sql.SQLException: Column 'place' not found.
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Returnerar = false
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Boolean som skickas = false
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är FALSE så skickar vi följande till errorHandler = Välj en plats från listan
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Inne i metoden
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Storlek på strängarrayen = 2
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Välj en plats från listan",}
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: När det skickas.
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 1:58:40 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är TRUE så skickas den till sendBoolToClient = false
+apr 28, 2016 1:58:40 EM server.Server LOGG
+INFO: CONTROLLER/sendBoolToClient: Inne i metoden 
+apr 28, 2016 1:58:40 EM server.Server sendBool
+INFO: sendJsonToClient: Skickar följande: false
+apr 28, 2016 1:58:40 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 2
+
+apr 28, 2016 1:58:40 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Här skickas boolean genom output streamen
+
+apr 28, 2016 1:58:40 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = false
+
+apr 28, 2016 1:58:40 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 1:58:40 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 1:58:41 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 1:58:41 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/109.58.144.167,port=60930,localport=8080]
+
+apr 28, 2016 1:58:41 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-7
+
+apr 28, 2016 1:58:41 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 1:58:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 1:58:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 1:58:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Malmö Högskola
+
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Malmö Högskola
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 1:58:41 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 1:58:41 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 1:58:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 1:58:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 1:58:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 1:58:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 1:58:41 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:00:58 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:00:58 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/109.58.144.167,port=60631,localport=8080]
+
+apr 28, 2016 2:00:58 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-8
+
+apr 28, 2016 2:00:58 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:00:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:00:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:00:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Mal
+
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Mal
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Mal%';
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Mal%';
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:00:58 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:00:58 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:00:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:00:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:00:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:00:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:00:58 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:01 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:01 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/109.58.144.167,port=63493,localport=8080]
+
+apr 28, 2016 2:01:01 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-9
+
+apr 28, 2016 2:01:01 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:01 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:01 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:01 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Malmö Högskola
+
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Malmö Högskola
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:01:01 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:01 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:01 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:01:01 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:01:01 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:01:01 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:01 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:02 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:02 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/109.58.144.167,port=63677,localport=8080]
+
+apr 28, 2016 2:01:02 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-10
+
+apr 28, 2016 2:01:02 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:02 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:02 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:02 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,Malmö Högskola
+
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,Malmö Högskola
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Inne i metoden createSQL_CNF
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Inne i metoden
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: CATCH SQL = java.sql.SQLException: Column 'place' not found.
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Returnerar = false
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Boolean som skickas = false
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är FALSE så skickar vi följande till errorHandler = Välj en plats från listan
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Inne i metoden
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Storlek på strängarrayen = 2
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Välj en plats från listan",}
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: När det skickas.
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:02 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är TRUE så skickas den till sendBoolToClient = false
+apr 28, 2016 2:01:02 EM server.Server LOGG
+INFO: CONTROLLER/sendBoolToClient: Inne i metoden 
+apr 28, 2016 2:01:02 EM server.Server sendBool
+INFO: sendJsonToClient: Skickar följande: false
+apr 28, 2016 2:01:02 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 2
+
+apr 28, 2016 2:01:02 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Här skickas boolean genom output streamen
+
+apr 28, 2016 2:01:02 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = false
+
+apr 28, 2016 2:01:02 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:02 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:12 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:12 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/109.58.144.167,port=60654,localport=8080]
+
+apr 28, 2016 2:01:12 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-11
+
+apr 28, 2016 2:01:12 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:12 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:12 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:12 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,NIA0515,Malmö Högskola
+
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,NIA0515,Malmö Högskola
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'SER' så är vi här inne.
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: efter anropad metod createSQL_SER
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Inne i metoden changeDB
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: SQLanrop = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'NIA0515'
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'NIA0515'
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: I TRY när fromDB-arrayen ska fyllas med svar från DB. Svar = 
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'NIA0515'
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Inne i metoden createJSON
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Niagara.bmp
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Plan 5.bmp
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 2:01:12 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 2:01:13 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 2:01:13 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 2:01:13 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+apr 28, 2016 2:01:13 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden sendCompleteJSONToClient
+apr 28, 2016 2:01:13 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:13 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:13 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:01:13 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:01:18 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:18 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/84.55.78.172,port=56824,localport=8080]
+
+apr 28, 2016 2:01:18 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-12
+
+apr 28, 2016 2:01:18 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:18 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:18 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:19 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Ma
+
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Ma
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Ma%';
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Ma%';
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:01:19 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:19 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:19 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:01:19 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:01:19 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:01:19 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:19 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:20 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/84.55.78.172,port=48497,localport=8080]
+
+apr 28, 2016 2:01:20 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-13
+
+apr 28, 2016 2:01:20 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,Malmö Högskola
+
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,Malmö Högskola
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Inne i metoden createSQL_CNF
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Inne i metoden
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: CATCH SQL = java.sql.SQLException: Column 'place' not found.
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Returnerar = false
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Boolean som skickas = false
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är FALSE så skickar vi följande till errorHandler = Välj en plats från listan
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Inne i metoden
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Storlek på strängarrayen = 2
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Välj en plats från listan",}
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: När det skickas.
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:20 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är TRUE så skickas den till sendBoolToClient = false
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/sendBoolToClient: Inne i metoden 
+apr 28, 2016 2:01:20 EM server.Server sendBool
+INFO: sendJsonToClient: Skickar följande: false
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 2
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Här skickas boolean genom output streamen
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = false
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:20 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/84.55.78.172,port=52998,localport=8080]
+
+apr 28, 2016 2:01:20 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-14
+
+apr 28, 2016 2:01:20 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Malmö Högskola
+
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Malmö Högskola
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:01:20 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:20 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:20 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:30 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:01:30 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:30 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:34 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:34 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/84.55.78.172,port=46564,localport=8080]
+
+apr 28, 2016 2:01:34 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-15
+
+apr 28, 2016 2:01:34 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:34 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:34 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:34 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,Malmö Högskola
+
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,Malmö Högskola
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Inne i metoden createSQL_CNF
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Inne i metoden
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: CATCH SQL = java.sql.SQLException: Column 'place' not found.
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Returnerar = false
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Boolean som skickas = false
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är FALSE så skickar vi följande till errorHandler = Välj en plats från listan
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Inne i metoden
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Storlek på strängarrayen = 2
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Välj en plats från listan",}
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: När det skickas.
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:34 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är TRUE så skickas den till sendBoolToClient = false
+apr 28, 2016 2:01:34 EM server.Server LOGG
+INFO: CONTROLLER/sendBoolToClient: Inne i metoden 
+apr 28, 2016 2:01:34 EM server.Server sendBool
+INFO: sendJsonToClient: Skickar följande: false
+apr 28, 2016 2:01:34 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 2
+
+apr 28, 2016 2:01:34 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Här skickas boolean genom output streamen
+
+apr 28, 2016 2:01:34 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = false
+
+apr 28, 2016 2:01:34 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:34 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:54 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:54 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/84.55.78.172,port=43618,localport=8080]
+
+apr 28, 2016 2:01:54 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-16
+
+apr 28, 2016 2:01:54 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:54 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:54 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:54 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Ma
+
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Ma
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Ma%';
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Ma%';
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:01:54 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:54 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:54 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:01:54 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:01:54 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:01:54 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:54 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:56 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/81.227.253.254,port=55254,localport=8080]
+
+apr 28, 2016 2:01:56 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-17
+
+apr 28, 2016 2:01:56 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Mal
+
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Mal
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Mal%';
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Mal%';
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:56 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:56 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/84.55.78.172,port=41444,localport=8080]
+
+apr 28, 2016 2:01:56 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-18
+
+apr 28, 2016 2:01:56 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Malmö Högskola
+
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Malmö Högskola
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:01:56 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:56 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:56 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:57 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/84.55.78.172,port=38361,localport=8080]
+
+apr 28, 2016 2:01:57 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-19
+
+apr 28, 2016 2:01:57 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,Malmö Högskola
+
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,Malmö Högskola
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Inne i metoden createSQL_CNF
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Inne i metoden
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: CATCH SQL = java.sql.SQLException: Column 'place' not found.
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Returnerar = false
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Boolean som skickas = false
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är FALSE så skickar vi följande till errorHandler = Välj en plats från listan
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Inne i metoden
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Storlek på strängarrayen = 2
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Välj en plats från listan",}
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: När det skickas.
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:57 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är TRUE så skickas den till sendBoolToClient = false
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/sendBoolToClient: Inne i metoden 
+apr 28, 2016 2:01:57 EM server.Server sendBool
+INFO: sendJsonToClient: Skickar följande: false
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 2
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Här skickas boolean genom output streamen
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = false
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:01:57 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/81.227.253.254,port=60329,localport=8080]
+
+apr 28, 2016 2:01:57 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-20
+
+apr 28, 2016 2:01:57 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,Malmö Högskola
+
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,Malmö Högskola
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Inne i metoden createSQL_CNF
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Inne i metoden
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: CATCH SQL = java.sql.SQLException: Column 'place' not found.
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Returnerar = false
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Boolean som skickas = false
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är FALSE så skickar vi följande till errorHandler = Välj en plats från listan
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Inne i metoden
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Storlek på strängarrayen = 2
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Välj en plats från listan",}
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: När det skickas.
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:57 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är TRUE så skickas den till sendBoolToClient = false
+apr 28, 2016 2:01:57 EM server.Server LOGG
+INFO: CONTROLLER/sendBoolToClient: Inne i metoden 
+apr 28, 2016 2:01:57 EM server.Server sendBool
+INFO: sendJsonToClient: Skickar följande: false
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 2
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Här skickas boolean genom output streamen
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = false
+
+apr 28, 2016 2:01:57 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: Connection reset by peer: socket write error
+
+apr 28, 2016 2:01:57 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:01:58 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/81.227.253.254,port=58070,localport=8080]
+
+apr 28, 2016 2:01:58 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-21
+
+apr 28, 2016 2:01:58 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:01:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:01:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:01:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Malmö Högskola
+
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Malmö Högskola
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:01:58 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:01:58 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:01:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:01:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:01:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:01:58 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:01:58 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:02:21 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:02:21 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/81.227.253.254,port=50370,localport=8080]
+
+apr 28, 2016 2:02:21 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-22
+
+apr 28, 2016 2:02:21 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:02:21 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:02:21 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:02:21 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,NIA0515,Malmö Högskola
+
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,NIA0515,Malmö Högskola
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'SER' så är vi här inne.
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: efter anropad metod createSQL_SER
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Inne i metoden changeDB
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: SQLanrop = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'NIA0515'
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'NIA0515'
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: I TRY när fromDB-arrayen ska fyllas med svar från DB. Svar = 
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'NIA0515'
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Inne i metoden createJSON
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Niagara.bmp
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Plan 5.bmp
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden sendCompleteJSONToClient
+apr 28, 2016 2:02:21 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:02:21 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:02:22 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:02:22 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:02:29 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:02:29 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:02:29 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:02:49 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:02:49 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.181.61,port=56427,localport=8080]
+
+apr 28, 2016 2:02:49 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-23
+
+apr 28, 2016 2:02:49 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:02:49 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:02:49 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:02:49 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Mal
+
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Mal
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Mal%';
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Mal%';
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:02:49 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:02:49 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:02:49 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:02:49 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:02:49 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:02:49 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:02:49 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:02:50 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.181.61,port=54032,localport=8080]
+
+apr 28, 2016 2:02:50 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-24
+
+apr 28, 2016 2:02:50 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,Malmö Högskola
+
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,Malmö Högskola
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Inne i metoden createSQL_CNF
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Inne i metoden
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: CATCH SQL = java.sql.SQLException: Column 'place' not found.
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Returnerar = false
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Boolean som skickas = false
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är FALSE så skickar vi följande till errorHandler = Välj en plats från listan
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Inne i metoden
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: Storlek på strängarrayen = 2
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Välj en plats från listan",}
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: När det skickas.
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:02:50 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är TRUE så skickas den till sendBoolToClient = false
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/sendBoolToClient: Inne i metoden 
+apr 28, 2016 2:02:50 EM server.Server sendBool
+INFO: sendJsonToClient: Skickar följande: false
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 2
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Här skickas boolean genom output streamen
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = false
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:02:50 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.181.61,port=36848,localport=8080]
+
+apr 28, 2016 2:02:50 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-25
+
+apr 28, 2016 2:02:50 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Malmö Högskola
+
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Malmö Högskola
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:02:50 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:02:50 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:02:50 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:03:10 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:03:10 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.181.61,port=41386,localport=8080]
+
+apr 28, 2016 2:03:10 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-26
+
+apr 28, 2016 2:03:10 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:03:10 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:03:10 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:03:10 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0305,Malmö Högskola
+
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0305,Malmö Högskola
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'SER' så är vi här inne.
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: efter anropad metod createSQL_SER
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Inne i metoden changeDB
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: SQLanrop = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0305'
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0305'
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: I TRY när fromDB-arrayen ska fyllas med svar från DB. Svar = 
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0305'
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H13]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H12]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H3, NI3H5]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H8]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H4, NI3H6]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H11, NI3H14]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H3]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H9]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1, NI3H7, NI3H10, NI3H2]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1, NI3H4, NI3H7, NI3H10, NI3H2]
+apr 28, 2016 2:03:10 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:03:11 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:03:11 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/84.55.78.172,port=56436,localport=8080]
+
+apr 28, 2016 2:03:11 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-27
+
+apr 28, 2016 2:03:11 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:03:11 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:03:11 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:03:11 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,NIA0515,Malmö Högskola
+
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,NIA0515,Malmö Högskola
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'SER' så är vi här inne.
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: efter anropad metod createSQL_SER
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Inne i metoden changeDB
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: SQLanrop = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'NIA0515'
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'NIA0515'
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: I TRY när fromDB-arrayen ska fyllas med svar från DB. Svar = 
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'NIA0515'
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H13]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H12]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H3, NI3H5]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H8]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H4, NI3H6]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H11, NI3H14]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H3]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H9]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:11 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1, NI3H7, NI3H10, NI3H2]
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1, NI3H4, NI3H7, NI3H10, NI3H2]
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Inne i metoden createJSON
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Niagara.bmp
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Plan 5.bmp
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden sendCompleteJSONToClient
+apr 28, 2016 2:03:12 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:03:12 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:03:12 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:03:12 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:03:27 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:03:27 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:03:27 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:03:32 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:03:32 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/84.55.78.172,port=49286,localport=8080]
+
+apr 28, 2016 2:03:32 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-28
+
+apr 28, 2016 2:03:32 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:03:32 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:03:32 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:03:32 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Malmö Högskola
+
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Malmö Högskola
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = [Malmö Högskola]
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = {"place1":"Malmö Högskola","nbrOfPlaces":"1"}
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient
+apr 28, 2016 2:03:32 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:03:32 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:03:32 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:03:32 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:03:32 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:03:32 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:03:32 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:03:41 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:03:41 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/104.219.238.10,port=57373,localport=8080]
+
+apr 28, 2016 2:03:41 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-29
+
+apr 28, 2016 2:03:41 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:03:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:03:41 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:03:51 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+apr 28, 2016 2:05:14 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:05:14 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.181.61,port=51285,localport=8080]
+
+apr 28, 2016 2:05:14 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-30
+
+apr 28, 2016 2:05:14 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:05:14 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:05:14 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:05:14 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0305,Malmö Högskola
+
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0305,Malmö Högskola
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'SER' så är vi här inne.
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: efter anropad metod createSQL_SER
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Inne i metoden changeDB
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: SQLanrop = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0305'
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0305'
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: I TRY när fromDB-arrayen ska fyllas med svar från DB. Svar = 
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0305'
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H13]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H12]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H3, NI3H5]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:14 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H8]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H4, NI3H6]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H11, NI3H14]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H3]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H9]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1, NI3H7, NI3H10, NI3H2]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1, NI3H4, NI3H7, NI3H10, NI3H2]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H1]
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Inne i metoden createJSON
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Niagara.bmp
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = C:/Users/Chrille/Desktop/LocatorDB/Buildings/NI/Plan 3.bmp
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Inne i metoden StrinToByte
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: Efter det är encodat.
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/StrinToByte: När det skickas
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: Innan det skickas till metoden sendCompleteJSONToClient
+apr 28, 2016 2:05:15 EM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+apr 28, 2016 2:05:15 EM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+apr 28, 2016 2:05:16 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+apr 28, 2016 2:05:16 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen
+
+apr 28, 2016 2:05:34 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+apr 28, 2016 2:05:34 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.
+
+apr 28, 2016 2:05:34 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+apr 28, 2016 2:06:27 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:06:27 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.181.61,port=39655,localport=8080]
+
+apr 28, 2016 2:06:27 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-31
+
+apr 28, 2016 2:06:27 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:06:27 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:06:27 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:06:27 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,,Malmö Högskola
+
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,,Malmö Högskola
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'SER' så är vi här inne.
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: efter anropad metod createSQL_SER
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Inne i metoden changeDB
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: SQLanrop = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = ''
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = ''
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: I TRY när fromDB-arrayen ska fyllas med svar från DB. Svar = 
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = ''
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI2H11]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI2H12]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI2H11]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H13]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H12]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H3, NI3H5]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H8]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H4, NI3H6]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H11, NI3H14]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H3]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H4]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H1, NI4H2, NI4H3, NI4H10]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIEH7]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H2, NI6H3, NI6H10]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIEH7]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI2H1, NI2H2]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIEH2]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI3H9]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIEH3]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI2H2, NI2H3, NI2H6, NI2H7]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H1, NI4H4]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIEH6, NIEH8]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI2H1, NI2H2]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIEH3]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIEH2]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIEH1, NIEH4, NIEH5, NIES2]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIES4, NIES6, NIEH5]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIES4, NIEH1, NIEH5]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIES2, NIEH1, NIEH4, NIEH5]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIES2]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NIES2, NIES6, NIEH5]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H12]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H9]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI2H10]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H8]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI2H5]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H5, NI4H3]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4, NI4H11, NI4H13]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H6, NI6H4, NI6H2, NI6H10]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI2H9, NI2H13]
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+apr 28, 2016 2:06:27 EM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+apr 28, 2016 2:07:59 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:07:59 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.181.61,port=55792,localport=8080]
+
+apr 28, 2016 2:07:59 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-32
+
+apr 28, 2016 2:07:59 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:07:59 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:07:59 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:07:59 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,
+
+apr 28, 2016 2:07:59 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,
+apr 28, 2016 2:07:59 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:07:59 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.
+apr 28, 2016 2:08:15 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+apr 28, 2016 2:08:15 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.181.61,port=51671,localport=8080]
+
+apr 28, 2016 2:08:15 EM server.Server <init>
+INFO: KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : Thread-33
+
+apr 28, 2016 2:08:15 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+apr 28, 2016 2:08:15 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: objectoutputstream är instansierad
+
+apr 28, 2016 2:08:15 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Datainputstream är instansierad
+
+apr 28, 2016 2:08:15 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,
+
+apr 28, 2016 2:08:15 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,
+apr 28, 2016 2:08:15 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten
+apr 28, 2016 2:08:15 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.
