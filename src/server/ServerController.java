@@ -121,7 +121,7 @@ public class ServerController implements Serializable{
 		    createSQL_edge(dB, nID, room);
 		}
 		
-		System.out.println(lastNode.toString());
+		System.out.println("Närmsta noden till salen = " + lastNode.toString());
 		int x, y;
 		String lastNodeID = lastNode.get(0);
 		String lastNodeString = map.get(lastNodeID);
@@ -130,7 +130,7 @@ public class ServerController implements Serializable{
 		y = Integer.parseInt(coor[1]);
 		
 		String splited = floor.substring(2);
-		System.out.println(splited);
+		System.out.println("Våningsplan = " + splited + " Sökt rum = " + room);
 		int floorInt = Integer.parseInt(splited); 
 		int sx = 0, sy = 0;
 		switch (floorInt) {
@@ -175,7 +175,7 @@ public class ServerController implements Serializable{
 				
 		for (int j = sizeOnArray+1; j < newArray.length; j++){
 			newArray[j] = listCoords.get(j-(sizeOnArray+1));
-		}
+		} 
 		createJSON(newArray);
 	}
 
@@ -289,10 +289,11 @@ public class ServerController implements Serializable{
 		String jsonNode = "\"nbrOfNodes\": \"" + fromDB[9];
 		String jsonBuildText = "";
 		String jsonCloseText = "\",}";
-		int where = Integer.parseInt(fromDB[9]);
+		int where = 9;
+		int howMany = Integer.parseInt(fromDB[9]);
 		
-		for (int i = 1; i < where+1; i++){
-			jsonBuildText += "\",\"node" + (i+1) + "\": \"" + fromDB[where+i];
+		for (int i = 1; i < howMany+1; i++){
+			jsonBuildText += "\",\"node" + (i) + "\": \"" + fromDB[where+i];
 			}
 		
 		jsonBuildText += jsonCloseText;
@@ -304,7 +305,11 @@ public class ServerController implements Serializable{
 				+ "\"corridorCoor\": \"" + fromDB[8] + "\","+jsonNode;
 		server.LOGG("CONTROLLER/CreateJSON: När det gjorts om till JSON");
 		JSONObject obj = new JSONObject(jsonText);
-		System.out.println("JSON som objekt : " + obj.getString("nbrOfNodes"));
+		System.out.println("Antal noder i JSONobjekt : " + obj.getString("nbrOfNodes"));
+		System.out.println("node1 : " + obj.getString("node1"));
+		System.out.println("node2 : " + obj.getString("node2"));
+
+		System.out.println(" ");
 
 		server.LOGG("CONTROLLER/CreateJSON: Innan det skickas till metoden sendCompleteJSONToClient");
 		
@@ -342,7 +347,6 @@ public class ServerController implements Serializable{
 		Encoder en = Base64.getEncoder();
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		BufferedImage originalImage = ImageIO.read(fnew);
-		System.out.println("Bild skickad.");
 		ImageIO.write(originalImage, "BMP", baos);
 		byte[] buffer = baos.toByteArray();
 		String byteToString = en.encodeToString(buffer);
