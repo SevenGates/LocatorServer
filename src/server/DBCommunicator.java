@@ -52,14 +52,30 @@ public class DBCommunicator implements Serializable{
 					return errorArray;
 				} else{
 				array[0] = rs.getString("name");
+				System.out.println(array[0]);
 				array[1] = rs.getString("path");
+				System.out.println(array[1]);
 				array[2] = rs.getString("floors");
+
+				System.out.println(array[2]);
 				array[3] = rs.getString("id");
+
+				System.out.println(array[3]);
 				array[4] = rs.getString("map");
+
+				System.out.println(array[4]);
 				array[5] = rs.getString("roomid");
+
+				System.out.println(array[5]);
 				array[6] = rs.getString("roomCoor");
+
+				System.out.println(array[6]);
 				array[7] = rs.getString("doorCoor");
+
+				System.out.println(array[7]);
 				array[8] = rs.getString("corridorCoor");
+
+				System.out.println(array[8]);
 				}
 			}
 		} catch (SQLException e) {
@@ -263,7 +279,6 @@ public class DBCommunicator implements Serializable{
 		controller.loggDB("DBCommunicator/dBgetNodes: Returnerar noder");
 		return value;
 	}
-
 
 	public ArrayList<String> dBSearchEdges(String queryGetEdges) throws SQLException {
 		Statement stmt = null;

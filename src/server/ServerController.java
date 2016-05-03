@@ -42,21 +42,16 @@ public class ServerController implements Serializable{
 		String sqlQuery = request;
 		server.LOGG("CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = " + request);
 		String[] splitQuery = sqlQuery.split(",");
-		server.LOGG("CONTROLLER/msgFromClient: En strängarray som innehåller allt splitande av requesten");
 		if (splitQuery[0].equals("GCO")) {
-			server.LOGG("CONTROLLER/msgFromClient: If 'GCO' så är vi här inne.");
 			createSQL_GCO(splitQuery[1]);
 			return 1;
 		} else if (splitQuery[0].equals("CNF")) {
-			server.LOGG("CONTROLLER/msgFromClient: If 'CNF' så är vi här inne.");
 			createSQL_CNF(splitQuery[1]);
 			return 2;
 		} else if (splitQuery[0].equals("SER")) {
-			server.LOGG("CONTROLLER/msgFromClient: If 'SER' så är vi här inne.");
 			createSQL_SER(splitQuery);
 			return 1;
 		} else if (splitQuery[0].equals("SEP")) {
-			server.LOGG("CONTROLLER/msgFromClient: If 'SEP' så är vi här inne.");
 			createSQL_SEP(splitQuery);
 			return 1;
 		}
@@ -70,7 +65,6 @@ public class ServerController implements Serializable{
 	}
 
 	private void createSQL_SER(String[] splitQuery) throws SQLException, JSONException, IOException {
-		server.LOGG("CONTROLLER/createSQL_SER: efter anropad metod createSQL_SER");
 		String msg = "Det blev fel när du angav rummets namn, försök igen.";
 		splitQuery[2] = changeDB(splitQuery[2]);
 		server.LOGG("CONTROLLER/createSQL_SER: Har ändrat DB med följande information = " + splitQuery[2]);
@@ -81,14 +75,20 @@ public class ServerController implements Serializable{
 		server.LOGG("CONTROLLER/createSQL_SER: SQLQueryn som är genererad = " + SERQuery);
 		String[] fromDB ;
 		try {
-			fromDB = dbCom.dBSearchRoom(SERQuery);
-			server.LOGG("CONTROLLER/createSQL_SER: I TRY när fromDB-arrayen ska fyllas med svar från DB. Svar = ");
-			if (fromDB.length == 2){
-				server.LOGG("CONTROLLER/createSQL_SER: Om fromDB enbart har 2 platser. Då skickas följande meddelande = " + msg);
+			if (splitQuery[2] == null){
+				server.LOGG("CONTROLLER/createSQL_SER: Om fel - Då skickas följande meddelande = " + msg);
 				errorHandler(msg);
 			} else {
-				server.LOGG("CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = ");
-				createSQL_nodes(splitQuery[1], splitQuery[2], fromDB);
+				fromDB = dbCom.dBSearchRoom(SERQuery);
+				if (fromDB.length > 2){
+					server.LOGG("CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = ");
+					createSQL_nodes(splitQuery[1], splitQuery[2], fromDB);
+				} else {
+					server.LOGG("CONTROLLER/createSQL_SER: Om felsökt rum - Då skickas följande meddelande = " + msg);
+					errorHandler(msg);
+				}
+				
+				
 			}
 		} catch (SQLException | JSONException | IOException e) {
 			// TODO Auto-generated catch block
@@ -121,7 +121,7 @@ public class ServerController implements Serializable{
 		    createSQL_edge(dB, nID, room);
 		}
 		
-		System.out.println(lastNode.toString());
+		
 		int x, y;
 		String lastNodeID = lastNode.get(0);
 		String lastNodeString = map.get(lastNodeID);
@@ -130,7 +130,7 @@ public class ServerController implements Serializable{
 		y = Integer.parseInt(coor[1]);
 		
 		String splited = floor.substring(2);
-		System.out.println(splited);
+		
 		int floorInt = Integer.parseInt(splited); 
 		int sx = 0, sy = 0;
 		switch (floorInt) {
@@ -162,10 +162,27 @@ public class ServerController implements Serializable{
 		
 		List <String> listCoords = mp.findShortestPath(sx, sy, x, y);
 		
+//		int sizeOnArray = fromDB.length;
+//		int sizeListCoords = listCoords.size();
+//		int totalSize = sizeOnArray+sizeListCoords;
+//		String[] newArray = new String[totalSize+1];
+//		
+//		
+//		for(int i = 0; i < fromDB.length; i++){
+//			newArray[i] = fromDB[i];
+//		}
+//		
+//		newArray[sizeOnArray] = Integer.toString(sizeListCoords);
+//				
+//		for (int j = sizeOnArray+1; j < newArray.length; j++){
+//			newArray[j] = listCoords.get(j-(sizeOnArray+1));
+//		}
+		
 		int sizeOnArray = fromDB.length;
 		int sizeListCoords = listCoords.size();
-		int totalSize = sizeOnArray+sizeListCoords;
-		String[] newArray = new String[totalSize+1];
+		String[] newArray = new String[sizeOnArray+1];
+		String[] newArray2 = new String[sizeListCoords];
+		
 		
 		for(int i = 0; i < fromDB.length; i++){
 			newArray[i] = fromDB[i];
@@ -173,12 +190,13 @@ public class ServerController implements Serializable{
 		
 		newArray[sizeOnArray] = Integer.toString(sizeListCoords);
 				
-		for (int j = sizeOnArray+1; j < newArray.length; j++){
-			newArray[j] = listCoords.get(j-(sizeOnArray+1));
+		for (int j = 0; j < newArray2.length; j++){
+			newArray2[j] = listCoords.get(j);
 		}
-		createJSON(newArray);
+		
+		
+		createJSON(newArray, newArray2);
 	}
-
 	
 	private void createSQL_edge(String dB, String nID, String room) throws SQLException, JSONException, IOException {
 		String queryGetEdges = "SELECT connectID " + "FROM "
@@ -239,12 +257,10 @@ public class ServerController implements Serializable{
 	}
 
 	private void createSQL_GCO(String splitQuery) throws SQLException, JSONException, IOException {
-		server.LOGG("CONTROLLER/createSQL_GCO: Inne i metoden createSQL_GCO");
 		String msg = "Det saknas en plats som innehåller bokstäverna " + splitQuery + ", försök igen.";
 		String GCOQuery = "SELECT place FROM locatormain.places WHERE place LIKE '"+ splitQuery +"%';";
 		server.LOGG("CONTROLLER/createSQL_GCO: SQL anropet = " + GCOQuery);
 		ArrayList<String> differentPlaces = dbCom.searchComplex(GCOQuery);
-		server.LOGG("CONTROLLER/createSQL_GCO: Skapad Arraylist med följande innehåll = " + differentPlaces.toString());
 		server.LOGG("CONTROLLER/createSQL_GCO: Arraylisten har storlek = " + differentPlaces.size());
 		if (differentPlaces.size() == 0){
 			server.LOGG("CONTROLLER/createSQL_GCO: Om Arraylisten inte innegåller något så anropas errorHandler med = " + msg);
@@ -272,9 +288,7 @@ public class ServerController implements Serializable{
 	}
 
 	private String changeDB(String string) throws SQLException, JSONException, IOException {
-		server.LOGG("CONTROLLER/changeDB: Inne i metoden changeDB");
-		String query = "SELECT dbname FROM locatormain.places WHERE place LIKE '" + string + "';";;
-		server.LOGG("CONTROLLER/changeDB: SQLanrop = " + query);
+		String query = "SELECT dbname FROM locatormain.places WHERE place LIKE '" + string + "';";
 		String newString = dbCom.dBchange(query);
 		server.LOGG("CONTROLLER/changeDB: Returnerat från DB = " + newString);
 		return newString;
@@ -285,33 +299,32 @@ public class ServerController implements Serializable{
 	 * Sedan gör vi om det till JSON för att skicka till klienten. 
 	 */
 	
-	private void createJSON(String[] fromDB) throws IOException, JSONException {
-		server.LOGG("CONTROLLER/CreateJSON: Inne i metoden createJSON");
-		server.LOGG("CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = " + fromDB[1]);
-		server.LOGG("CONTROLLER/CreateJSON: Innan det skickas till metoden stringToByte = " + fromDB[4]);
-		fromDB[1] = stringToByte(fromDB[1]);
-		fromDB[4] = stringToByte(fromDB[4]);
-		String jsonNode = "\"nbrOfNodes\": \"" + fromDB[9];
+	private void createJSON(String[] newArray, String[] newArray2) throws IOException, JSONException {
+		newArray[1] = stringToByte(newArray[1]);
+		newArray[4] = stringToByte(newArray[4]);
+		String jsonNode = "\"nbrOfNodes\": \"" + newArray[9];
 		String jsonBuildText = "";
 		String jsonCloseText = "\",}";
-		int where = Integer.parseInt(fromDB[9]);
+		int where = Integer.parseInt(newArray[9]);
 		
-		for (int i = 1; i < where+1; i++){
-			jsonBuildText += "\",\"node" + (i+1) + "\": \"" + fromDB[where+i];
+		for (int i = 0; i < newArray2.length; i++){
+			jsonBuildText += "\",\"node" + (i+1) + "\": \"" + newArray2[i];
 			}
 		
 		jsonBuildText += jsonCloseText;
 		jsonNode += jsonBuildText;
+		
+		System.out.println("JSONnode = " + jsonNode);
 
-		String jsonText = "{\"name\": \"" + fromDB[0] + "\",\"path\": \"" + fromDB[1] + "\"," + "\"floors\": \""
-				+ fromDB[2] + "\",\"id\": \"" + fromDB[3] + "\",\"map\": \"" + fromDB[4] + "\"," + "\"roomid\": \""
-				+ fromDB[5] + "\",\"roomCoor\": \"" + fromDB[6] + "\", \"doorCoor\": \"" + fromDB[7] + "\","
-				+ "\"corridorCoor\": \"" + fromDB[8] + "\","+jsonNode;
+		String jsonText = "{\"name\": \"" + newArray[0] + "\",\"path\": \"" + newArray[1] + "\"," + "\"floors\": \""
+				+ newArray[2] + "\",\"id\": \"" + newArray[3] + "\",\"map\": \"" + newArray[4] + "\"," + "\"roomid\": \""
+				+ newArray[5] + "\",\"roomCoor\": \"" + newArray[6] + "\", \"doorCoor\": \"" + newArray[7] + "\","
+				+ "\"corridorCoor\": \"" + newArray[8] + "\","+jsonNode;
 		server.LOGG("CONTROLLER/CreateJSON: När det gjorts om till JSON");
 		JSONObject obj = new JSONObject(jsonText);
-		System.out.println("JSON som objekt : " + obj.getString("nbrOfNodes"));
-
-		server.LOGG("CONTROLLER/CreateJSON: Innan det skickas till metoden sendCompleteJSONToClient");
+		System.out.println("nbrodNodes = " + obj.get("nbrOfNodes"));
+		System.out.println("node1 = " + obj.get("node1"));
+		System.out.println("node2 = " + obj.get("node2"));
 		
 		sendCompleteJSONToClient(obj);
 		
@@ -319,7 +332,6 @@ public class ServerController implements Serializable{
 	}
 	
 	private void createJSON_GCO(ArrayList<String> differentPlaces) throws IOException, JSONException {
-		server.LOGG("CONTROLLER/CreateJSON_GCO: Inne i metoden createJSON_GCO");
 		String jsonText = "{\"nbrOfPlaces\": \"" + Integer.toString(differentPlaces.size());
 		String jsonBuildText = "";
 		String jsonCloseText = "\",}";
@@ -335,26 +347,20 @@ public class ServerController implements Serializable{
 		}
 		server.LOGG("CONTROLLER/CreateJSON_GCO: JSON som skickas = " + jsonText);
 		JSONObject obj = new JSONObject(jsonText);
-		server.LOGG("CONTROLLER/CreateJSON_GCO: Efter det är ett JSONobjekt = " + obj.toString());
-		server.LOGG("CONTROLLER/CreateJSON_GCO: Skickas till sendCompleteJSONToClient");
 		sendCompleteJSONToClient(obj);
 
 	}
 	
 	private String stringToByte(String pic) throws IOException {
-		server.LOGG("CONTROLLER/StrinToByte: Inne i metoden StrinToByte");
 		File fnew = new File(pic);
 		Encoder en = Base64.getEncoder();
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		BufferedImage originalImage = ImageIO.read(fnew);
-		System.out.println("Bild skickad.");
 		ImageIO.write(originalImage, "BMP", baos);
 		byte[] buffer = baos.toByteArray();
 		String byteToString = en.encodeToString(buffer);
-		server.LOGG("CONTROLLER/StrinToByte: Efter det är encodat.");
 		baos.flush();
 		baos.close();
-		server.LOGG("CONTROLLER/StrinToByte: När det skickas");
 		return byteToString;
 
 	}
@@ -371,16 +377,13 @@ public class ServerController implements Serializable{
 	}
 
 	private void errorHandler(String msg) throws JSONException {
-		server.LOGG("CONTROLLER/ErrorHandler: Inne i metoden");
 		String[] error = new String[2];
-		server.LOGG("CONTROLLER/ErrorHandler: Storlek på strängarrayen = " + error.length);
 		error[0] = "Error";
 		error[1] = msg;
 		
 		String jsonText = "{\"name\": \"" + error[0] + "\",\"message\": \"" + error[1] + "\",}";
 		server.LOGG("CONTROLLER/ErrorHandler: JSON texten = " + jsonText);
 		JSONObject obj = new JSONObject(jsonText);
-		server.LOGG("CONTROLLER/ErrorHandler: När det skickas.");
 		sendCompleteJSONToClient(obj);
 		
 	}

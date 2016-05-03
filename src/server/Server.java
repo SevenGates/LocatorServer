@@ -50,24 +50,21 @@ public class Server implements Serializable{
 		try {
 			newLoggFile();
 			System.out.println("Waiting...");
-			LOGG.info("KONSTRUKTORN: Server is waiting for response.\n");
 			serverSocket = new ServerSocket(port);
 			LOGG.info("KONSTRUKTORN: ServerSocket is created with port : " + port + "\n");
 			controller = new ServerController(this);
-			LOGG.info("KONSTRUKTORN: Controller is created\n");
 			
 			while(true) {
 				Socket clientSocket = serverSocket.accept();
 				LOGG.info("KONSTRUKTORN: Klienten är ansluten\n");
+				System.out.println("Klienten är ansluten");
 				Thread t = new ThreadHandler(clientSocket);
-				LOGG.info("KONSTRUKTORN: ThreadHandler är skapad av klientsocketen. Trådens namn : " + t.getName()+"\n");
 				t.start();
 				LOGG.info("KONSTRUKTORN: Tråden är startad\n");
 			}
 		} catch (IOException e) {
 			LOGG.warning("KONSTRUKTORN: CATCH IOE: " + e.toString()+"\n");
 		}
-		LOGG.info("KONSTRUKTORN: End!\n");
 	} 
 	
 	/**
@@ -88,10 +85,8 @@ public class Server implements Serializable{
 	        try {
 	        	
 	            ObjectOutputStream output = new ObjectOutputStream(clientSocket.getOutputStream());
-				LOGG.info("THREADHANDLER: objectoutputstream är instansierad\n");
 	            output.flush();
 	            DataInputStream input = new DataInputStream(clientSocket.getInputStream());
-				LOGG.info("THREADHANDLER: Datainputstream är instansierad\n");
 
 	            /*
 	             * A while-loop that is reading inputs from the client. 
@@ -105,20 +100,19 @@ public class Server implements Serializable{
 					LOGG.info("THREADHANDLER: msgFromClient skickas till Controller med info = " + sendNbr+"\n");
 	            	switch (sendNbr){
 	            	case 1 : 
-	    				LOGG.info("THREADHANDLER: Switch 1: Här skrivs Json object genom output streamen\n");
 	            		output.writeObject(completeJson);
 	    				LOGG.info("THREADHANDLER: Switch 1: Json skickat genom output\n");
 		            	output.flush();
 		            	output.close();
-	    				LOGG.info("THREADHANDLER: Switch 1: Outputstreamen är flushad och stängd.\n");
+		            	System.out.println("Objekt skickat till klienten");
 	            		break;
 	            	case 2 : 
 	    				LOGG.info("THREADHANDLER: Switch 2: Här skickas boolean genom output streamen\n");
 	            		output.writeBoolean(confirmComplex);
+		            	System.out.println("Boolean skickat till klienten");
 	    				LOGG.info("THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = " + confirmComplex+"\n");
 		            	output.flush();
 		            	output.close();
-	    				LOGG.info("THREADHANDLER: Switch 2: Outputstreamen är flushad och stängd.\n");
 	            		break;
 	            	}       	
 	            }
@@ -130,7 +124,12 @@ public class Server implements Serializable{
 				LOGG.warning("KONSTRUKTORN: CATCH SQL: " + e.toString()+"\n");
 			} catch (JSONException e) {
 				LOGG.warning("KONSTRUKTORN: CATCH JSON: " + e.toString()+"\n");
-
+			} finally {
+				try {
+					clientSocket.close();
+				} catch (IOException e) {
+					System.out.println("CP-Servern har inte lyckats stänga klienten ordentligt!");
+				}
 			}
 	    }
 	}
@@ -146,7 +145,7 @@ public class Server implements Serializable{
 	}
 
 	public void sendBool(boolean b) {
-		LOGG.info("sendJsonToClient: Skickar följande: " + b);
+		LOGG.info("sendBool: Skickar följande: " + b);
 		confirmComplex = b;
 	}
 	
