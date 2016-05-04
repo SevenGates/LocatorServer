@@ -91,17 +91,13 @@ public class MapGraph {
 	public List<String> findShortestPath(int x1, int y1, int x2, int y2) {
 		HashMap map = graph.getNodes();
 		
-		System.out.println(x1 +" "+ y1 + " " + x2 + " " + y2);
-		System.out.println(map.size());
-		System.out.println(map.toString());
+		
 		Node nodeCheck, node1 = new Node(-1), node2 = new Node(-1);
-		System.out.println("Node på plats 15 " + map.get(15));		
 		
 		for(int i = 0; i < Node.getNodeCount(); i++) {
 			nodeCheck = (Node)map.get(i);
 			if(nodeCheck.getNodeConf().getX() == x1 && nodeCheck.getNodeConf().getY() == y1){
 				node1 = nodeCheck;
-				System.out.println("node1 = " + node1.toString());
 				}
 			else if (nodeCheck.getNodeConf().getX() == x2 && nodeCheck.getNodeConf().getY() == y2)
 				node2 = nodeCheck;

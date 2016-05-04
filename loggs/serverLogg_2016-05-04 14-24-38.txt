@@ -1,0 +1,3 @@
+maj 04, 2016 2:24:38 EM server.Server <init>
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.BindException: Address already in use: JVM_Bind
+

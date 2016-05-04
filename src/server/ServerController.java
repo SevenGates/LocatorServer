@@ -65,7 +65,7 @@ public class ServerController implements Serializable{
 	}
 
 	private void createSQL_SER(String[] splitQuery) throws SQLException, JSONException, IOException {
-		String msg = "Det blev fel när du angav rummets namn, försök igen.";
+		String msg = "Fel när du angav rummets namn, försök igen.";
 		splitQuery[2] = changeDB(splitQuery[2]);
 		server.LOGG("CONTROLLER/createSQL_SER: Har ändrat DB med följande information = " + splitQuery[2]);
 		
@@ -80,12 +80,12 @@ public class ServerController implements Serializable{
 				errorHandler(msg);
 			} else {
 				fromDB = dbCom.dBSearchRoom(SERQuery);
-				if (fromDB.length > 2){
-					server.LOGG("CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = ");
-					createSQL_nodes(splitQuery[1], splitQuery[2], fromDB);
-				} else {
+				if (fromDB[0].equals("Error")){
 					server.LOGG("CONTROLLER/createSQL_SER: Om felsökt rum - Då skickas följande meddelande = " + msg);
 					errorHandler(msg);
+				} else {
+					server.LOGG("CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = ");
+					createSQL_nodes(splitQuery[1], splitQuery[2], fromDB);
 				}
 				
 				
@@ -220,8 +220,11 @@ public class ServerController implements Serializable{
 				+ dB + ".noderoom " + "WHERE roomID = '" + room + "';";
 		
 		try {
+			if (nID != null){
 			lastNode = dbCom.dBSearchLastNode(queryGetEdges2);
-
+			} else {
+				System.out.println("Inte skapat någon LastNode eftersom det är fel i sökningen.");
+			}
 			
 		} catch (SQLException e) {
 			server.LOGG("CONTROLLER/create: CATCH = " + e);

@@ -40,6 +40,7 @@ public class DBCommunicator implements Serializable{
 		controller.loggDB("DBCommunicator/dcSearchRoom: Anropet till DB = " + roomSearch);
 		String[] array = new String[9];
 		String[] errorArray = new String[2];
+		array[0] = "Error";
 
 		try {
 			con = DriverManager.getConnection(dbURL, username, password);
@@ -47,39 +48,30 @@ public class DBCommunicator implements Serializable{
 			ResultSet rs = stmt.executeQuery(query);
 					
 			while (rs.next()) {
-				if (rs.getString("name") == null){
-					controller.loggDB("DBCommunicator/dcSearchRoom: I TRY/WHILE/IF, om name = null");
-					return errorArray;
-				} else{
+				
 				array[0] = rs.getString("name");
 				System.out.println(array[0]);
 				array[1] = rs.getString("path");
 				System.out.println(array[1]);
 				array[2] = rs.getString("floors");
-
 				System.out.println(array[2]);
 				array[3] = rs.getString("id");
-
 				System.out.println(array[3]);
 				array[4] = rs.getString("map");
-
 				System.out.println(array[4]);
 				array[5] = rs.getString("roomid");
-
 				System.out.println(array[5]);
 				array[6] = rs.getString("roomCoor");
-
 				System.out.println(array[6]);
 				array[7] = rs.getString("doorCoor");
-
 				System.out.println(array[7]);
 				array[8] = rs.getString("corridorCoor");
-
 				System.out.println(array[8]);
-				}
+				
 			}
 		} catch (SQLException e) {
 			controller.loggDB("DBCommunicator/dcSearchRoom: CATCH SQL = " + e);
+			
 		} finally {
 			if (stmt != null) {
 				controller.loggDB("DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt");
