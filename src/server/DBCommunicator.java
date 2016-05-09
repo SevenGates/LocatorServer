@@ -50,23 +50,26 @@ public class DBCommunicator implements Serializable{
 			while (rs.next()) {
 				
 				array[0] = rs.getString("name");
-				System.out.println(array[0]);
+				System.out.println("");
+				System.out.println("--------SÖKNING PÅ RUM---------");
+				System.out.println("Byggnad = " + array[0]);
 				array[1] = rs.getString("path");
-				System.out.println(array[1]);
+				System.out.println("Överblicksbild = " + array[1]);
 				array[2] = rs.getString("floors");
-				System.out.println(array[2]);
+				System.out.println("Antal våningar = " + array[2]);
 				array[3] = rs.getString("id");
-				System.out.println(array[3]);
 				array[4] = rs.getString("map");
-				System.out.println(array[4]);
+				System.out.println("Våningsplansbild = " +array[4]);
 				array[5] = rs.getString("roomid");
-				System.out.println(array[5]);
+				System.out.println("Sökt rum = " +array[5]);
 				array[6] = rs.getString("roomCoor");
-				System.out.println(array[6]);
+				System.out.println("Koordinater till rum = " +array[6]);
 				array[7] = rs.getString("doorCoor");
-				System.out.println(array[7]);
+				System.out.println("Koordinater till dörr = " +array[7]);
 				array[8] = rs.getString("corridorCoor");
-				System.out.println(array[8]);
+				System.out.println("Korridinater till korridor = " +array[8]);
+				System.out.println("--------SÖKNING AVSLUTAD---------");
+				System.out.println("");
 				
 			}
 		} catch (SQLException e) {
@@ -184,7 +187,7 @@ public class DBCommunicator implements Serializable{
 		String password = "k5!298E45H";
 		String query = string;
 		controller.loggDB("DBCommunicator/confirmComplex: SQLanrop = " + string);
-
+		
 		int whatIsThis = -1;
 		boolean result = false;
 		
@@ -194,12 +197,7 @@ public class DBCommunicator implements Serializable{
 			ResultSet rs = stmt.executeQuery(query);
 			
 			while (rs.next()) {
-				whatIsThis = rs.getInt("place");
-			}
-			if (whatIsThis == 1){
-				result = true;
-			} else if (whatIsThis == 0){
-				result = false;
+				whatIsThis = rs.getInt("count(1)");
 			}
 		} catch (SQLException e) {
 			controller.loggDB("DBCommunicator/confirmComplex: CATCH SQL = " + e);
@@ -210,6 +208,12 @@ public class DBCommunicator implements Serializable{
 			}
 		}
 		controller.loggDB("DBCommunicator/confirmComplex: Returnerar = " + result);
+		
+		if (whatIsThis == 1){
+			result = true;
+		} else if (whatIsThis == 0){
+			result = false;
+		}
 		return result;
 	}
 

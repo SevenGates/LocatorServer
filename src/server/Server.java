@@ -49,7 +49,7 @@ public class Server implements Serializable{
 	public Server() {
 		try {
 			newLoggFile();
-			System.out.println("Waiting...");
+			System.out.println("Servern startad och väntar..");
 			serverSocket = new ServerSocket(port);
 			LOGG.info("KONSTRUKTORN: ServerSocket is created with port : " + port + "\n");
 			controller = new ServerController(this);
@@ -99,7 +99,7 @@ public class Server implements Serializable{
 	            	int sendNbr = controller.msgFromClient(request);
 					LOGG.info("THREADHANDLER: msgFromClient skickas till Controller med info = " + sendNbr+"\n");
 	            	switch (sendNbr){
-	            	case 1 : 
+	               	case 1 : 
 	            		output.writeObject(completeJson);
 	    				LOGG.info("THREADHANDLER: Switch 1: Json skickat genom output\n");
 		            	output.flush();
@@ -108,11 +108,14 @@ public class Server implements Serializable{
 	            		break;
 	            	case 2 : 
 	    				LOGG.info("THREADHANDLER: Switch 2: Här skickas boolean genom output streamen\n");
+	    				System.out.println("Boolean som skickas = " + confirmComplex);
 	            		output.writeBoolean(confirmComplex);
 		            	System.out.println("Boolean skickat till klienten");
 	    				LOGG.info("THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = " + confirmComplex+"\n");
 		            	output.flush();
 		            	output.close();
+	            		break;
+	            	default : 
 	            		break;
 	            	}       	
 	            }
@@ -146,7 +149,10 @@ public class Server implements Serializable{
 
 	public void sendBool(boolean b) {
 		LOGG.info("sendBool: Skickar följande: " + b);
-		confirmComplex = b;
+//		if (b == false){
+			confirmComplex = b;
+//		} else
+//		confirmComplex = 1;
 	}
 	
 	private void newLoggFile() throws IOException {

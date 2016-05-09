@@ -42,6 +42,9 @@ public class ServerController implements Serializable{
 		String sqlQuery = request;
 		server.LOGG("CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = " + request);
 		String[] splitQuery = sqlQuery.split(",");
+//		if (splitQuery.length < 2){
+//			return 0;
+//		}
 		if (splitQuery[0].equals("GCO")) {
 			createSQL_GCO(splitQuery[1]);
 			return 1;
@@ -316,7 +319,7 @@ public class ServerController implements Serializable{
 		
 		jsonBuildText += jsonCloseText;
 		jsonNode += jsonBuildText;
-		
+		System.out.println("-------NODER--------");
 		System.out.println("JSONnode = " + jsonNode);
 
 		String jsonText = "{\"name\": \"" + newArray[0] + "\",\"path\": \"" + newArray[1] + "\"," + "\"floors\": \""
@@ -325,9 +328,9 @@ public class ServerController implements Serializable{
 				+ "\"corridorCoor\": \"" + newArray[8] + "\","+jsonNode;
 		server.LOGG("CONTROLLER/CreateJSON: När det gjorts om till JSON");
 		JSONObject obj = new JSONObject(jsonText);
-		System.out.println("nbrodNodes = " + obj.get("nbrOfNodes"));
-		System.out.println("node1 = " + obj.get("node1"));
-		System.out.println("node2 = " + obj.get("node2"));
+		System.out.println("Antal noder = " + obj.get("nbrOfNodes"));
+		System.out.println("-------NODHANTERING SLUT-------");
+		System.out.println("");
 		
 		sendCompleteJSONToClient(obj);
 		
