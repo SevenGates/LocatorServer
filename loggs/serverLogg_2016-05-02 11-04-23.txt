@@ -1,0 +1,15 @@
+maj 02, 2016 11:04:23 FM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+maj 02, 2016 11:06:17 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 02, 2016 11:06:17 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/115.231.222.40,port=54144,localport=8080]
+
+maj 02, 2016 11:06:17 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 02, 2016 11:06:48 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+

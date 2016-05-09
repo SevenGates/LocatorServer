@@ -1,0 +1,26 @@
+maj 04, 2016 2:16:03 EM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+maj 04, 2016 2:16:38 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 04, 2016 2:16:38 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/79.138.130.220,port=63912,localport=8080]
+
+maj 04, 2016 2:16:38 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 04, 2016 2:16:38 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,
+
+maj 04, 2016 2:16:38 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,
+maj 04, 2016 2:16:48 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 04, 2016 2:16:48 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/79.138.130.220,port=63935,localport=8080]
+
+maj 04, 2016 2:16:48 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+

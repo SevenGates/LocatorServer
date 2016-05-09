@@ -1,0 +1,234 @@
+maj 09, 2016 10:28:24 FM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+maj 09, 2016 10:29:43 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:29:43 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=33425,localport=8080]
+
+maj 09, 2016 10:29:43 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:29:43 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Vý
+
+maj 09, 2016 10:29:43 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Vý
+maj 09, 2016 10:29:43 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Vý%';
+maj 09, 2016 10:29:43 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+maj 09, 2016 10:29:43 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Vý%';
+maj 09, 2016 10:29:43 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+maj 09, 2016 10:29:43 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:29:43 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 0
+maj 09, 2016 10:29:43 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om Arraylisten inte innegåller något så anropas errorHandler med = Det saknas en plats som innehåller bokstäverna Vý, försök igen.
+maj 09, 2016 10:29:43 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Det saknas en plats som innehåller bokstäverna Vý, försök igen.",}
+maj 09, 2016 10:29:43 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:29:43 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:29:43 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:29:43 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:29:43 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:29:44 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:29:44 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=55767,localport=8080]
+
+maj 09, 2016 10:29:44 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:29:44 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Výýh
+
+maj 09, 2016 10:29:44 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Výýh
+maj 09, 2016 10:29:44 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Výýh%';
+maj 09, 2016 10:29:44 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+maj 09, 2016 10:29:44 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Výýh%';
+maj 09, 2016 10:29:44 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+maj 09, 2016 10:29:44 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:29:44 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 0
+maj 09, 2016 10:29:44 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om Arraylisten inte innegåller något så anropas errorHandler med = Det saknas en plats som innehåller bokstäverna Výýh, försök igen.
+maj 09, 2016 10:29:44 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Det saknas en plats som innehåller bokstäverna Výýh, försök igen.",}
+maj 09, 2016 10:29:44 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:29:44 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:29:44 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:29:44 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:29:44 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:29:46 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:29:46 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=46386,localport=8080]
+
+maj 09, 2016 10:29:46 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:29:46 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,
+
+maj 09, 2016 10:29:46 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,
+maj 09, 2016 10:29:50 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:29:50 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=60207,localport=8080]
+
+maj 09, 2016 10:29:50 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:29:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,₩
+
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,₩
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Inne i metoden createSQL_CNF
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = '₩';
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Inne i metoden
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = '₩';
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: CATCH SQL = java.sql.SQLException: Column 'place' not found.
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Returnerar = false
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Boolean som skickas = false
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är FALSE så skickar vi följande till errorHandler = Välj en plats från listan
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Välj en plats från listan",}
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:29:50 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är TRUE så skickas den till sendBoolToClient = false
+maj 09, 2016 10:29:50 FM server.Server LOGG
+INFO: CONTROLLER/sendBoolToClient: Inne i metoden 
+maj 09, 2016 10:29:50 FM server.Server sendBool
+INFO: sendBool: Skickar följande: false
+maj 09, 2016 10:29:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 2
+
+maj 09, 2016 10:29:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Här skickas boolean genom output streamen
+
+maj 09, 2016 10:29:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = false
+
+maj 09, 2016 10:29:50 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: Connection reset by peer: socket write error
+
+maj 09, 2016 10:29:53 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:29:53 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=36805,localport=8080]
+
+maj 09, 2016 10:29:53 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:29:53 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,,₩
+
+maj 09, 2016 10:29:53 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,,₩
+maj 09, 2016 10:29:53 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:29:53 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE '₩';
+maj 09, 2016 10:29:53 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:29:53 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = null
+maj 09, 2016 10:29:53 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = null
+maj 09, 2016 10:29:53 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM null.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = ''
+maj 09, 2016 10:29:53 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Om fel - Då skickas följande meddelande = Fel när du angav rummets namn, försök igen.
+maj 09, 2016 10:29:53 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Fel när du angav rummets namn, försök igen.",}
+maj 09, 2016 10:29:53 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:29:53 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:29:53 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:29:53 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:29:53 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:30:37 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:30:37 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=50683,localport=8080]
+
+maj 09, 2016 10:30:37 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:30:37 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,
+
+maj 09, 2016 10:30:37 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,
+maj 09, 2016 10:30:38 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:30:38 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=37106,localport=8080]
+
+maj 09, 2016 10:30:38 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:30:38 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,,
+
+maj 09, 2016 10:30:38 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,,

@@ -1,0 +1,3 @@
+maj 08, 2016 3:46:23 EM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+

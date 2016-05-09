@@ -1,0 +1,2781 @@
+maj 09, 2016 10:07:50 FM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+maj 09, 2016 10:11:52 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:11:52 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=38098,localport=8080]
+
+maj 09, 2016 10:11:52 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:11:52 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0513,Malmö Högskola
+
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0513,Malmö Högskola
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0513'
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0513'
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0513'
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+maj 09, 2016 10:11:52 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:11:53 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+maj 09, 2016 10:11:54 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:11:54 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:11:54 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:12:03 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:12:03 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:12:21 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:12:21 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=57447,localport=8080]
+
+maj 09, 2016 10:12:21 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:12:21 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0602,Malmö Högskola
+
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0602,Malmö Högskola
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0602'
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0602'
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0602'
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H6, NI6H4, NI6H2, NI6H10]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H5]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H4, NI6H11, NI6H13]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H4]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H2, NI6H3, NI6H10]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+maj 09, 2016 10:12:21 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:12:22 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+maj 09, 2016 10:12:22 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:12:22 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:12:22 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:12:32 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:12:32 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:14:10 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:14:10 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=50603,localport=8080]
+
+maj 09, 2016 10:14:10 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:14:10 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0502,Malmö Högskola
+
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0502,Malmö Högskola
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0502'
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0502'
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0502'
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H6, NI6H4, NI6H2, NI6H10]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H5]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H4, NI6H11, NI6H13]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H4]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H2, NI6H3, NI6H10]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+maj 09, 2016 10:14:10 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:14:11 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+maj 09, 2016 10:14:11 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:14:11 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:14:11 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:14:20 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:14:20 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:14:43 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:14:43 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=59395,localport=8080]
+
+maj 09, 2016 10:14:43 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:14:43 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nic0501,Malmö Högskola
+
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nic0501,Malmö Högskola
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nic0501'
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nic0501'
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Om felsökt rum - Då skickas följande meddelande = Fel när du angav rummets namn, försök igen.
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Fel när du angav rummets namn, försök igen.",}
+maj 09, 2016 10:14:43 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:14:43 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:14:43 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:14:43 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:14:43 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:15:13 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:15:13 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=46761,localport=8080]
+
+maj 09, 2016 10:15:13 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:15:13 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,hej,Malmö Högskola
+
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,hej,Malmö Högskola
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'hej'
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'hej'
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Om felsökt rum - Då skickas följande meddelande = Fel när du angav rummets namn, försök igen.
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Fel när du angav rummets namn, försök igen.",}
+maj 09, 2016 10:15:13 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:15:13 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:15:13 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:15:13 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:15:13 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:15:28 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:15:28 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=39811,localport=8080]
+
+maj 09, 2016 10:15:28 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:15:28 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0513,Malmö Högskola
+
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0513,Malmö Högskola
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0513'
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0513'
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0513'
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H6, NI6H4, NI6H2, NI6H10]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H5]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H4, NI6H11, NI6H13]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H2, NI6H3, NI6H10]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+maj 09, 2016 10:15:28 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:15:29 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+maj 09, 2016 10:15:29 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:15:29 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:15:30 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:15:40 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:15:40 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:15:47 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:15:47 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.140.117,port=51179,localport=8080]
+
+maj 09, 2016 10:15:47 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:15:47 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Malm
+
+maj 09, 2016 10:15:47 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Malm
+maj 09, 2016 10:15:47 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Malm%';
+maj 09, 2016 10:15:47 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+maj 09, 2016 10:15:47 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Malm%';
+maj 09, 2016 10:15:47 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+maj 09, 2016 10:15:47 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+maj 09, 2016 10:15:47 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+maj 09, 2016 10:15:47 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+maj 09, 2016 10:15:47 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+maj 09, 2016 10:15:47 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:15:47 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:15:47 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:15:47 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:15:47 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:15:50 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.140.117,port=51385,localport=8080]
+
+maj 09, 2016 10:15:50 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Malmö Högskola
+
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Malmö Högskola
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Malmö Högskola%';
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:15:50 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:15:50 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.140.117,port=51386,localport=8080]
+
+maj 09, 2016 10:15:50 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,Malmö Högskola
+
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,Malmö Högskola
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Inne i metoden createSQL_CNF
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Inne i metoden
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Malmö Högskola';
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: CATCH SQL = java.sql.SQLException: Column 'place' not found.
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Returnerar = false
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Boolean som skickas = false
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är FALSE så skickar vi följande till errorHandler = Välj en plats från listan
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Välj en plats från listan",}
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:15:50 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är TRUE så skickas den till sendBoolToClient = false
+maj 09, 2016 10:15:50 FM server.Server LOGG
+INFO: CONTROLLER/sendBoolToClient: Inne i metoden 
+maj 09, 2016 10:15:50 FM server.Server sendBool
+INFO: sendBool: Skickar följande: false
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 2
+
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Här skickas boolean genom output streamen
+
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = false
+
+maj 09, 2016 10:15:50 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:16:19 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:16:19 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.140.117,port=53300,localport=8080]
+
+maj 09, 2016 10:16:19 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:16:19 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0502,Malmö Högskola
+
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0502,Malmö Högskola
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0502'
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0502'
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0502'
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H6, NI6H4, NI6H2, NI6H10]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H5]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H4, NI6H11, NI6H13]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H4]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H2, NI6H3, NI6H10]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+maj 09, 2016 10:16:19 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:16:20 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+maj 09, 2016 10:16:20 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:16:20 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:16:20 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:16:28 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:16:28 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=32939,localport=8080]
+
+maj 09, 2016 10:16:28 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:16:28 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,ej,Malmö Högskola
+
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,ej,Malmö Högskola
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'ej'
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'ej'
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Om felsökt rum - Då skickas följande meddelande = Fel när du angav rummets namn, försök igen.
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Fel när du angav rummets namn, försök igen.",}
+maj 09, 2016 10:16:28 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:16:28 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:16:28 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:16:28 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:16:28 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:16:31 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:16:31 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:16:33 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:16:33 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=55454,localport=8080]
+
+maj 09, 2016 10:16:33 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:16:33 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0513,Malmö Högskola
+
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0513,Malmö Högskola
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0513'
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0513'
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0513'
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H6, NI6H4, NI6H2, NI6H10]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H5]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H4, NI6H11, NI6H13]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H2, NI6H3, NI6H10]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+maj 09, 2016 10:16:33 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:16:34 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+maj 09, 2016 10:16:34 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:16:34 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:16:34 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:16:44 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:16:44 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:17:00 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:17:00 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=33218,localport=8080]
+
+maj 09, 2016 10:17:00 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:17:01 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,jf,Malmö Högskola
+
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,jf,Malmö Högskola
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'jf'
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'jf'
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Om felsökt rum - Då skickas följande meddelande = Fel när du angav rummets namn, försök igen.
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Fel när du angav rummets namn, försök igen.",}
+maj 09, 2016 10:17:01 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:17:01 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:17:01 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:17:01 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:17:01 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:17:03 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:17:03 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=51487,localport=8080]
+
+maj 09, 2016 10:17:03 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:17:03 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,md,Malmö Högskola
+
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,md,Malmö Högskola
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'md'
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'md'
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Om felsökt rum - Då skickas följande meddelande = Fel när du angav rummets namn, försök igen.
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Fel när du angav rummets namn, försök igen.",}
+maj 09, 2016 10:17:03 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:17:03 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:17:03 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:17:03 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:17:03 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:17:05 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:17:06 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=37281,localport=8080]
+
+maj 09, 2016 10:17:06 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:17:06 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,äf,Malmö Högskola
+
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,äf,Malmö Högskola
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'äf'
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'äf'
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Om felsökt rum - Då skickas följande meddelande = Fel när du angav rummets namn, försök igen.
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Fel när du angav rummets namn, försök igen.",}
+maj 09, 2016 10:17:06 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:17:06 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:17:06 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:17:06 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:17:06 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:17:13 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:17:13 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=50116,localport=8080]
+
+maj 09, 2016 10:17:13 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:17:13 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0513,Malmö Högskola
+
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0513,Malmö Högskola
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0513'
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0513'
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0513'
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H6, NI6H4, NI6H2, NI6H10]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H5]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H4, NI6H11, NI6H13]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H2, NI6H3, NI6H10]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+maj 09, 2016 10:17:13 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4]
+maj 09, 2016 10:17:14 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+maj 09, 2016 10:17:14 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:17:14 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:17:14 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:17:23 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:17:23 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:17:36 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:17:36 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=44852,localport=8080]
+
+maj 09, 2016 10:17:36 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:17:36 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0602,Malmö Högskola
+
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0602,Malmö Högskola
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0602'
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0602'
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0602'
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H6, NI6H4, NI6H2, NI6H10]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H5]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H4, NI6H11, NI6H13]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H4]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H2, NI6H3, NI6H10]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+maj 09, 2016 10:17:36 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1]
+maj 09, 2016 10:17:37 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+maj 09, 2016 10:17:37 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:17:37 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:17:37 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:17:38 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:17:38 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.140.117,port=46368,localport=8080]
+
+maj 09, 2016 10:17:38 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:17:38 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0502,Malmö Högskola
+
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0502,Malmö Högskola
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0502'
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0502'
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0502'
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H6, NI6H4, NI6H2, NI6H10]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H5]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H4, NI6H11, NI6H13]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H4]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H2, NI6H3, NI6H10]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:17:38 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:39 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+maj 09, 2016 10:17:39 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:39 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+maj 09, 2016 10:17:39 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1]
+maj 09, 2016 10:17:39 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON: När det gjorts om till JSON
+maj 09, 2016 10:17:40 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:17:40 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:17:40 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:17:51 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:17:51 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:17:57 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:17:57 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:18:34 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=46578,localport=8080]
+
+maj 09, 2016 10:18:34 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = CNF,Ma
+
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = CNF,Ma
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Inne i metoden createSQL_CNF
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Ma';
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Inne i metoden
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: SQLanrop = SELECT count(1) FROM locatormain.places WHERE place = 'Ma';
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: CATCH SQL = java.sql.SQLException: Column 'place' not found.
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Om stmt != null så stänger vi stmt
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: DBCommunicator/confirmComplex: Returnerar = false
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Boolean som skickas = false
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är FALSE så skickar vi följande till errorHandler = Välj en plats från listan
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Välj en plats från listan",}
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:18:34 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_CNF: Om boolean är TRUE så skickas den till sendBoolToClient = false
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/sendBoolToClient: Inne i metoden 
+maj 09, 2016 10:18:34 FM server.Server sendBool
+INFO: sendBool: Skickar följande: false
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 2
+
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Här skickas boolean genom output streamen
+
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 2: Boolean är skickat genom outputstreamen = false
+
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:18:34 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=58212,localport=8080]
+
+maj 09, 2016 10:18:34 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Ma
+
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Ma
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Ma%';
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Ma%';
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [Malmö Högskola]
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 1
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om arraylisten är större än 0 så skickas den via createJSON
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/CreateJSON_GCO: JSON som skickas = {"nbrOfPlaces": "1","place1": "Malmö Högskola",}
+maj 09, 2016 10:18:34 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:18:34 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:18:34 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:19:04 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:19:04 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.140.117,port=64337,localport=8080]
+
+maj 09, 2016 10:19:04 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:19:04 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0418,Malmö Högskola
+
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0418,Malmö Högskola
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0418'
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0418'
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0418'
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H12]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H9]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H8]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H5, NI4H3]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H6, NI6H4, NI6H2, NI6H10]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4, NI4H11, NI4H13]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H5]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H5]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H4, NI6H11, NI6H13]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H2, NI5H10, NI5H4, NI5H6]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H3, NI4H7]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4, NI4H6, NI4H2, NI4H10]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H2, NI5H3, NI5H10]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H1, NI5H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H1, NI4H2, NI4H3, NI4H10]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H1, NI6H2, NI6H3, NI6H10]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H12]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H9]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H1, NI4H4]
+maj 09, 2016 10:19:04 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:19:18 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.140.117,port=65292,localport=8080]
+
+maj 09, 2016 10:19:18 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:19:18 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0418,Malmö Högskola
+
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0418,Malmö Högskola
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0418'
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0418'
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = 
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT levels FROM locatormah.room WHERE roomid = 'nia0418'
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/dBgetNodes: Returnerar noder
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H9]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H12]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H12]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H9]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H8]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H8]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H8]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H4, NI5H11, NI5H13]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI6H3, NI6H7]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H5, NI4H3]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI5H3, NI5H7]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = [NI4H4]
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:18 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 10:19:40 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:19:40 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.140.117,port=50410,localport=8080]
+
+maj 09, 2016 10:19:40 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:19:41 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0418,Malmö Högskola
+
+maj 09, 2016 10:19:41 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0418,Malmö Högskola
+maj 09, 2016 10:19:41 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:19:41 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:19:41 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:19:41 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = null
+maj 09, 2016 10:19:41 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = null
+maj 09, 2016 10:19:41 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM null.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0418'
+maj 09, 2016 10:19:41 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Om fel - Då skickas följande meddelande = Fel när du angav rummets namn, försök igen.
+maj 09, 2016 10:19:41 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Fel när du angav rummets namn, försök igen.",}
+maj 09, 2016 10:19:41 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:19:41 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:19:41 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:19:41 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:19:41 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 10:20:20 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 10:20:20 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/83.249.140.117,port=53103,localport=8080]
+
+maj 09, 2016 10:20:20 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 10:20:20 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,nia0418,Malmö Högskola
+
+maj 09, 2016 10:20:20 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,nia0418,Malmö Högskola
+maj 09, 2016 10:20:20 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 09, 2016 10:20:20 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 09, 2016 10:20:20 FM server.Server LOGG
+INFO: DBCommunicator/dBchange: CATCH SQL = com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Data source rejected establishment of connection,  message from server: "Too many connections"
+maj 09, 2016 10:20:20 FM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = null
+maj 09, 2016 10:20:20 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = null
+maj 09, 2016 10:20:20 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM null.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'nia0418'
+maj 09, 2016 10:20:20 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Om fel - Då skickas följande meddelande = Fel när du angav rummets namn, försök igen.
+maj 09, 2016 10:20:20 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Fel när du angav rummets namn, försök igen.",}
+maj 09, 2016 10:20:20 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 10:20:20 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 10:20:20 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 10:20:20 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 10:20:20 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
