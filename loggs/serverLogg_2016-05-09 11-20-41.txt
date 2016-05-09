@@ -1,0 +1,64 @@
+maj 09, 2016 11:20:41 FM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+maj 09, 2016 11:21:07 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 11:21:07 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=35814,localport=8080]
+
+maj 09, 2016 11:21:07 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 11:21:07 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,Kdkdk
+
+maj 09, 2016 11:21:07 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,Kdkdk
+maj 09, 2016 11:21:07 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: SQL anropet = SELECT place FROM locatormain.places WHERE place LIKE 'Kdkdk%';
+maj 09, 2016 11:21:07 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Inne i metoden
+maj 09, 2016 11:21:07 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: SQL anrop = SELECT place FROM locatormain.places WHERE place LIKE 'Kdkdk%';
+maj 09, 2016 11:21:07 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Om stmt != null så stänger vi stmt
+maj 09, 2016 11:21:07 FM server.Server LOGG
+INFO: DBCommunicator/searchComplex: Returnerar resultatet = []
+maj 09, 2016 11:21:07 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Arraylisten har storlek = 0
+maj 09, 2016 11:21:07 FM server.Server LOGG
+INFO: CONTROLLER/createSQL_GCO: Om Arraylisten inte innegåller något så anropas errorHandler med = Det saknas en plats som innehåller bokstäverna Kdkdk, försök igen.
+maj 09, 2016 11:21:07 FM server.Server LOGG
+INFO: CONTROLLER/ErrorHandler: JSON texten = {"name": "Error","message": "Det saknas en plats som innehåller bokstäverna Kdkdk, försök igen.",}
+maj 09, 2016 11:21:07 FM server.Server LOGG
+INFO: CONTROLLER/sendCompleteJSONToClient: Inne i metoden
+maj 09, 2016 11:21:07 FM server.Server sendJsonToClient
+INFO: sendJsonToClient: Skickar info till klient
+
+maj 09, 2016 11:21:07 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 1
+
+maj 09, 2016 11:21:07 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Switch 1: Json skickat genom output
+
+maj 09, 2016 11:21:07 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.net.SocketException: socket closed
+
+maj 09, 2016 11:21:09 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 09, 2016 11:21:09 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/82.183.62.105,port=60380,localport=8080]
+
+maj 09, 2016 11:21:09 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 09, 2016 11:21:09 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = GCO,
+
+maj 09, 2016 11:21:09 FM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = GCO,
+maj 09, 2016 11:21:09 FM server.Server$ThreadHandler run
+INFO: THREADHANDLER: msgFromClient skickas till Controller med info = 0
+

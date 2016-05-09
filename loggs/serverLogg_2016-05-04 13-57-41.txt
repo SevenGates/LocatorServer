@@ -1,0 +1,37 @@
+maj 04, 2016 1:57:41 EM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+maj 04, 2016 1:57:45 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 04, 2016 1:57:45 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/79.138.130.220,port=63935,localport=8080]
+
+maj 04, 2016 1:57:45 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 04, 2016 1:57:46 EM server.Server$ThreadHandler run
+INFO: THREADHANDLER: Läser innehållet från input = SER,hejhejgeh,Malmö Högskola
+
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = SER,hejhejgeh,Malmö Högskola
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Inne i metoden.
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: SQLanropet = SELECT dbname FROM locatormain.places WHERE place LIKE 'Malmö Högskola';
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/dBchange: Om stmt != null så stänger vid stmt
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/changeDB: Returnerat från DB = locatormah
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: Har ändrat DB med följande information = locatormah
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: CONTROLLER/createSQL_SER: SQLQueryn som är genererad = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'hejhejgeh'
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Inne i metoden.
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Anropet till DB = SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor FROM locatormah.building JOIN levels ON building.name=levels.building JOIN room ON levels.id = room.levels WHERE roomid = 'hejhejgeh'
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Om stmt != null så stänget vi stmt
+maj 04, 2016 1:57:46 EM server.Server LOGG
+INFO: DBCommunicator/dcSearchRoom: Returnerar array

@@ -1,0 +1,39 @@
+maj 02, 2016 11:49:57 FM server.Server <init>
+INFO: KONSTRUKTORN: ServerSocket is created with port : 8080
+
+maj 02, 2016 11:50:55 FM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 02, 2016 11:50:55 FM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/115.239.228.8,port=1982,localport=8080]
+
+maj 02, 2016 11:50:55 FM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 02, 2016 11:51:26 FM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+maj 02, 2016 12:42:51 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 02, 2016 12:42:51 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/115.231.222.40,port=13175,localport=8080]
+
+maj 02, 2016 12:42:51 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 02, 2016 12:43:22 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+
+maj 02, 2016 2:17:49 EM server.Server <init>
+INFO: KONSTRUKTORN: Klienten är ansluten
+
+maj 02, 2016 2:17:49 EM server.Server$ThreadHandler <init>
+INFO: THREADHANDLER: clientSocket tilldelas = Socket[addr=/115.231.222.40,port=36030,localport=8080]
+
+maj 02, 2016 2:17:49 EM server.Server <init>
+INFO: KONSTRUKTORN: Tråden är startad
+
+maj 02, 2016 2:18:20 EM server.Server$ThreadHandler run
+VARNING: KONSTRUKTORN: CATCH IOE: java.io.EOFException
+

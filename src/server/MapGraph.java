@@ -90,11 +90,15 @@ public class MapGraph {
 	
 	public List<String> findShortestPath(int x1, int y1, int x2, int y2) {
 		HashMap map = graph.getNodes();
+		
+		
 		Node nodeCheck, node1 = new Node(-1), node2 = new Node(-1);
+		
 		for(int i = 0; i < Node.getNodeCount(); i++) {
 			nodeCheck = (Node)map.get(i);
-			if(nodeCheck.getNodeConf().getX() == x1 && nodeCheck.getNodeConf().getY() == y1)
+			if(nodeCheck.getNodeConf().getX() == x1 && nodeCheck.getNodeConf().getY() == y1){
 				node1 = nodeCheck;
+				}
 			else if (nodeCheck.getNodeConf().getX() == x2 && nodeCheck.getNodeConf().getY() == y2)
 				node2 = nodeCheck;
 		}
