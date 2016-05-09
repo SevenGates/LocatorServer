@@ -124,7 +124,6 @@ public class ServerController implements Serializable{
 		    createSQL_edge(dB, nID, room);
 		}
 		
-		
 		int x, y;
 		String lastNodeID = lastNode.get(0);
 		String lastNodeString = map.get(lastNodeID);
@@ -133,7 +132,7 @@ public class ServerController implements Serializable{
 		y = Integer.parseInt(coor[1]);
 		
 		String splited = floor.substring(2);
-		
+
 		int floorInt = Integer.parseInt(splited); 
 		int sx = 0, sy = 0;
 		switch (floorInt) {
@@ -196,7 +195,6 @@ public class ServerController implements Serializable{
 		for (int j = 0; j < newArray2.length; j++){
 			newArray2[j] = listCoords.get(j);
 		}
-		
 		
 		createJSON(newArray, newArray2);
 	}
@@ -315,7 +313,7 @@ public class ServerController implements Serializable{
 		
 		for (int i = 0; i < newArray2.length; i++){
 			jsonBuildText += "\",\"node" + (i+1) + "\": \"" + newArray2[i];
-			}
+		}
 		
 		jsonBuildText += jsonCloseText;
 		jsonNode += jsonBuildText;
@@ -328,6 +326,7 @@ public class ServerController implements Serializable{
 				+ "\"corridorCoor\": \"" + newArray[8] + "\","+jsonNode;
 		server.LOGG("CONTROLLER/CreateJSON: När det gjorts om till JSON");
 		JSONObject obj = new JSONObject(jsonText);
+
 		System.out.println("Antal noder = " + obj.get("nbrOfNodes"));
 		System.out.println("-------NODHANTERING SLUT-------");
 		System.out.println("");
