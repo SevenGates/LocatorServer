@@ -21,11 +21,15 @@ import org.json.JSONObject;
 import com.mysql.jdbc.Statement;
 
 public class DBCommunicator implements Serializable{
+	private String dbURL;
+	final String username = "root";
+	final String password = "k5!298E45H";
 	private ServerController controller;
 	private HashMap<String,String> map = new HashMap<String, String>();
 
 	
 	public DBCommunicator(ServerController serverController) {
+		dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
 		controller = serverController;
 	}
 
@@ -33,12 +37,10 @@ public class DBCommunicator implements Serializable{
 		controller.loggDB("DBCommunicator/dcSearchRoom: Inne i metoden.");
 		Statement stmt = null;
 		Connection con = null;
-		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
-		String username = "root";
-		String password = "k5!298E45H";
+		String dbURL = this.dbURL;
 		String query = roomSearch;
 		controller.loggDB("DBCommunicator/dcSearchRoom: Anropet till DB = " + roomSearch);
-		String[] array = new String[9];
+		String[] array = new String[11];
 		String[] errorArray = new String[2];
 		array[0] = "Error";
 
@@ -53,8 +55,8 @@ public class DBCommunicator implements Serializable{
 				System.out.println("");
 				System.out.println("--------SÖKNING PÅ RUM---------");
 				System.out.println("Byggnad = " + array[0]);
-				array[1] = rs.getString("path");
-				System.out.println("Överblicksbild = " + array[1]);
+				array[1] = rs.getString("nbrOfpaths");
+				System.out.println("Antal paths = " + array[1]);
 				array[2] = rs.getString("floors");
 				System.out.println("Antal våningar = " + array[2]);
 				array[3] = rs.getString("id");
@@ -68,6 +70,10 @@ public class DBCommunicator implements Serializable{
 				System.out.println("Koordinater till dörr = " +array[7]);
 				array[8] = rs.getString("corridorCoor");
 				System.out.println("Korridinater till korridor = " +array[8]);
+				array[9] = rs.getString("longi");
+				System.out.println("Longitud = " +array[9]);
+				array[10] = rs.getString("lati");
+				System.out.println("Latitud = " +array[10]);
 				System.out.println("--------SÖKNING AVSLUTAD---------");
 				System.out.println("");
 				
@@ -89,9 +95,6 @@ public class DBCommunicator implements Serializable{
 		controller.loggDB("DBCommunicator/dcSearchRoom: Inne i metoden.");
 		Statement stmt = null;
 		Connection con = null;
-		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
-		String username = "root";
-		String password = "k5!298E45H";
 		String query = roomSearch;
 		controller.loggDB("DBCommunicator/dcSearchRoom: Anropet till DB = " + roomSearch);
 		String floor = "";
@@ -121,9 +124,6 @@ public class DBCommunicator implements Serializable{
 		controller.loggDB("DBCommunicator/dBchange: Inne i metoden.");
 		Statement stmt = null;
 		Connection con = null;
-		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
-		String username = "root";
-		String password = "k5!298E45H";
 		String query = string;
 		controller.loggDB("DBCommunicator/dBchange: SQLanropet = " + string);
 		String result = null;
@@ -143,7 +143,7 @@ public class DBCommunicator implements Serializable{
 				stmt.close();
 			}
 		}
-		
+		dbURL = "jdbc:mysql://localhost:3306/" +result+ "?useSSL=false";
 		return result;
 	}
 
@@ -151,9 +151,6 @@ public class DBCommunicator implements Serializable{
 		controller.loggDB("DBCommunicator/searchComplex: Inne i metoden");
 		Statement stmt = null;
 		Connection con = null;
-		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
-		String username = "root";
-		String password = "k5!298E45H";
 		String query = string;
 		controller.loggDB("DBCommunicator/searchComplex: SQL anrop = " + string);
 		ArrayList<String> result = new ArrayList<String>();
@@ -182,9 +179,6 @@ public class DBCommunicator implements Serializable{
 		controller.loggDB("DBCommunicator/confirmComplex: Inne i metoden");
 		Statement stmt = null;
 		Connection con = null;
-		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
-		String username = "root";
-		String password = "k5!298E45H";
 		String query = string;
 		controller.loggDB("DBCommunicator/confirmComplex: SQLanrop = " + string);
 		
@@ -221,9 +215,6 @@ public class DBCommunicator implements Serializable{
 		controller.loggDB("DBCommunicator/dcSearchRoom: Inne i metoden.");
 		Statement stmt = null;
 		Connection con = null;
-		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
-		String username = "root";
-		String password = "k5!298E45H";
 		String query = queryGetNodes;
 
 		try {
@@ -251,9 +242,6 @@ public class DBCommunicator implements Serializable{
 		controller.loggDB("DBCommunicator/dcSearchRoom: Inne i metoden.");
 		Statement stmt = null;
 		Connection con = null;
-		String dbURL = "jdbc:mysql://localhost:3306/locatormah?useSSL=false";
-		String username = "root";
-		String password = "k5!298E45H";
 		String query = queryGetNodes;
 		String value = "NAJS";
 
@@ -279,9 +267,6 @@ public class DBCommunicator implements Serializable{
 	public ArrayList<String> dBSearchEdges(String queryGetEdges) throws SQLException {
 		Statement stmt = null;
 		Connection con = null;
-		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
-		String username = "root";
-		String password = "k5!298E45H";
 		String query = queryGetEdges;
 		ArrayList<String> result = new ArrayList<String>();
 		
@@ -311,9 +296,6 @@ public class DBCommunicator implements Serializable{
 	public ArrayList<String> dBSearchLastNode(String queryGetEdges) throws SQLException {
 		Statement stmt = null;
 		Connection con = null;
-		String dbURL = "jdbc:mysql://localhost:3306/locatormain?useSSL=false";
-		String username = "root";
-		String password = "k5!298E45H";
 		String query = queryGetEdges;
 		ArrayList<String> result = new ArrayList<String>();
 		
