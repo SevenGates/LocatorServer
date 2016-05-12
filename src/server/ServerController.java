@@ -157,62 +157,66 @@ public class ServerController implements Serializable{
 		
 		switch (floorInt) {
 		case 1 : 
-			s1x = 1000;
+			s1x = 1000; // Vanligaste ingången
 			s1y = 581;
-			s2x = 861;
+			s2x = 861; // Mot vägen eller G8
 			s2y = 705;
-			s3x = 800;
+			s3x = 800; // Mot kanalen
 			s3y = 493;
 			s4x = 0;
 			s4y = 0;
 			break;
 		case 2 : 
-			s1x = 690;
-			s1y = 767;
-			s2x = 618;
-			s2y = 603;
-			s3x = 690;
-			s3y = 767;
+			s1x = 618; // Trappa
+			s1y = 603;
+			s2x = 690; // Hiss A
+			s2y = 767;
+			s3x = 924; // Hiss B
+			s3y = 724;
 			s4x = 0;
 			s4y = 0;
 			break;
 		case 3 :
-			s1x = 735;
+			s1x = 735; // Hiss A och Trappa
 			s1y = 758;
-			s2x = 735;
-			s2y = 758;
-			s3x = 986;
-			s3y = 709;
+			s2x = 986; // Hiss B 
+			s2y = 709;
+			s3x = 915; // Hiss C
+			s3y = 418;
 			s4x = 0;
 			s4y = 0;
 			break;
 		case 4 : 
-			s1x = 976;
-			s1y = 703;
-			s2x = 714;
+			s1x = 714; // Hiss A och Trappa
+			s1y = 755;
+			s2x = 714; // Hiss A och Trappa
 			s2y = 755;
-			s3x = 976;
-			s3y = 703;
-			s4x = 0;
-			s4y = 0;
+			s3x = 714; // Hiss A och Trappa
+			s3y = 755;
+//			s2x = 976; // Hiss B 
+//			s2y = 703;
+//			s3x = 900; // Hiss C
+//			s3y = 410;
+//			s4x = 0;
+//			s4y = 0;
 			break;
 		case 5 : 
-			s1x = 885;
-			s1y = 786;
-			s2x = 627;
-			s2y = 830;
-			s3x = 885;
-			s3y = 786;
+			s1x = 627; // Hiss A och Trappa
+			s1y = 830;
+			s2x = 885; // Hiss B 
+			s2y = 786;
+			s3x = 810; // Hiss C
+			s3y = 485;
 			s4x = 0;
 			s4y = 0;
 			break;
 		case 6 : 
-			s1x = 978;
-			s1y = 712;
-			s2x = 709;
-			s2y = 759;
-			s3x = 978;
-			s3y = 712;
+			s1x = 709; // Hiss A och Trappa
+			s1y = 759;
+			s2x = 978; // Hiss B 
+			s2y = 712;
+			s3x = 900; // Hiss C
+			s3y = 410;
 			s4x = 0;
 			s4y = 0;
 			break;
