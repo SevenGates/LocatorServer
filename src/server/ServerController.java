@@ -29,6 +29,7 @@ public class ServerController implements Serializable{
 	DBCommunicator dbCom;
 	MapGraph mp = new MapGraph();
 	int x, y, s1x, s1y, s2x, s2y, s3x, s3y, s4x, s4y;
+	String s1name, s2name, s3name, s4name;
 	private HashMap<String,String> map = new HashMap<String, String>();
 	ArrayList<String> lastNode = new ArrayList<String>();
 	ArrayList<String> fromDBNew = new ArrayList<String>();
@@ -134,17 +135,32 @@ public class ServerController implements Serializable{
 	}
 
 	private ArrayList findShortestPath(String[] fromDB) {
-		List <String> listCoords = mp.findShortestPath(s1x, s1y, x, y);
+		
 		ArrayList<String> findShortestPath = new ArrayList<String>();
-		for (int k = 0; k < fromDB.length; k++){ findShortestPath.add(fromDB[k]);}
-		findShortestPath.add(Integer.toString(listCoords.size()));	
-		for (int j = 0; j < listCoords.size(); j++){ findShortestPath.add(listCoords.get(j));}
-		List <String> listCoords2 = mp.findShortestPath(s2x, s2y, x, y);
-		findShortestPath.add(Integer.toString(listCoords2.size()));	
-		for (int i = 0; i < listCoords2.size(); i++){ findShortestPath.add(listCoords2.get(i));}
-		List <String> listCoords3 = mp.findShortestPath(s3x, s3y, x, y);
-		findShortestPath.add(Integer.toString(listCoords3.size()));	
-		for (int c = 0; c < listCoords3.size(); c++){ findShortestPath.add(listCoords3.get(c));}
+		List <String> listCoords = new ArrayList<String>();
+		int[] iterate = {Integer.parseInt(fromDB[1]), s1x, s1y, s2x, s2y, s3x, s3y, s4x, s4y};
+		for (int k = 0; k < fromDB.length; k++){
+			findShortestPath.add(fromDB[k]);
+		}
+		
+		for(int nbr = 1; nbr <= iterate[0]; nbr++) {
+			listCoords = mp.findShortestPath(iterate[(nbr*2)-1], iterate[nbr*2], x, y);
+			findShortestPath.add(Integer.toString(listCoords.size()));
+			for (int j = 0; j < listCoords.size(); j++){
+				findShortestPath.add(listCoords.get(j));
+			}
+		}
+//		List <String> listCoords = mp.findShortestPath(s1x, s1y, x, y);
+//		ArrayList<String> findShortestPath = new ArrayList<String>();
+//		for (int k = 0; k < fromDB.length; k++){ findShortestPath.add(fromDB[k]);}
+//		findShortestPath.add(Integer.toString(listCoords.size()));	
+//		for (int j = 0; j < listCoords.size(); j++){ findShortestPath.add(listCoords.get(j));}
+//		List <String> listCoords2 = mp.findShortestPath(s2x, s2y, x, y);
+//		findShortestPath.add(Integer.toString(listCoords2.size()));	
+//		for (int i = 0; i < listCoords2.size(); i++){ findShortestPath.add(listCoords2.get(i));}
+//		List <String> listCoords3 = mp.findShortestPath(s3x, s3y, x, y);
+//		findShortestPath.add(Integer.toString(listCoords3.size()));	
+//		for (int c = 0; c < listCoords3.size(); c++){ findShortestPath.add(listCoords3.get(c));}
 		map.clear();
 		System.out.println(findShortestPath.toString());
 		return findShortestPath;
@@ -165,16 +181,24 @@ public class ServerController implements Serializable{
 			s3y = 493;
 			s4x = 0;
 			s4y = 0;
+			s1name = "Ingången mot centralen";
+			s2name = "Ingången mot MalmöLive";
+			s3name = "Ingången mot kanalen";
+			s4name = "NotInUse";
 			break;
 		case 2 : 
 			s1x = 618; // Trappa
 			s1y = 603;
 			s2x = 690; // Hiss A
 			s2y = 767;
-			s3x = 924; // Hiss B
+			s3x = 964; // Hiss B
 			s3y = 724;
 			s4x = 0;
 			s4y = 0;
+			s1name = "Trappa";
+			s2name = "Hiss A";
+			s3name = "Hiss B";
+			s4name = "NotInUse";
 			break;
 		case 3 :
 			s1x = 735; // Hiss A och Trappa
@@ -185,20 +209,24 @@ public class ServerController implements Serializable{
 			s3y = 418;
 			s4x = 0;
 			s4y = 0;
+			s1name = "Trappa / Hiss A";
+			s2name = "Hiss B";
+			s3name = "Hiss C";
+			s4name = "NotInUse";
 			break;
 		case 4 : 
 			s1x = 714; // Hiss A och Trappa
 			s1y = 755;
-			s2x = 714; // Hiss A och Trappa
-			s2y = 755;
-			s3x = 714; // Hiss A och Trappa
-			s3y = 755;
-//			s2x = 976; // Hiss B 
-//			s2y = 703;
-//			s3x = 900; // Hiss C
-//			s3y = 410;
-//			s4x = 0;
-//			s4y = 0;
+			s2x = 976; // Hiss B 
+			s2y = 703;
+			s3x = 900; // Hiss C
+			s3y = 410;
+			s4x = 0;
+			s4y = 0;
+			s1name = "Trappa / Hiss A";
+			s2name = "Hiss B";
+			s3name = "Hiss C";
+			s4name = "NotInUse";
 			break;
 		case 5 : 
 			s1x = 627; // Hiss A och Trappa
@@ -209,6 +237,10 @@ public class ServerController implements Serializable{
 			s3y = 485;
 			s4x = 0;
 			s4y = 0;
+			s1name = "Trappa / Hiss A";
+			s2name = "Hiss B";
+			s3name = "Hiss C";
+			s4name = "NotInUse";
 			break;
 		case 6 : 
 			s1x = 709; // Hiss A och Trappa
@@ -219,6 +251,10 @@ public class ServerController implements Serializable{
 			s3y = 410;
 			s4x = 0;
 			s4y = 0;
+			s1name = "Trappa / Hiss A";
+			s2name = "Hiss B";
+			s3name = "Hiss C";
+			s4name = "NotInUse";
 			break;
 		}
 		
@@ -333,32 +369,42 @@ public class ServerController implements Serializable{
 		
 		String pic2 = stringToByte(all.get(4));
 		String jsonBuildText = "";
-		String jsonBuildText2 = "";
-		String jsonBuildText3 = "";
+//		String jsonBuildText2 = "";
+//		String jsonBuildText3 = "";
 		String jsonCloseText = "\",}";
-		String longi = "55.6091855";
-		String lati = "12.9925708";
-		int inArray = 12+Integer.parseInt(all.get(11));
-		int inArray2 = (inArray + Integer.parseInt(all.get(inArray)) + 1);
+//		int inArray = 12+Integer.parseInt(all.get(11));
+//		int inArray2 = (inArray + Integer.parseInt(all.get(inArray)) + 1);
+		int position = 11;
+		int count = Integer.parseInt(all.get(11));
+		
+		for(int nbr = 1; nbr <= Integer.parseInt(all.get(1)); nbr++) {
+			jsonBuildText += "\"nbrOfNodesS"+ nbr +"\": \"" + all.get(position) + "\",";
+			for (int i = 0; i < count; i++){
+				jsonBuildText += "\"s" + nbr + "node" + (i+1) + "\": \"" + all.get(position+(i+1)) + "\",";
+			}
+			position += (count+1);
+			if(position!=all.size()) {
+			count = Integer.parseInt(all.get(position));
+			}
+		}
 		
 		
-		for (int i = 0; i < Integer.parseInt(all.get(11)); i++){
-			jsonBuildText += "\",\"s1node" + (i+1) + "\": \"" + all.get(11+(i+1));
-		}
-						
-		for (int i = 0; i < Integer.parseInt(all.get(inArray)); i++){
-			jsonBuildText2 += "\",\"s2node" + (i+1) + "\": \"" + all.get(inArray+(i+1));
-		}
-				
-		for (int i = 0; i < Integer.parseInt(all.get(inArray2)); i++){
-			jsonBuildText3 += "\",\"s3node" + (i+1) + "\": \"" + all.get(inArray2+(i+1));
-		}
+//		for (int i = 0; i < Integer.parseInt(all.get(11)); i++){
+//			jsonBuildText += "\",\"s1node" + (i+1) + "\": \"" + all.get(11+(i+1));
+//		}
+//						
+//		for (int i = 0; i < Integer.parseInt(all.get(inArray)); i++){
+//			jsonBuildText2 += "\",\"s2node" + (i+1) + "\": \"" + all.get(inArray+(i+1));
+//		}
+//				
+//		for (int i = 0; i < Integer.parseInt(all.get(inArray2)); i++){
+//			jsonBuildText3 += "\",\"s3node" + (i+1) + "\": \"" + all.get(inArray2+(i+1));
+//		}
 		
 		if (all.get(3).equals("NIE")){
 			all.set(3, "NI1");
 		}
 		
-		System.out.println(all.get(3));
 				
 		String jsonText = "{\"name\": \"" + all.get(0) + "\","+ 
 							"\"nbrOfPaths\": \"" + all.get(1) + "\"," + 
@@ -369,19 +415,27 @@ public class ServerController implements Serializable{
 							"\"roomCoor\": \"" + all.get(6) + "\","+ 
 							"\"doorCoor\": \"" + all.get(7) + "\","	+ 
 							"\"corridorCoor\": \"" + all.get(8) + "\","+
-							"\"nbrOfNodesS1\": \"" + all.get(11)+
-							jsonBuildText+"\","+
-							"\"nbrOfNodesS2\": \"" + all.get(inArray)+ 
-							jsonBuildText2+"\","+
-							"\"nbrOfNodesS3\": \"" + all.get(inArray2)+ 
-							jsonBuildText3+"\","+
+//							"\"nbrOfNodesS1\": \"" + all.get(11)+
+							jsonBuildText+
+//							"\","+
+//							"\"nbrOfNodesS2\": \"" + all.get(inArray)+ 
+//							jsonBuildText2+"\","+
+//							"\"nbrOfNodesS3\": \"" + all.get(inArray2)+ 
+//							jsonBuildText3+"\","+
 							"\"long\": \"" + all.get(9) + "\","+ 
-							"\"lat\": \"" + all.get(10) + jsonCloseText;
+							"\"lat\": \"" + all.get(10) + "\","+ 
+							"\"s1name\": \"" + s1name + "\","+ 
+							"\"s2name\": \"" + s2name + "\","+ 
+							"\"s3name\": \"" + s3name + "\","+ 
+							"\"s4name\": \"" + s4name + jsonCloseText;
+		
+		
 		
 		server.LOGG("CONTROLLER/CreateJSON: När det gjorts om till JSON");
 		JSONObject obj = new JSONObject(jsonText);
 		System.out.println("-------NODHANTERING SLUT-------");
 		System.out.println("");
+		
 		
 		sendCompleteJSONToClient(obj);
 	}
