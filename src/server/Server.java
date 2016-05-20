@@ -28,7 +28,7 @@ import java.util.logging.*;
 
 /**
  * A class for a javaServer. 
- * @author Chrille
+ * @author Chrille & Isak
  *
  */
 
@@ -42,7 +42,7 @@ public class Server implements Serializable{
 	Object send;
 	private final static Logger LOGG = Logger.getLogger("ServerLogg");
 	
-	/*
+	/**
 	 * Constructor that starts the loggfile, serversocket and a instance of the controller.
 	 * Starting a thread that looops and waiting for a client to connect. 
 	 */
@@ -149,10 +149,8 @@ public class Server implements Serializable{
 
 	public void sendBool(boolean b) {
 		LOGG.info("sendBool: Skickar följande: " + b);
-//		if (b == false){
-			confirmComplex = b;
-//		} else
-//		confirmComplex = 1;
+		confirmComplex = b;
+
 	}
 	
 	private void newLoggFile() throws IOException {

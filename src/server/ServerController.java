@@ -21,30 +21,31 @@ import javax.imageio.ImageIO;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import brite.Graph.Node;
+
 public class ServerController implements Serializable{
+	private static final long serialVersionUID = 2797313745946203668L;
 	Server server;
 	DBCommunicator dbCom;
 	MapGraph mp = new MapGraph();
+	int x, y, s1x, s1y, s2x, s2y, s3x, s3y, s4x, s4y;
+	String s1name, s2name, s3name, s4name;
 	private HashMap<String,String> map = new HashMap<String, String>();
-	private HashMap<String,ArrayList<String>> edgeMap = new HashMap<String,ArrayList<String>>();
 	ArrayList<String> lastNode = new ArrayList<String>();
+	ArrayList<String> fromDBNew = new ArrayList<String>();
+	String forNow;
 
 	public ServerController(Server server) {
 		this.server = server;
 		dbCom = new DBCommunicator(this);
 	}
 
-	/*
-	 * Spliting the message from Client. If the three first letters is one of the IF´s they will be activated.
-	 * 
-	 */
 	public int msgFromClient(String request) throws SQLException, JSONException, IOException {
 		String sqlQuery = request;
 		server.LOGG("CONTROLLER/msgFromClient: Kontrollerar vad controllern tar emot från klienten = " + request);
 		String[] splitQuery = sqlQuery.split(",");
-//		if (splitQuery.length < 2){
-//			return 0;
-//		}
+
+
 		if (splitQuery[0].equals("GCO")) {
 			createSQL_GCO(splitQuery[1]);
 			return 1;
@@ -70,12 +71,11 @@ public class ServerController implements Serializable{
 	private void createSQL_SER(String[] splitQuery) throws SQLException, JSONException, IOException {
 		String msg = "Fel när du angav rummets namn, försök igen.";
 		splitQuery[2] = changeDB(splitQuery[2]);
-		server.LOGG("CONTROLLER/createSQL_SER: Har ändrat DB med följande information = " + splitQuery[2]);
-		
-		String SERQuery = "SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor " + "FROM "
+			server.LOGG("CONTROLLER/createSQL_SER: Har ändrat DB med följande information = " + splitQuery[2]);
+		String SERQuery = "SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor, nbrOfPaths, longi, lati " + "FROM "
 				+ splitQuery[2] + ".building " + "JOIN levels " + "ON building.name=levels.building " + "JOIN room "
 				+ "ON levels.id = room.levels " + "WHERE roomid = '" + splitQuery[1] + "'";
-		server.LOGG("CONTROLLER/createSQL_SER: SQLQueryn som är genererad = " + SERQuery);
+			server.LOGG("CONTROLLER/createSQL_SER: SQLQueryn som är genererad = " + SERQuery);
 		String[] fromDB ;
 		try {
 			if (splitQuery[2] == null){
@@ -94,7 +94,6 @@ public class ServerController implements Serializable{
 				
 			}
 		} catch (SQLException | JSONException | IOException e) {
-			// TODO Auto-generated catch block
 			server.LOGG("CONTROLLER/createSQL_SER: CATCH = " + e);
 		}
 		
@@ -103,17 +102,7 @@ public class ServerController implements Serializable{
 	}
 
 	private void createSQL_nodes(String room, String dB, String[] fromDB) throws SQLException, JSONException, IOException {
-		String queryGetFloor = "SELECT levels " + "FROM "
-				+ dB + ".room " + "WHERE roomid = '" + room + "'";
-		String floor = "";
-		try {
-			floor = dbCom.dBSearchFloor(queryGetFloor);
-			
-		} catch (SQLException | JSONException | IOException e) {
-			server.LOGG("CONTROLLER/createSQL_nodes: CATCH = " + e);
-		}
-		
-		
+		String floor = createSQL_getFloor(dB, room);
 		String queryGetNodes = "SELECT nID, coor " + "FROM "
 				+ dB + ".node " + "WHERE nID LIKE '" + floor + "%'";
 		map = dbCom.dBGetNodes(queryGetNodes);
@@ -123,108 +112,124 @@ public class ServerController implements Serializable{
 		    String nID = entry.getKey();
 		    createSQL_edge(dB, nID, room);
 		}
+		getTheLastNode(dB, room);
+		Object[] xAndY = getTheStartNode(dB, fromDB);
+		ArrayList<String> all = findShortestPath(fromDB, xAndY);
+		createJSON(all);
 		
-		int x, y;
+	}
+	
+	private void getTheLastNode(String dB, String room) {
+		String queryGetEdges2 = "SELECT nID " + "FROM "
+				+ dB + ".noderoom " + "WHERE roomID = '" + room + "';";
+		try {
+			lastNode = dbCom.dBSearchLastNode(queryGetEdges2);
+		} catch (SQLException e) {
+			server.LOGG("CONTROLLER/create: CATCH = " + e);
+		}	
 		String lastNodeID = lastNode.get(0);
 		String lastNodeString = map.get(lastNodeID);
 		String[] coor = lastNodeString.split("\\.");
 		x = Integer.parseInt(coor[0]);
 		y = Integer.parseInt(coor[1]);
-		
-		String splited = floor.substring(2);
-
-		int floorInt = Integer.parseInt(splited); 
-		int sx = 0, sy = 0;
-		switch (floorInt) {
-		case 1 : 
-			sx = 1000;
-			sy = 581;
-			break;
-		case 2 : 
-			sx = 618;
-			sy = 603;
-			break;
-		case 3 :
-			sx = 735;
-			sy = 758;
-			break;
-		case 4 : 
-			sx = 714;
-			sy = 755;
-			break;
-		case 5 : 
-			sx = 627;
-			sy = 830;
-			break;
-		case 6 : 
-			sx = 709;
-			sy = 759;
-			break;
-		}
-		
-		List <String> listCoords = mp.findShortestPath(sx, sy, x, y);
-		
-//		int sizeOnArray = fromDB.length;
-//		int sizeListCoords = listCoords.size();
-//		int totalSize = sizeOnArray+sizeListCoords;
-//		String[] newArray = new String[totalSize+1];
-//		
-//		
-//		for(int i = 0; i < fromDB.length; i++){
-//			newArray[i] = fromDB[i];
-//		}
-//		
-//		newArray[sizeOnArray] = Integer.toString(sizeListCoords);
-//				
-//		for (int j = sizeOnArray+1; j < newArray.length; j++){
-//			newArray[j] = listCoords.get(j-(sizeOnArray+1));
-//		}
-		
-		int sizeOnArray = fromDB.length;
-		int sizeListCoords = listCoords.size();
-		String[] newArray = new String[sizeOnArray+1];
-		String[] newArray2 = new String[sizeListCoords];
-		
-		
-		for(int i = 0; i < fromDB.length; i++){
-			newArray[i] = fromDB[i];
-		}
-		
-		newArray[sizeOnArray] = Integer.toString(sizeListCoords);
-				
-		for (int j = 0; j < newArray2.length; j++){
-			newArray2[j] = listCoords.get(j);
-		}
-		
-		createJSON(newArray, newArray2);
 	}
-	
+
+	private ArrayList findShortestPath(String[] fromDB, Object[] xAndY) {
+		int[] xCoor = (int[]) xAndY[0];
+		int[] yCoor = (int[]) xAndY[1];
+		String[] allTheNames = (String[]) xAndY[2];
+		int nbrOfPath = Integer.parseInt(fromDB[1]);
+		ArrayList<String> findShortestPath = new ArrayList<String>();
+		List <String> listCoords = new ArrayList<String>();
+//		int[] iterate = {Integer.parseInt(fromDB[1]), s1x, s1y, s2x, s2y, s3x, s3y, s4x, s4y};
+		for (int k = 0; k < fromDB.length; k++){
+			findShortestPath.add(fromDB[k]);
+		}
+		
+		for(int nbr = 0; nbr < nbrOfPath; nbr++) {
+			listCoords = mp.findShortestPath(xCoor[nbr], yCoor[nbr], x, y);
+			findShortestPath.add(Integer.toString(listCoords.size()));
+			for (int j = 0; j < listCoords.size(); j++){
+				findShortestPath.add(listCoords.get(j));
+			}
+		}
+		
+		for(int i = 0; i < allTheNames.length; i++) {
+			findShortestPath.add(allTheNames[i]);
+		}
+
+		map.clear();
+		System.out.println(findShortestPath.toString());
+		return findShortestPath;
+	}
+
+	private Object[] getTheStartNode(String dB, String[] fromDB) {
+		int[] startNodesX = new int[Integer.parseInt(fromDB[1])];
+		int[] startNodesY = new int[Integer.parseInt(fromDB[1])];
+		String[] namePath = getPathNames(fromDB, dB);
+		String temp = "";
+		
+		for (int i = 0; i < Integer.parseInt(fromDB[1]); i++){ 
+		String queryGetStartNode = "SELECT coor " + "FROM "
+				+ dB + ".node " + "WHERE nID = '" + fromDB[3]+ "S"+(i+1)+"';";
+		try {
+				temp = dbCom.dBGetStartNode(queryGetStartNode);
+				
+		} catch (SQLException e) {
+			server.LOGG("CONTROLLER/create: CATCH = " + e);
+		}	
+		String[] splitPath = temp.split("\\.");
+		startNodesX[i] = Integer.parseInt(splitPath[0]);
+		startNodesY[i] = Integer.parseInt(splitPath[1]);
+		}
+		Object[] xAndY = {startNodesX, startNodesY, namePath}; 
+		return xAndY;
+	}
+
+	private String[] getPathNames(String[] fromDB, String dB) {
+		String[] pathNames = new String[7];
+		String queryGetPathName = "SELECT path1Name, path2Name, path3Name, path4Name, path5Name, path6Name, path7Name " + "FROM "
+				+ dB + ".levels " + "WHERE id = '" + fromDB[3]+ "';";
+		try {
+				pathNames = dbCom.getPathName(queryGetPathName);
+				
+		} catch (SQLException e) {
+			server.LOGG("CONTROLLER/create: CATCH = " + e);
+		}	
+		
+		String[] finalNames = new String[Integer.parseInt(fromDB[1])];
+		for (int i = 0; i < finalNames.length; i++){
+			finalNames[i] = pathNames[i];		}
+		
+		return finalNames;
+	}
+
+	private String createSQL_getFloor(String dB, String room) {
+		String floor = "";
+		String queryGetFloor = "SELECT levels " + "FROM "
+				+ dB + ".room " + "WHERE roomid = '" + room + "'";
+		
+		try {
+			floor = dbCom.dBSearchFloor(queryGetFloor);
+						
+		} catch (SQLException | JSONException | IOException e) {
+			server.LOGG("CONTROLLER/createSQL_nodes: CATCH = " + e);
+		}
+		return floor;
+	}
+
 	private void createSQL_edge(String dB, String nID, String room) throws SQLException, JSONException, IOException {
 		String queryGetEdges = "SELECT connectID " + "FROM "
 				+ dB + ".edge " + "WHERE nID = '" + nID + "';";
-		ArrayList<String> fromDB = new ArrayList<String>();
-		
 		try {
-			fromDB = dbCom.dBSearchEdges(queryGetEdges);
-			if (fromDB.size() > 0){
-				for (int i = 0; i < fromDB.size();i++){
-					addEdges(nID, fromDB.get(i));
+			int test = 0;
+			fromDBNew = dbCom.dBSearchEdges(queryGetEdges);
+			if (fromDBNew.size() > 0){
+				for (int i = 0; i < fromDBNew.size();i++){
+					addEdges(nID, fromDBNew.get(i));
+					
 				}
-			}
-			
-		} catch (SQLException e) {
-			server.LOGG("CONTROLLER/create: CATCH = " + e);
-		}
-		
-		
-		String queryGetEdges2 = "SELECT nID " + "FROM "
-				+ dB + ".noderoom " + "WHERE roomID = '" + room + "';";
-		
-		try {
-			if (nID != null){
-			lastNode = dbCom.dBSearchLastNode(queryGetEdges2);
-			} else {
-				System.out.println("Inte skapat någon LastNode eftersom det är fel i sökningen.");
+				
 			}
 			
 		} catch (SQLException e) {
@@ -236,7 +241,9 @@ public class ServerController implements Serializable{
 	private void addEdges(String nID, String connected) {
 		int x1, x2, y1, y2;
 		String coor1 = map.get(nID);
+		System.out.println("nID = " + coor1);
 		String coor2 = map.get(connected);
+		System.out.println("connected = " + coor2);
 		String[] splitCoor = coor1.split("\\.");
 		String[] splitCoor2 = coor2.split("\\.");
 	    x1 = Integer.parseInt(splitCoor[0]);
@@ -256,8 +263,10 @@ public class ServerController implements Serializable{
 		    String[] splitCoor = value.split("\\.");
 		    x = Integer.parseInt(splitCoor[0]);
 		    y = Integer.parseInt(splitCoor[1]);
+		    
 		    mp.addNode(x, y);
 		}
+		
 	}
 
 	private void createSQL_GCO(String splitQuery) throws SQLException, JSONException, IOException {
@@ -298,42 +307,57 @@ public class ServerController implements Serializable{
 		return newString;
 	}
 	
-	/*
-	 * Metoden som tar emot allt från databasen. Vilken sal, byggnad, våning, bild och hur många noder den har ansluten till sig. 
-	 * Sedan gör vi om det till JSON för att skicka till klienten. 
-	 */
-	
-	private void createJSON(String[] newArray, String[] newArray2) throws IOException, JSONException {
-		newArray[1] = stringToByte(newArray[1]);
-		newArray[4] = stringToByte(newArray[4]);
-		String jsonNode = "\"nbrOfNodes\": \"" + newArray[9];
+	private void createJSON(ArrayList<String> all) throws IOException, JSONException {
+		String pic2 = stringToByte(all.get(4));
 		String jsonBuildText = "";
-		String jsonCloseText = "\",}";
-		int where = Integer.parseInt(newArray[9]);
+		String jsonCloseText = "}";
+		String jsonPathNames = "";
+		int position = 11;
+		int count = Integer.parseInt(all.get(11));
 		
-		for (int i = 0; i < newArray2.length; i++){
-			jsonBuildText += "\",\"node" + (i+1) + "\": \"" + newArray2[i];
+		
+		for(int nbr = 1; nbr <= Integer.parseInt(all.get(1)); nbr++) {
+			jsonBuildText += "\"nbrOfNodesS"+ nbr +"\": \"" + all.get(position) + "\",";
+			for (int i = 0; i < count; i++){
+				jsonBuildText += "\"s" + nbr + "node" + (i+1) + "\": \"" + all.get(position+(i+1)) + "\",";
+			}
+			position += (count+1);
+			if(position!=(all.size()-nbr)) {
+			count = Integer.parseInt(all.get(position));
+			}
 		}
 		
-		jsonBuildText += jsonCloseText;
-		jsonNode += jsonBuildText;
-		System.out.println("-------NODER--------");
-		System.out.println("JSONnode = " + jsonNode);
-
-		String jsonText = "{\"name\": \"" + newArray[0] + "\",\"path\": \"" + newArray[1] + "\"," + "\"floors\": \""
-				+ newArray[2] + "\",\"id\": \"" + newArray[3] + "\",\"map\": \"" + newArray[4] + "\"," + "\"roomid\": \""
-				+ newArray[5] + "\",\"roomCoor\": \"" + newArray[6] + "\", \"doorCoor\": \"" + newArray[7] + "\","
-				+ "\"corridorCoor\": \"" + newArray[8] + "\","+jsonNode;
+		
+		for(int k = 0; k < Integer.parseInt(all.get(1)) ; k++) {
+			jsonPathNames += "\"s" + (k+1) + "name\": \"" + all.get(position+k) + "\","; 
+		}
+		
+		if (all.get(3).equals("NIE")){
+			all.set(3, "NI1");
+		}	
+		String jsonText = "{\"name\": \"" + all.get(0) + "\","+ 
+							"\"nbrOfPaths\": \"" + all.get(1) + "\"," + 
+							"\"floors\": \""+ all.get(2) + "\","+ 
+							"\"id\": \"" + all.get(3) + "\","+
+							"\"map\": \"" + pic2 + "\"," + 
+							"\"roomid\": \"" + all.get(5) + "\","+
+							"\"roomCoor\": \"" + all.get(6) + "\","+ 
+							"\"doorCoor\": \"" + all.get(7) + "\","	+ 
+							"\"corridorCoor\": \"" + all.get(8) + "\","+
+							jsonBuildText+
+							"\"long\": \"" + all.get(9) + "\","+ 
+							"\"lat\": \"" + all.get(10) + "\","+ 
+							jsonPathNames + jsonCloseText;
+		
+		
+		
 		server.LOGG("CONTROLLER/CreateJSON: När det gjorts om till JSON");
 		JSONObject obj = new JSONObject(jsonText);
-
-		System.out.println("Antal noder = " + obj.get("nbrOfNodes"));
 		System.out.println("-------NODHANTERING SLUT-------");
 		System.out.println("");
 		
-		sendCompleteJSONToClient(obj);
 		
-
+		sendCompleteJSONToClient(obj);
 	}
 	
 	private void createJSON_GCO(ArrayList<String> differentPlaces) throws IOException, JSONException {
@@ -398,12 +422,3 @@ public class ServerController implements Serializable{
 	}
 	
 }
-
-/*
- * 
- * Skapa en metod som skapar en startnod.
- * Skapa en metod som skapar en slutnod.
- * Skapa EDGE-hashmap
- * 
- * 
- */
