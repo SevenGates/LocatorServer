@@ -113,8 +113,8 @@ public class ServerController implements Serializable{
 		    createSQL_edge(dB, nID, room);
 		}
 		getTheLastNode(dB, room);
-		getTheStartNode(floor);
-		ArrayList<String> all = findShortestPath(fromDB);
+		Object[] xAndY = getTheStartNode(dB, fromDB);
+		ArrayList<String> all = findShortestPath(fromDB, xAndY);
 		createJSON(all);
 		
 	}
@@ -134,130 +134,74 @@ public class ServerController implements Serializable{
 		y = Integer.parseInt(coor[1]);
 	}
 
-	private ArrayList findShortestPath(String[] fromDB) {
-		
+	private ArrayList findShortestPath(String[] fromDB, Object[] xAndY) {
+		int[] xCoor = (int[]) xAndY[0];
+		int[] yCoor = (int[]) xAndY[1];
+		String[] allTheNames = (String[]) xAndY[2];
+		int nbrOfPath = Integer.parseInt(fromDB[1]);
 		ArrayList<String> findShortestPath = new ArrayList<String>();
 		List <String> listCoords = new ArrayList<String>();
-		int[] iterate = {Integer.parseInt(fromDB[1]), s1x, s1y, s2x, s2y, s3x, s3y, s4x, s4y};
+//		int[] iterate = {Integer.parseInt(fromDB[1]), s1x, s1y, s2x, s2y, s3x, s3y, s4x, s4y};
 		for (int k = 0; k < fromDB.length; k++){
 			findShortestPath.add(fromDB[k]);
 		}
 		
-		for(int nbr = 1; nbr <= iterate[0]; nbr++) {
-			listCoords = mp.findShortestPath(iterate[(nbr*2)-1], iterate[nbr*2], x, y);
+		for(int nbr = 0; nbr < nbrOfPath; nbr++) {
+			listCoords = mp.findShortestPath(xCoor[nbr], yCoor[nbr], x, y);
 			findShortestPath.add(Integer.toString(listCoords.size()));
 			for (int j = 0; j < listCoords.size(); j++){
 				findShortestPath.add(listCoords.get(j));
 			}
 		}
-//		List <String> listCoords = mp.findShortestPath(s1x, s1y, x, y);
-//		ArrayList<String> findShortestPath = new ArrayList<String>();
-//		for (int k = 0; k < fromDB.length; k++){ findShortestPath.add(fromDB[k]);}
-//		findShortestPath.add(Integer.toString(listCoords.size()));	
-//		for (int j = 0; j < listCoords.size(); j++){ findShortestPath.add(listCoords.get(j));}
-//		List <String> listCoords2 = mp.findShortestPath(s2x, s2y, x, y);
-//		findShortestPath.add(Integer.toString(listCoords2.size()));	
-//		for (int i = 0; i < listCoords2.size(); i++){ findShortestPath.add(listCoords2.get(i));}
-//		List <String> listCoords3 = mp.findShortestPath(s3x, s3y, x, y);
-//		findShortestPath.add(Integer.toString(listCoords3.size()));	
-//		for (int c = 0; c < listCoords3.size(); c++){ findShortestPath.add(listCoords3.get(c));}
+		
+		for(int i = 0; i < allTheNames.length; i++) {
+			findShortestPath.add(allTheNames[i]);
+		}
+
 		map.clear();
 		System.out.println(findShortestPath.toString());
 		return findShortestPath;
 	}
 
-	private void getTheStartNode(String floor) {
-		String splited = floor.substring(2);
-		if (splited.equals("E")){splited = "1";}
-		int floorInt = Integer.parseInt(splited); 
+	private Object[] getTheStartNode(String dB, String[] fromDB) {
+		int[] startNodesX = new int[Integer.parseInt(fromDB[1])];
+		int[] startNodesY = new int[Integer.parseInt(fromDB[1])];
+		String[] namePath = getPathNames(fromDB, dB);
+		String temp = "";
 		
-		switch (floorInt) {
-		case 1 : 
-			s1x = 1000; // Vanligaste ingången
-			s1y = 581;
-			s2x = 861; // Mot vägen eller G8
-			s2y = 705;
-			s3x = 800; // Mot kanalen
-			s3y = 493;
-			s4x = 0;
-			s4y = 0;
-			s1name = "Ingången mot centralen";
-			s2name = "Ingången mot MalmöLive";
-			s3name = "Ingången mot kanalen";
-			s4name = "NotInUse";
-			break;
-		case 2 : 
-			s1x = 618; // Trappa
-			s1y = 603;
-			s2x = 690; // Hiss A
-			s2y = 767;
-			s3x = 964; // Hiss B
-			s3y = 724;
-			s4x = 0;
-			s4y = 0;
-			s1name = "Trappa";
-			s2name = "Hiss A";
-			s3name = "Hiss B";
-			s4name = "NotInUse";
-			break;
-		case 3 :
-			s1x = 735; // Hiss A och Trappa
-			s1y = 758;
-			s2x = 986; // Hiss B 
-			s2y = 709;
-			s3x = 915; // Hiss C
-			s3y = 418;
-			s4x = 0;
-			s4y = 0;
-			s1name = "Trappa / Hiss A";
-			s2name = "Hiss B";
-			s3name = "Hiss C";
-			s4name = "NotInUse";
-			break;
-		case 4 : 
-			s1x = 714; // Hiss A och Trappa
-			s1y = 755;
-			s2x = 976; // Hiss B 
-			s2y = 703;
-			s3x = 900; // Hiss C
-			s3y = 410;
-			s4x = 0;
-			s4y = 0;
-			s1name = "Trappa / Hiss A";
-			s2name = "Hiss B";
-			s3name = "Hiss C";
-			s4name = "NotInUse";
-			break;
-		case 5 : 
-			s1x = 627; // Hiss A och Trappa
-			s1y = 830;
-			s2x = 885; // Hiss B 
-			s2y = 786;
-			s3x = 810; // Hiss C
-			s3y = 485;
-			s4x = 0;
-			s4y = 0;
-			s1name = "Trappa / Hiss A";
-			s2name = "Hiss B";
-			s3name = "Hiss C";
-			s4name = "NotInUse";
-			break;
-		case 6 : 
-			s1x = 709; // Hiss A och Trappa
-			s1y = 759;
-			s2x = 978; // Hiss B 
-			s2y = 712;
-			s3x = 900; // Hiss C
-			s3y = 410;
-			s4x = 0;
-			s4y = 0;
-			s1name = "Trappa / Hiss A";
-			s2name = "Hiss B";
-			s3name = "Hiss C";
-			s4name = "NotInUse";
-			break;
+		for (int i = 0; i < Integer.parseInt(fromDB[1]); i++){ 
+		String queryGetStartNode = "SELECT coor " + "FROM "
+				+ dB + ".node " + "WHERE nID = '" + fromDB[3]+ "S"+(i+1)+"';";
+		try {
+				temp = dbCom.dBGetStartNode(queryGetStartNode);
+				
+		} catch (SQLException e) {
+			server.LOGG("CONTROLLER/create: CATCH = " + e);
+		}	
+		String[] splitPath = temp.split("\\.");
+		startNodesX[i] = Integer.parseInt(splitPath[0]);
+		startNodesY[i] = Integer.parseInt(splitPath[1]);
 		}
+		Object[] xAndY = {startNodesX, startNodesY, namePath}; 
+		return xAndY;
+	}
+
+	private String[] getPathNames(String[] fromDB, String dB) {
+		String[] pathNames = new String[7];
+		String queryGetPathName = "SELECT path1Name, path2Name, path3Name, path4Name, path5Name, path6Name, path7Name " + "FROM "
+				+ dB + ".levels " + "WHERE id = '" + fromDB[3]+ "';";
+		try {
+				pathNames = dbCom.getPathName(queryGetPathName);
+				
+		} catch (SQLException e) {
+			server.LOGG("CONTROLLER/create: CATCH = " + e);
+		}	
 		
+		String[] finalNames = new String[Integer.parseInt(fromDB[1])];
+		for (int i = 0; i < finalNames.length; i++){
+			finalNames[i] = pathNames[i];		}
+		
+		return finalNames;
 	}
 
 	private String createSQL_getFloor(String dB, String room) {
@@ -297,7 +241,9 @@ public class ServerController implements Serializable{
 	private void addEdges(String nID, String connected) {
 		int x1, x2, y1, y2;
 		String coor1 = map.get(nID);
+		System.out.println("nID = " + coor1);
 		String coor2 = map.get(connected);
+		System.out.println("connected = " + coor2);
 		String[] splitCoor = coor1.split("\\.");
 		String[] splitCoor2 = coor2.split("\\.");
 	    x1 = Integer.parseInt(splitCoor[0]);
@@ -362,20 +308,13 @@ public class ServerController implements Serializable{
 	}
 	
 	private void createJSON(ArrayList<String> all) throws IOException, JSONException {
-		/*
-		 * Metoden som tar emot allt från databasen. Vilken sal, byggnad, våning, bild och hur många noder den har ansluten till sig. 
-		 * Sedan gör vi om det till JSON för att skicka till klienten. 
-		 */
-		
 		String pic2 = stringToByte(all.get(4));
 		String jsonBuildText = "";
-//		String jsonBuildText2 = "";
-//		String jsonBuildText3 = "";
-		String jsonCloseText = "\",}";
-//		int inArray = 12+Integer.parseInt(all.get(11));
-//		int inArray2 = (inArray + Integer.parseInt(all.get(inArray)) + 1);
+		String jsonCloseText = "}";
+		String jsonPathNames = "";
 		int position = 11;
 		int count = Integer.parseInt(all.get(11));
+		
 		
 		for(int nbr = 1; nbr <= Integer.parseInt(all.get(1)); nbr++) {
 			jsonBuildText += "\"nbrOfNodesS"+ nbr +"\": \"" + all.get(position) + "\",";
@@ -383,29 +322,19 @@ public class ServerController implements Serializable{
 				jsonBuildText += "\"s" + nbr + "node" + (i+1) + "\": \"" + all.get(position+(i+1)) + "\",";
 			}
 			position += (count+1);
-			if(position!=all.size()) {
+			if(position!=(all.size()-nbr)) {
 			count = Integer.parseInt(all.get(position));
 			}
 		}
 		
 		
-//		for (int i = 0; i < Integer.parseInt(all.get(11)); i++){
-//			jsonBuildText += "\",\"s1node" + (i+1) + "\": \"" + all.get(11+(i+1));
-//		}
-//						
-//		for (int i = 0; i < Integer.parseInt(all.get(inArray)); i++){
-//			jsonBuildText2 += "\",\"s2node" + (i+1) + "\": \"" + all.get(inArray+(i+1));
-//		}
-//				
-//		for (int i = 0; i < Integer.parseInt(all.get(inArray2)); i++){
-//			jsonBuildText3 += "\",\"s3node" + (i+1) + "\": \"" + all.get(inArray2+(i+1));
-//		}
+		for(int k = 0; k < Integer.parseInt(all.get(1)) ; k++) {
+			jsonPathNames += "\"s" + (k+1) + "name\": \"" + all.get(position+k) + "\","; 
+		}
 		
 		if (all.get(3).equals("NIE")){
 			all.set(3, "NI1");
-		}
-		
-				
+		}	
 		String jsonText = "{\"name\": \"" + all.get(0) + "\","+ 
 							"\"nbrOfPaths\": \"" + all.get(1) + "\"," + 
 							"\"floors\": \""+ all.get(2) + "\","+ 
@@ -415,19 +344,10 @@ public class ServerController implements Serializable{
 							"\"roomCoor\": \"" + all.get(6) + "\","+ 
 							"\"doorCoor\": \"" + all.get(7) + "\","	+ 
 							"\"corridorCoor\": \"" + all.get(8) + "\","+
-//							"\"nbrOfNodesS1\": \"" + all.get(11)+
 							jsonBuildText+
-//							"\","+
-//							"\"nbrOfNodesS2\": \"" + all.get(inArray)+ 
-//							jsonBuildText2+"\","+
-//							"\"nbrOfNodesS3\": \"" + all.get(inArray2)+ 
-//							jsonBuildText3+"\","+
 							"\"long\": \"" + all.get(9) + "\","+ 
 							"\"lat\": \"" + all.get(10) + "\","+ 
-							"\"s1name\": \"" + s1name + "\","+ 
-							"\"s2name\": \"" + s2name + "\","+ 
-							"\"s3name\": \"" + s3name + "\","+ 
-							"\"s4name\": \"" + s4name + jsonCloseText;
+							jsonPathNames + jsonCloseText;
 		
 		
 		

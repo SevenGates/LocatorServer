@@ -60,6 +60,7 @@ public class DBCommunicator implements Serializable{
 				array[2] = rs.getString("floors");
 				System.out.println("Antal våningar = " + array[2]);
 				array[3] = rs.getString("id");
+				System.out.println("VåningsId = " + array[3]);
 				array[4] = rs.getString("map");
 				System.out.println("Våningsplansbild = " +array[4]);
 				array[5] = rs.getString("roomid");
@@ -322,4 +323,70 @@ public class DBCommunicator implements Serializable{
 		return result;
 	}
 	
+	public String dBGetStartNode(String queryGetStartNode) throws SQLException {
+		controller.loggDB("DBCommunicator/dcSearchRoom: Inne i metoden.");
+		Statement stmt = null;
+		Connection con = null;
+		String query = queryGetStartNode;
+		String coor = "Najs!";
+
+		try {
+			con = DriverManager.getConnection(dbURL, username, password);
+			stmt = (Statement) con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery(query);
+					
+			while (rs.next()) {
+				coor = rs.getString(1);
+				System.out.println("Startnod X/Y = " + coor);
+				}
+		} catch (SQLException e) {
+			controller.loggDB("DBCommunicator/dBGetStartNode: CATCH SQL = " + e);
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+		}
+		controller.loggDB("DBCommunicator/dBgetStartNode: Returnerar startnod");
+		return coor;
+	}
+
+	public String[] getPathName(String queryGetPathName) throws SQLException {
+		controller.loggDB("DBCommunicator/dcSearchRoom: Inne i metoden.");
+		Statement stmt = null;
+		Connection con = null;
+		String query = queryGetPathName;
+		String[] pathName = new String[7];
+
+		try {
+			con = DriverManager.getConnection(dbURL, username, password);
+			stmt = (Statement) con.prepareStatement(query);
+			ResultSet rs = stmt.executeQuery(query);
+					
+			while (rs.next()) {
+				pathName[0] = rs.getString("path1Name");
+				System.out.println("S1name = " + pathName[0]);
+				pathName[1] = rs.getString("path2Name");
+				System.out.println("S2name = " + pathName[1]);
+				pathName[2] = rs.getString("path3Name");
+				System.out.println("S3name = " + pathName[2]);
+				pathName[3] = rs.getString("path4Name");
+				System.out.println("S4name = " + pathName[3]);
+				pathName[4] = rs.getString("path5Name");
+				System.out.println("S5name = " + pathName[4]);
+				pathName[5] = rs.getString("path6Name");
+				System.out.println("S6name = " + pathName[5]);
+				pathName[6] = rs.getString("path7Name");
+				System.out.println("S7name = " + pathName[6]);
+				}
+		} catch (SQLException e) {
+			controller.loggDB("DBCommunicator/dBGetStartNode: CATCH SQL = " + e);
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+		}
+		controller.loggDB("DBCommunicator/dBgetStartNode: Returnerar startnod");
+		return pathName;
+	}
+
 }
