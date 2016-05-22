@@ -72,10 +72,6 @@ public final class Dijkstra {
 		}
 	}
 
-	
-
-	// --------------- Priority Queue Helper Functons -----------------------
-
 	private void UpdatePQ(Node v, double newWeight) {
 		// first check if v is in PQ, if not don't worry about it.
 		// ** Note that the if v is in S then v is not in PQ.
