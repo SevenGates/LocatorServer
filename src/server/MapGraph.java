@@ -56,7 +56,23 @@ public class MapGraph {
 		edge.setEuclideanDist(0);
 		graph.addEdge(edge);
 	}
-		
+	
+	public int getNodeId(int x, int y) {
+		HashMap map = graph.getNodes();
+	    Node nodeCheck, node1 = new Node(-1);
+	    for(int i = 0; i < Node.getNodeCount()+1; i++) {
+	        nodeCheck = (Node)map.get(i);
+	        if(nodeCheck.getNodeConf().getX() == x && nodeCheck.getNodeConf().getY() == y)
+	            node1 = nodeCheck;
+	    }
+	    return node1.getID();
+	}
+
+	public int getEdgeId(int x1, int y1, int x2, int y2) {
+		int node1 = getNodeId(x1, y1), node2 = getNodeId(x2,y2);
+	  	return Edge.computeID(node1,node2);
+	}
+	
 	public List<String> findShortestPath(int x1, int y1, int x2, int y2) {
 		HashMap map = graph.getNodes();
 		
