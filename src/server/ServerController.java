@@ -70,12 +70,14 @@ public class ServerController implements Serializable{
 
 	private void createSQL_SER(String[] splitQuery) throws SQLException, JSONException, IOException {
 		String msg = "Fel när du angav rummets namn, försök igen.";
+		System.out.println("DB = " + splitQuery[2]);
 		splitQuery[2] = changeDB(splitQuery[2]);
 			server.LOGG("CONTROLLER/createSQL_SER: Har ändrat DB med följande information = " + splitQuery[2]);
 		String SERQuery = "SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor, nbrOfPaths, longi, lati " + "FROM "
 				+ splitQuery[2] + ".building " + "JOIN levels " + "ON building.name=levels.building " + "JOIN room "
 				+ "ON levels.id = room.levels " + "WHERE roomid = '" + splitQuery[1] + "'";
 			server.LOGG("CONTROLLER/createSQL_SER: SQLQueryn som är genererad = " + SERQuery);
+			System.out.println("query = " + SERQuery);
 		String[] fromDB ;
 		try {
 			if (splitQuery[2] == null){
@@ -271,7 +273,7 @@ public class ServerController implements Serializable{
 
 	private void createSQL_GCO(String splitQuery) throws SQLException, JSONException, IOException {
 		String msg = "Det saknas en plats som innehåller bokstäverna " + splitQuery + ", försök igen.";
-		String GCOQuery = "SELECT place FROM locatormain.places WHERE place LIKE '"+ splitQuery +"%';";
+		String GCOQuery = "SELECT place FROM locatormain.places;";
 		server.LOGG("CONTROLLER/createSQL_GCO: SQL anropet = " + GCOQuery);
 		ArrayList<String> differentPlaces = dbCom.searchComplex(GCOQuery);
 		server.LOGG("CONTROLLER/createSQL_GCO: Arraylisten har storlek = " + differentPlaces.size());
@@ -302,6 +304,7 @@ public class ServerController implements Serializable{
 
 	private String changeDB(String string) throws SQLException, JSONException, IOException {
 		String query = "SELECT dbname FROM locatormain.places WHERE place LIKE '" + string + "';";
+		System.out.println("changeDB = " + query);
 		String newString = dbCom.dBchange(query);
 		server.LOGG("CONTROLLER/changeDB: Returnerat från DB = " + newString);
 		return newString;
