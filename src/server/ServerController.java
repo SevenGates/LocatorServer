@@ -28,6 +28,8 @@ public class ServerController implements Serializable{
 	Server server;
 	DBCommunicator dbCom;
 	MapGraph mp = new MapGraph();
+	ServerSearchProgram sSP;
+	
 	int x, y, s1x, s1y, s2x, s2y, s3x, s3y, s4x, s4y;
 	String s1name, s2name, s3name, s4name;
 	private HashMap<String,String> map = new HashMap<String, String>();
@@ -38,6 +40,7 @@ public class ServerController implements Serializable{
 	public ServerController(Server server) {
 		this.server = server;
 		dbCom = new DBCommunicator(this);
+		sSP = new ServerSearchProgram();
 	}
 
 	public int msgFromClient(String request) throws SQLException, JSONException, IOException {
@@ -62,10 +65,17 @@ public class ServerController implements Serializable{
 		return 0;
 	}
 
-	private void createSQL_SEP(String[] splitQuery) {
+	private void createSQL_SEP(String[] splitQuery) throws IOException, SQLException, JSONException {
+		System.out.println("Sökt på program med följande : " + splitQuery[0] +" "+ splitQuery[1] + " " + splitQuery[2] );
+		splitQuery[1] = sSP.searchProgram(splitQuery[1]);
+		if(splitQuery[1].equals("Error"))  {
+			String msg = "Det angavna id:et kan inte hittats. Var noga med att skriva exakt så som det står i schemat.";
+			errorHandler(msg);
+		}
+		else {
+			createSQL_SER(splitQuery);
+		}
 		server.LOGG("CONTROLLER/createSQL_SEP: ");
-		// RÖR INTE I SPRINT 2. 8=====D
-
 	}
 
 	private void createSQL_SER(String[] splitQuery) throws SQLException, JSONException, IOException {
