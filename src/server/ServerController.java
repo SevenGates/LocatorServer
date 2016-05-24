@@ -28,6 +28,8 @@ public class ServerController implements Serializable{
 	Server server;
 	DBCommunicator dbCom;
 	MapGraph mp = new MapGraph();
+	ServerSearchProgram sSP;
+	
 	int x, y, s1x, s1y, s2x, s2y, s3x, s3y, s4x, s4y;
 	String s1name, s2name, s3name, s4name;
 	private HashMap<String,String> map = new HashMap<String, String>();
@@ -38,6 +40,7 @@ public class ServerController implements Serializable{
 	public ServerController(Server server) {
 		this.server = server;
 		dbCom = new DBCommunicator(this);
+		sSP = new ServerSearchProgram();
 	}
 
 	public int msgFromClient(String request) throws SQLException, JSONException, IOException {
@@ -62,31 +65,47 @@ public class ServerController implements Serializable{
 		return 0;
 	}
 
-	private void createSQL_SEP(String[] splitQuery) {
+	private void createSQL_SEP(String[] splitQuery) throws IOException, SQLException, JSONException {
+		System.out.println("Sökt på program med följande : " + splitQuery[0] +" "+ splitQuery[1] + " " + splitQuery[2] );
+		String test = sSP.searchProgram(splitQuery[1]);
+		 splitQuery[1] = test;
+		if(splitQuery[1].equals("Error"))  {
+			String msg = "Det angavna id:et kan inte hittats. Var noga med att skriva exakt så som det står i schemat.";
+			errorHandler(msg);
+		}
+		else if(splitQuery[1].equals("Error2")) {
+			String msg = "Ditt program eller kurs verkar inte ha någon sal inbokad.";
+			errorHandler(msg);
+		}
+		else {
+			splitQuery[0] = "SER";
+			System.out.println(splitQuery[0] + " " + splitQuery[1] + " " + splitQuery[2]);
+			createSQL_SER(splitQuery);
+		}
 		server.LOGG("CONTROLLER/createSQL_SEP: ");
-		// RÖR INTE I SPRINT 2. 8=====D
-
 	}
 
 	private void createSQL_SER(String[] splitQuery) throws SQLException, JSONException, IOException {
-		String msg = "Fel när du angav rummets namn, försök igen.";
-		System.out.println("DB = " + splitQuery[2]);
+		splitQuery[1] = splitQuery[1].replaceAll(":", "");
+		String msg = new String("Fel när du skrev salens namn.");
 		splitQuery[2] = changeDB(splitQuery[2]);
 			server.LOGG("CONTROLLER/createSQL_SER: Har ändrat DB med följande information = " + splitQuery[2]);
 		String SERQuery = "SELECT name, path, floors, id, map, roomid, roomCoor, doorCoor, corridorCoor, nbrOfPaths, longi, lati " + "FROM "
 				+ splitQuery[2] + ".building " + "JOIN levels " + "ON building.name=levels.building " + "JOIN room "
 				+ "ON levels.id = room.levels " + "WHERE roomid = '" + splitQuery[1] + "'";
 			server.LOGG("CONTROLLER/createSQL_SER: SQLQueryn som är genererad = " + SERQuery);
-			System.out.println("query = " + SERQuery);
+			System.out.println("Sökt på = " + splitQuery[1]);
 		String[] fromDB ;
 		try {
 			if (splitQuery[2] == null){
 				server.LOGG("CONTROLLER/createSQL_SER: Om fel - Då skickas följande meddelande = " + msg);
+				msg = "Fel i platssökning. Gå tillbaka och ange ny plats.";
 				errorHandler(msg);
 			} else {
 				fromDB = dbCom.dBSearchRoom(SERQuery);
 				if (fromDB[0].equals("Error")){
 					server.LOGG("CONTROLLER/createSQL_SER: Om felsökt rum - Då skickas följande meddelande = " + msg);
+					msg += " Du angav (" + splitQuery[1] + ")";
 					errorHandler(msg);
 				} else {
 					server.LOGG("CONTROLLER/createSQL_SER: Else om fromDB är större än 2 platser. Då skickas till createJSON = ");
@@ -304,7 +323,6 @@ public class ServerController implements Serializable{
 
 	private String changeDB(String string) throws SQLException, JSONException, IOException {
 		String query = "SELECT dbname FROM locatormain.places WHERE place LIKE '" + string + "';";
-		System.out.println("changeDB = " + query);
 		String newString = dbCom.dBchange(query);
 		server.LOGG("CONTROLLER/changeDB: Returnerat från DB = " + newString);
 		return newString;
