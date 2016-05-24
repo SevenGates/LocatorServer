@@ -15,16 +15,16 @@ public class ServerSearchProgram {
 	 */
 	// URL adress där schemat finns.
 
-	private String URLProgram = "http://schema.mah.se/setup/jsp/Schema."
-			+ "jsp?startDatum=idag&intervallTyp=m&intervallAntal="
-			+ "6&sprak=SV&sokMedAND=true&forklaringar=true&resurser=p.";
-	private String URLKurs = "http://schema.mah.se/setup/jsp/Schema."
-			+ "jsp?startDatum=idag&intervallTyp=m&intervallAntal="
-			+ "6&sprak=SV&sokMedAND=true&forklaringar=true&resurser=k.";
+
+	
 
 	// metod som tar emot programid och returnerar rätt sal
 
 	public String searchProgram(String query) throws IOException {
+		
+		String URLProgram = "http://schema.mah.se/setup/jsp/Schema."
+				+ "jsp?startDatum=idag&intervallTyp=m&intervallAntal="
+				+ "6&sprak=SV&sokMedAND=true&forklaringar=true&resurser=p.";
 
 		URLProgram += query;
 
@@ -71,6 +71,10 @@ public class ServerSearchProgram {
 	}
 
 	public String searchCourse(String query) throws IOException {
+		
+		String URLKurs = "http://schema.mah.se/setup/jsp/Schema."
+				+ "jsp?startDatum=idag&intervallTyp=m&intervallAntal="
+				+ "6&sprak=SV&sokMedAND=true&forklaringar=true&resurser=k.";
 
 		String room = "";
 		URLKurs += query;
@@ -85,7 +89,7 @@ public class ServerSearchProgram {
 
 		String col = getColumn(document);
 		if (col.equals("notFound")) {
-			return "Error";
+			return "Error2";
 		}
 		
 		int row = 4;
